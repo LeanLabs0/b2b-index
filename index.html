@@ -47,20 +47,7 @@
   .why td { color: var(--text-secondary); }
 </style>
 </head>
-<body class="show-anno">
-
-<!-- preview banner (dev chrome, not part of the site) -->
-<div class="pv-banner">
-  <div class="wrap">
-    <span class="pv-tag">Non-functional preview</span>
-    <button class="pv-btn" onclick="toggleAnno()" id="annoBtn">Annotations: on</button>
-    <a class="pv-btn" href="#why-structure">Why this structure</a>
-    <div class="pv-legend">
-      <span><span class="dot dot-real"></span>real data</span>
-      <span><span class="dot dot-schema"></span>real schema, illustrative values</span>
-    </div>
-  </div>
-</div>
+<body>
 
 <!-- site header -->
 <header class="site-head">
@@ -77,7 +64,7 @@
 </header>
 
 <!-- hero -->
-<section class="hero anno-wrap">
+<section class="hero">
   <div class="wrap">
     <div class="eyebrow">The B2B category index</div>
     <h1>Who actually ranks in every B2B category.</h1>
@@ -88,42 +75,36 @@
       <div class="stat"><b>32</b><span>solution categories</span></div>
       <div class="stat"><b>8</b><span>answer engines monitored</span></div>
     </div>
-    <div class="anno" style="max-width:720px;margin-left:auto;margin-right:auto">ref: G2 / Product Hunt hero + search · all three stats are REAL: 413 confirmed orgs in entities.org, 32-slug shared taxonomy, 8 engines in the fan-out pipeline</div>
   </div>
 </section>
 
 <!-- category grid -->
-<section class="wrap section anno-wrap" id="categories">
+<section class="wrap section" id="categories">
   <div class="sec-head">
     <h2>Browse by category</h2>
-    <span class="chip chip-entities"><span class="dot dot-real"></span>taxonomy: entities.org + AnswerStack (shared 32-slug)</span>
   </div>
   <div class="grid-cats" id="catGrid"></div>
-  <div class="anno">ref: G2 category grid · the 32 slugs are the REAL shared industry taxonomy both entities.org and AnswerStack already use (schemas/entity.py) · zero migration needed to launch category pages · org counts illustrative except digital-marketing (50 real records)</div>
 </section>
 
 <!-- featured leaderboard + demand radar -->
-<section class="wrap section-sm anno-wrap" id="rankings" style="padding-bottom:56px">
+<section class="wrap section-sm" id="rankings" style="padding-bottom:56px">
   <div class="grid grid-2">
     <div class="card">
       <div class="sec-head" style="margin-bottom:8px">
         <h2 style="font-size:20px">Featured ranking: Digital Marketing</h2>
       </div>
-      <div style="margin-bottom:6px"><span class="chip chip-entities"><span class="dot dot-real"></span>companies: entities.org</span> <span class="chip chip-wib"><span class="dot dot-schema"></span>scores: WhatIsBest</span></div>
       <div class="lb-row"><span class="lb-rank">1</span><span class="avatar">TA</span><div><div class="lb-name">THAT Agency</div><div class="lb-domain">thatagency.com</div></div><div class="lb-right"><span class="score score-hi">94</span><span class="badge badge-domain"><span class="material-symbols-outlined">verified</span>DOMAIN_VERIFIED</span></div></div>
       <div class="lb-row"><span class="lb-rank">2</span><span class="avatar">PD</span><div><div class="lb-name">Prism Digital Agency</div><div class="lb-domain">prismdigitalinc.com</div></div><div class="lb-right"><span class="score score-hi">91</span><span class="badge badge-domain"><span class="material-symbols-outlined">verified</span>DOMAIN_VERIFIED</span></div></div>
       <div class="lb-row"><span class="lb-rank">3</span><span class="avatar">WU</span><div><div class="lb-name">Wheels Up Collective</div><div class="lb-domain">wheelsupcollective.com</div></div><div class="lb-right"><span class="score score-hi">88</span><span class="badge badge-confirmed"><span class="material-symbols-outlined">check_circle</span>CONFIRMED</span></div></div>
       <div class="lb-row"><span class="lb-rank">4</span><span class="avatar">FC</span><div><div class="lb-name">FabCom</div><div class="lb-domain">fabcomlive.com</div></div><div class="lb-right"><span class="score score-hi">85</span><span class="badge badge-confirmed"><span class="material-symbols-outlined">check_circle</span>CONFIRMED</span></div></div>
       <div class="lb-row"><span class="lb-rank">5</span><span class="avatar">AD</span><div><div class="lb-name">Atlas Domus</div><div class="lb-domain">atlasdomus.com</div></div><div class="lb-right"><span class="score score-mid">79</span><span class="badge badge-confirmed"><span class="material-symbols-outlined">check_circle</span>CONFIRMED</span></div></div>
       <div style="margin-top:18px"><a class="btn btn-primary" href="category-digital-marketing.html">View full ranking <span class="material-symbols-outlined" style="color:#0D0D0D;font-size:18px">arrow_forward</span></a></div>
-      <div class="anno">ref: Product Hunt leaderboard · top-5 are real entities.org companies · fit scores illustrative (WhatIsBest categoryFitScore shape)</div>
     </div>
     <div class="card">
       <div class="sec-head" style="margin-bottom:8px">
         <h2 style="font-size:20px">Demand Radar: UCaaS</h2>
       </div>
-      <div style="margin-bottom:14px"><span class="chip chip-fanout"><span class="dot dot-real"></span>from fan-out engine (real data)</span></div>
-      <p class="muted" style="font-size:14px;margin-bottom:16px"><b style="color:var(--text-primary)">198 buyer questions</b> tracked across 8 answer engines (264 raw, deduplicated). Demand mapping precedes every category launch.</p>
+      <p class="muted" style="font-size:14px;margin-bottom:16px"><b style="color:var(--text-primary)">198 buyer questions</b> tracked across 8 answer engines, deduplicated from 264 raw queries. Demand mapping precedes every category launch.</p>
       <div class="engine-row"><span class="en">Gemini expansion</span><div class="weight-bar"><span style="width:100%"></span></div><span class="cnt">83</span></div>
       <div class="engine-row"><span class="en">Google Autocomplete</span><div class="weight-bar"><span style="width:70%"></span></div><span class="cnt">58</span></div>
       <div class="engine-row"><span class="en">ChatGPT queries</span><div class="weight-bar"><span style="width:36%"></span></div><span class="cnt">30</span></div>
@@ -139,13 +120,12 @@
         <span class="chip">ucaas vs voip</span>
         <span class="chip">ucaas magic quadrant</span>
       </div>
-      <div class="anno">REAL data from fanout_ucaas.json (2026-05-05 run): counts per engine and sample queries are verbatim · this is the demand layer that decides which category pages get built first</div>
     </div>
   </div>
 </section>
 
 <!-- trust strip -->
-<section class="wrap section-sm anno-wrap" style="padding-bottom:56px">
+<section class="wrap section-sm" style="padding-bottom:56px">
   <div class="sec-head"><h2>Built to be trusted</h2></div>
   <div class="grid grid-4">
     <div class="card trust-card">
@@ -169,14 +149,12 @@
       <p>A Brandvius Digital research property. Sister sites are disclosed below. Each keeps its own editorial gate and original research.</p>
     </div>
   </div>
-  <div class="anno">ref: Gartner methodology framing + "Capterra is a Gartner company" disclosure pattern · this strip is the anti-PBN answer: same-owner disclosed openly, strong editorial gates, original data · verification tiers are the real entities.org validationTier enum</div>
 </section>
 
 <!-- recently verified -->
-<section class="wrap section-sm anno-wrap" style="padding-bottom:64px">
+<section class="wrap section-sm" style="padding-bottom:64px">
   <div class="sec-head">
     <h2>Recently verified</h2>
-    <span class="chip chip-entities"><span class="dot dot-real"></span>from entities.org</span>
   </div>
   <div class="grid grid-4">
     <div class="card rv-card">
@@ -204,7 +182,6 @@
       <span class="badge badge-confirmed"><span class="material-symbols-outlined">check_circle</span>CONFIRMED</span>
     </div>
   </div>
-  <div class="anno">ref: Crunchbase "recently added" cards · companies, founders, domains are REAL entities.org records</div>
 </section>
 
 <!-- footer -->
@@ -217,31 +194,6 @@
     </div>
   </div>
 </footer>
-
-<!-- why this structure (preview-only) -->
-<section class="why section" id="why-structure">
-  <div class="wrap">
-    <div class="eyebrow" style="color:var(--accent-alert)">Preview notes, not part of the site</div>
-    <h2>Why this structure</h2>
-    <div class="tbl-scroll" style="background:transparent;box-shadow:none">
-      <table>
-        <thead><tr><th>Element</th><th>Modeled on</th><th>Data behind it</th></tr></thead>
-        <tbody>
-          <tr><td>Category grid (32)</td><td>G2 category browse</td><td>REAL shared taxonomy: entities.org + AnswerStack use the same 32 slugs today, so category pages need zero data migration</td></tr>
-          <tr><td>Ranked table + sponsored row</td><td>G2 rankings, G2 sponsored labeling</td><td>Companies/founders/domains real (entities.org, 50-company digital-marketing corpus). Scores use WhatIsBest schema (categoryFitScore, rankingStrength, categoryKing), values illustrative</td></tr>
-          <tr><td>Filters bar</td><td>Capterra facets</td><td>Non-functional; verification-level filter is unique to us (entities.org tiers)</td></tr>
-          <tr><td>Featured leaderboard</td><td>Product Hunt daily ranking</td><td>Top-5 real companies from the category corpus</td></tr>
-          <tr><td>Verified profile cards</td><td>Crunchbase company profiles</td><td>REAL founders, LinkedIn, emails, phone, evidence URLs from entities.org</td></tr>
-          <tr><td>Alternatives module</td><td>AlternativeTo</td><td>Real sister companies from the same category corpus</td></tr>
-          <tr><td>Buyer questions + citations</td><td>AnswerStack answer blocks</td><td>Real schema (citations, consensus_takeaway, methodology byline); the fan-out engine produces the real question sets</td></tr>
-          <tr><td>Demand Radar</td><td>Our own (no reference site does this)</td><td>REAL: 198 deduped UCaaS queries across 8 engines, per-engine counts verbatim from fanout_ucaas.json</td></tr>
-          <tr><td>Trust strip + ownership footer</td><td>Gartner methodology page, "Capterra is a Gartner company"</td><td>The anti-PBN posture: disclosed ownership, published methodology, earned verification tiers, labeled paid inclusion</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <p class="muted" style="margin-top:18px;font-size:13px;max-width:760px">The pitch in one line: G2 ranks on reviews it collects, Crunchbase on data it licenses. B2B Index ranks on data the cluster already generates (verified entities, cited answers, comparison scores, real fan-out demand), which is exactly the reuse mandate from the 8/3 sync.</p>
-  </div>
-</section>
 
 <script>
 const CATS = [
@@ -268,11 +220,6 @@ CATS.forEach(([slug, icon]) => {
     ${live ? '<span class="cat-live-tag">Featured · full index live</span>' : ""}`;
   grid.appendChild(el);
 });
-function toggleAnno() {
-  document.body.classList.toggle('show-anno');
-  document.getElementById('annoBtn').textContent =
-    'Annotations: ' + (document.body.classList.contains('show-anno') ? 'on' : 'off');
-}
 </script>
 </body>
 </html>

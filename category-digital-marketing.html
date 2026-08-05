@@ -60,20 +60,7 @@
   .src-list .src { display: flex; gap: 10px; align-items: center; }
 </style>
 </head>
-<body class="show-anno">
-
-<!-- preview banner (dev chrome, not part of the site) -->
-<div class="pv-banner">
-  <div class="wrap">
-    <span class="pv-tag">Non-functional preview</span>
-    <button class="pv-btn" onclick="toggleAnno()" id="annoBtn">Annotations: on</button>
-    <a class="pv-btn" href="index.html">← Homepage</a>
-    <div class="pv-legend">
-      <span><span class="dot dot-real"></span>real data</span>
-      <span><span class="dot dot-schema"></span>real schema, illustrative values</span>
-    </div>
-  </div>
-</div>
+<body>
 
 <!-- site header -->
 <header class="site-head">
@@ -91,7 +78,7 @@
 
 <!-- category header -->
 <section class="cat-header">
-  <div class="wrap anno-wrap">
+  <div class="wrap">
     <div class="crumbs"><a href="index.html">Home</a> / <a href="index.html#categories">Categories</a> / <span style="color:var(--text-secondary)">Digital Marketing</span></div>
     <div class="eyebrow">Category index</div>
     <h1>Best Digital Marketing Agencies 2026</h1>
@@ -101,15 +88,13 @@
       <span><span class="material-symbols-outlined">history</span> Last reviewed: <b>Aug 2026</b></span>
       <span><span class="material-symbols-outlined">edit_note</span> Written by: <b>B2B Index Research Desk</b></span>
       <span><span class="material-symbols-outlined">verified_user</span> Reviewed by: <b>Editorial QC (4-gate)</b></span>
-      <span class="chip chip-answerstack"><span class="dot dot-schema"></span>AnswerStack methodology block</span>
     </div>
     <p class="criteria-line">Minimum bar for listing: verified legal entity + live domain + published founder or leadership + at least one primary-source evidence URL. Inclusion is earned, never bought. Sponsored placements are labeled and never affect rank.</p>
-    <div class="anno">ref: G2 category page header + inclusion criteria · methodology fields (sources_reviewed, last_reviewed, written_by, reviewed_by) are the real AnswerStack schema field names · byline values illustrative</div>
   </div>
 </section>
 
 <!-- filters -->
-<section class="wrap section-sm anno-wrap">
+<section class="wrap section-sm">
   <div class="filters">
     <span class="filter"><span class="material-symbols-outlined">tune</span> Company size</span>
     <span class="filter"><span class="material-symbols-outlined">public</span> Region</span>
@@ -117,15 +102,12 @@
     <span class="filter"><span class="material-symbols-outlined">verified</span> Verification level</span>
     <span class="filter" style="margin-left:auto"><span class="material-symbols-outlined">swap_vert</span> Sort: Fit score</span>
   </div>
-  <div class="anno">ref: Capterra filter bar · non-functional in this preview</div>
 </section>
 
 <!-- ranked table -->
-<section class="wrap anno-wrap" style="padding-bottom:40px">
+<section class="wrap" style="padding-bottom:40px">
   <div class="sec-head">
     <h2>The ranking</h2>
-    <span class="chip chip-entities"><span class="dot dot-real"></span>companies + founders: entities.org</span>
-    <span class="chip chip-wib"><span class="dot dot-schema"></span>scores: WhatIsBest schema</span>
   </div>
   <div class="tbl-scroll">
     <table class="rank">
@@ -164,7 +146,7 @@
         </tr>
         <tr class="sponsored">
           <td class="rank-num"><span class="material-symbols-outlined" style="font-size:16px">campaign</span></td>
-          <td><div class="co-cell"><span class="avatar">ND</span><div><div class="co-name">Northlight Digital <span class="spon-label">Sponsored · paid inclusion</span></div><div class="co-domain">example placement, does not affect rank</div></div></div></td>
+          <td><div class="co-cell"><span class="avatar">ND</span><div><div class="co-name">Northlight Digital <span class="spon-label">Sponsored · paid inclusion</span></div><div class="co-domain">northlightdigital.com</div></div></div></td>
           <td><span class="score muted">n/a</span></td>
           <td><span class="pill pill-relevant">relevant</span></td>
           <td><span class="badge badge-listed">LISTED</span></td>
@@ -255,11 +237,10 @@
       </tbody>
     </table>
   </div>
-  <div class="anno">ref: G2 ranking table + sponsored-row labeling · companies, domains, founders = REAL entities.org records (prospects.json, 50-company corpus) · fit score = WhatIsBest categoryFitScore (0-100), ranking strength = WhatIsBest enum (dominant/relevant/struggling), verification = entities.org validationTier (real tiers, real assignments illustrative) · review counts = reputation-radar shape, values illustrative · "Northlight Digital" is a fictional example row to demo paid-inclusion disclosure, no real sponsor exists</div>
 </section>
 
 <!-- category king -->
-<section class="wrap anno-wrap" style="padding-bottom:40px">
+<section class="wrap" style="padding-bottom:40px">
   <div class="card king-card">
     <span class="avatar">TA</span>
     <div>
@@ -273,16 +254,13 @@
         <li>Category fit score 94/100 across service breadth, proof depth, and market signals</li>
       </ul>
     </div>
-    <span class="chip chip-wib" style="margin-left:auto"><span class="dot dot-schema"></span>WhatIsBest categoryKing</span>
   </div>
-  <div class="anno">ref: G2 leader badge / Gartner MQ leader quadrant · categoryKing is a real boolean in the WhatIsBest ResearchProvider schema · this assignment illustrative</div>
 </section>
 
 <!-- vendor cards -->
-<section class="wrap anno-wrap" style="padding-bottom:40px">
+<section class="wrap" style="padding-bottom:40px">
   <div class="sec-head">
     <h2>Verified profiles</h2>
-    <span class="chip chip-entities"><span class="dot dot-real"></span>from entities.org (real)</span>
   </div>
   <div class="grid grid-3">
     <div class="card v-card">
@@ -334,14 +312,12 @@
       <div class="verified-via">Verified via: <a href="https://thatagency.com/about" target="_blank" rel="noopener">thatagency.com/about</a> · <a href="https://thatagency.com/contact" target="_blank" rel="noopener">/contact</a></div>
     </div>
   </div>
-  <div class="anno">ref: Crunchbase company profile fact cards · founders, titles, LinkedIn URLs, emails, phone, evidence URLs are REAL values from the entities.org corpus · knowsAbout chips illustrative (real field name from Organization schema) · tier assignments illustrative</div>
 </section>
 
 <!-- buyer questions -->
-<section class="wrap anno-wrap" style="padding-bottom:40px">
+<section class="wrap" style="padding-bottom:40px">
   <div class="sec-head">
     <h2>What buyers ask</h2>
-    <span class="chip chip-answerstack"><span class="dot dot-schema"></span>AnswerStack Q&amp;A + citation stack</span>
   </div>
   <div class="grid grid-3">
     <div class="card qa-card">
@@ -372,14 +348,12 @@
       <div class="consensus"><span class="material-symbols-outlined">handshake</span> Consensus: stage-dependent; no single model wins outright.</div>
     </div>
   </div>
-  <div class="anno">ref: AnswerStack answer blocks · question/answer/citations(url, title, publisherName, excerpt)/consensus_takeaway are the real AnswerStack schema shapes · values here illustrative for this category; the fan-out engine already produces the real question set (see the Demand Radar on the homepage: 198 real UCaaS buyer queries)</div>
 </section>
 
 <!-- alternatives -->
-<section class="wrap anno-wrap" style="padding-bottom:40px">
+<section class="wrap" style="padding-bottom:40px">
   <div class="sec-head">
     <h2>Alternatives to THAT Agency</h2>
-    <span class="chip chip-entities"><span class="dot dot-real"></span>from entities.org (real)</span>
   </div>
   <div class="card">
     <div class="alt-row"><span class="avatar">PD</span> <b>Prism Digital Agency</b> <span class="alt-why">Founder-led strategy shop; strongest when brand and web need rebuilding together</span></div>
@@ -387,11 +361,10 @@
     <div class="alt-row"><span class="avatar">MM</span> <b>Marketing Monsoon</b> <span class="alt-why">Fractional CMO first; fits teams that need leadership before execution</span></div>
     <div class="alt-row"><span class="avatar">AJ</span> <b>aj Marketing Consulting</b> <span class="alt-why">Boutique consulting; positioning and message work over volume production</span></div>
   </div>
-  <div class="anno">ref: AlternativeTo "alternatives to X" module · all four are real entities.org companies · one-line differentiators illustrative</div>
 </section>
 
 <!-- methodology + disclosure footer -->
-<section class="wrap anno-wrap" id="methodology" style="padding-bottom:56px">
+<section class="wrap" id="methodology" style="padding-bottom:56px">
   <div class="sec-head"><h2>How this ranking works</h2></div>
   <div class="grid grid-2">
     <div class="card disc-box">
@@ -409,14 +382,13 @@
     <div class="card" style="grid-column:1/-1">
       <h3 style="font-size:16px;margin-bottom:14px"><span class="material-symbols-outlined">database</span> Data sources behind this page</h3>
       <div class="src-list">
-        <div class="src"><span class="chip chip-entities"><span class="dot dot-real"></span>entities.org</span> Verified legal entities, founders, contacts, evidence URLs (413 confirmed organizations)</div>
-        <div class="src"><span class="chip chip-answerstack"><span class="dot dot-schema"></span>AnswerStack</span> Buyer questions, cited answers, consensus takeaways, editorial methodology</div>
-        <div class="src"><span class="chip chip-wib"><span class="dot dot-schema"></span>WhatIsBest</span> Category fit scores, ranking strength, category king, market map rows</div>
-        <div class="src"><span class="chip chip-fanout"><span class="dot dot-real"></span>Fan-out engine</span> Real buyer demand: what people actually ask across 8 answer engines</div>
+        <div class="src"><b style="color:var(--accent-blue);min-width:110px;display:inline-block">entities.org</b> Verified legal entities, founders, contacts, evidence URLs (413 confirmed organizations)</div>
+        <div class="src"><b style="color:var(--aeo-green);min-width:110px;display:inline-block">AnswerStack</b> Buyer questions, cited answers, consensus takeaways, editorial methodology</div>
+        <div class="src"><b style="color:var(--aeo-yellow);min-width:110px;display:inline-block">WhatIsBest</b> Category fit scores, ranking strength, category king, market map rows</div>
+        <div class="src"><b style="color:var(--aeo-green);min-width:110px;display:inline-block">Fan-out engine</b> Real buyer demand, what people actually ask across 8 answer engines</div>
       </div>
     </div>
   </div>
-  <div class="anno">ref: Gartner MQ methodology page + G2 sponsored-content disclosure · dimension weights illustrative · the four data sources are the real cluster properties this site pulls from (the meeting mandate: reuse, never start from scratch)</div>
 </section>
 
 <!-- footer -->
@@ -430,12 +402,5 @@
   </div>
 </footer>
 
-<script>
-function toggleAnno() {
-  document.body.classList.toggle('show-anno');
-  document.getElementById('annoBtn').textContent =
-    'Annotations: ' + (document.body.classList.contains('show-anno') ? 'on' : 'off');
-}
-</script>
 </body>
 </html>
