@@ -3,109 +3,62 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
 <title>Best Digital Marketing Agencies 2026 | B2B Index</title>
 <link rel="stylesheet" href="ds.css">
 <style>
-  .cat-header { padding: 44px 0 28px; border-bottom: 1px solid var(--border-default); }
+  .cat-header { padding: 44px 0 32px; border-bottom: 1px solid var(--border-default); }
   .crumbs { font-size: 13px; color: var(--text-disabled); margin-bottom: 18px; }
   .crumbs a:hover { color: var(--text-secondary); }
-  .cat-header h1 { font-size: 34px; margin-bottom: 12px; }
-  .cat-header .def { max-width: 760px; color: var(--text-secondary); }
-  .methodology-byline {
-    display: flex; flex-wrap: wrap; gap: 18px; margin-top: 20px;
-    font-size: 13px; color: var(--text-secondary);
-  }
-  .methodology-byline span b { color: var(--text-primary); font-weight: 500; }
+  .cat-header h1 { font-size: 34px; margin-bottom: 16px; }
+  .capsule { max-width: 780px; color: var(--text-primary); font-size: 15px; line-height: 1.65; }
+  .capsule a { color: var(--accent-blue); }
+  .byline { display: flex; flex-wrap: wrap; gap: 18px; margin-top: 18px; font-size: 13px; color: var(--text-secondary); }
+  .byline span b { color: var(--text-primary); font-weight: 500; }
   .criteria-line { margin-top: 12px; font-size: 13px; color: var(--text-disabled); }
-  .filters { display: flex; gap: 10px; flex-wrap: wrap; padding: 18px 0; }
-  .filter {
-    display: inline-flex; align-items: center; gap: 6px;
-    background: var(--surface-button); border: 1px solid var(--border-default);
-    border-radius: var(--radius-md); padding: 7px 14px;
-    font-size: 13px; color: var(--text-secondary); cursor: default;
-  }
-  .king-card { display: flex; gap: 22px; align-items: flex-start; padding: 28px; }
-  .king-card .avatar { width: 52px; height: 52px; font-size: 18px; border-radius: var(--radius-lg); }
-  .king-card h3 { font-size: 20px; margin-bottom: 6px; }
-  .king-card ul { margin: 12px 0 0 18px; color: var(--text-secondary); font-size: 14px; }
-  .king-card ul li { margin-bottom: 5px; }
-  .crown { color: var(--aeo-yellow); }
-  .v-card h3 { font-size: 17px; }
-  .v-card .v-title { font-size: 13px; color: var(--text-secondary); }
-  .v-card .facts { margin-top: 14px; display: grid; gap: 8px; font-size: 13px; }
-  .v-card .facts .f { display: flex; gap: 8px; align-items: baseline; }
-  .v-card .facts .f b { color: var(--text-secondary); font-weight: 500; min-width: 84px; display: inline-block; }
-  .v-card .facts .f span { color: var(--text-primary); word-break: break-word; }
-  .v-card .knows { margin-top: 14px; display: flex; gap: 6px; flex-wrap: wrap; }
-  .v-card .knows .chip { font-size: 10px; }
-  .v-card .verified-via { margin-top: 14px; font-size: 12px; color: var(--text-disabled); word-break: break-all; }
-  .v-card .verified-via a { color: var(--accent-blue); }
+  .at-launch { color: var(--text-disabled); font-size: 12px; font-style: italic; }
+  tr.sample td { background: rgba(253, 230, 138, .04); }
+  .sample-tag { font-size: 10px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--accent-alert); }
+  .table-note { font-size: 12px; color: var(--text-disabled); margin-top: 12px; }
   .qa-card h3 { font-size: 16px; margin-bottom: 10px; }
   .qa-card .qa-answer { font-size: 14px; color: var(--text-secondary); }
-  .qa-card .cites { margin-top: 14px; border-top: 1px solid var(--border-default); padding-top: 12px; display: grid; gap: 10px; }
-  .qa-card .cite { font-size: 12px; }
-  .qa-card .cite .c-pub { color: var(--accent-blue); font-weight: 500; }
-  .qa-card .cite .c-title { color: var(--text-primary); }
-  .qa-card .cite .c-ex { color: var(--text-disabled); font-style: italic; }
-  .consensus { margin-top: 14px; font-size: 13px; color: var(--aeo-green); display: flex; gap: 8px; align-items: flex-start; }
-  .consensus .material-symbols-outlined { color: var(--aeo-green); font-size: 16px; margin-top: 2px; }
-  .alt-row { display: flex; align-items: center; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--border-default); font-size: 14px; }
-  .alt-row:last-child { border-bottom: none; }
-  .alt-row .alt-why { color: var(--text-secondary); font-size: 13px; margin-left: auto; text-align: right; max-width: 420px; }
+  .qa-card .qa-src { margin-top: 14px; border-top: 1px solid var(--border-default); padding-top: 12px; font-size: 12px; color: var(--text-disabled); }
+  .qa-card .qa-src a { color: var(--accent-blue); }
   .disc-box { border-left: 3px solid var(--accent-blue); }
-  .dim-row { display: grid; grid-template-columns: 190px 1fr 46px; align-items: center; gap: 14px; font-size: 13px; margin-bottom: 12px; }
-  .dim-row .dim-name { color: var(--text-secondary); }
-  .dim-row .dim-w { text-align: right; color: var(--text-primary); font-family: var(--font-heading); font-weight: 600; }
   .src-list { display: grid; gap: 10px; font-size: 13px; color: var(--text-secondary); }
-  .src-list .src { display: flex; gap: 10px; align-items: center; }
+  .src-list .src b { min-width: 110px; display: inline-block; }
 </style>
 </head>
 <body>
 
-<!-- site header -->
 <header class="site-head">
   <div class="wrap">
     <a class="wordmark" href="index.html"><span class="wm-badge">B2B</span> INDEX</a>
     <nav class="nav">
       <a href="index.html#categories">Categories</a>
-      <a href="#methodology">Methodology</a>
-      <a href="index.html#rankings">Rankings</a>
-      <a href="index.html#ownership">About &amp; Ownership</a>
+      <a href="methodology.html">Methodology</a>
+      <a href="category-digital-marketing.html">Rankings</a>
+      <a href="methodology.html#ownership">About &amp; Ownership</a>
     </nav>
     <div class="head-search"><span class="material-symbols-outlined">search</span> Search categories or companies…</div>
   </div>
 </header>
 
-<!-- category header -->
 <section class="cat-header">
   <div class="wrap">
     <div class="crumbs"><a href="index.html">Home</a> / <a href="index.html#categories">Categories</a> / <span style="color:var(--text-secondary)">Digital Marketing</span></div>
     <div class="eyebrow">Category index</div>
     <h1>Best Digital Marketing Agencies 2026</h1>
-    <p class="def">Who actually ranks in the digital marketing agency category. Every listed company is a verified legal entity with a live domain, published founder, and primary-source evidence on file. Rankings combine category fit, verification depth, and review presence.</p>
-    <div class="methodology-byline">
-      <span><span class="material-symbols-outlined">fact_check</span> Sources reviewed: <b>27</b></span>
-      <span><span class="material-symbols-outlined">history</span> Last reviewed: <b>Aug 2026</b></span>
-      <span><span class="material-symbols-outlined">edit_note</span> Written by: <b>B2B Index Research Desk</b></span>
-      <span><span class="material-symbols-outlined">verified_user</span> Reviewed by: <b>Editorial QC (4-gate)</b></span>
+    <p class="capsule">B2B Index tracks <b>50 verified digital marketing agencies</b> from the entities.org registry. The strongest verified listings appear below, including <a href="company-that-agency.html">THAT Agency</a>, Prism Digital Agency, and Wheels Up Collective. Every listed company is a verified legal entity with a named founder and primary-source evidence on file. Final rankings publish when category fit scores are computed at launch.</p>
+    <div class="byline">
+      <span><span class="material-symbols-outlined">edit_note</span> Edited by: <b>[Editor name, title]</b></span>
+      <span><span class="material-symbols-outlined">history</span> Updated: <b>August 5, 2026</b></span>
     </div>
-    <p class="criteria-line">Minimum bar for listing: verified legal entity + live domain + published founder or leadership + at least one primary-source evidence URL. Inclusion is earned, never bought. Sponsored placements are labeled and never affect rank.</p>
+    <p class="criteria-line">Minimum bar for listing: verified legal entity + live domain + published founder or leadership + at least one primary-source evidence URL. Inclusion is earned, never bought.</p>
   </div>
 </section>
 
-<!-- filters -->
-<section class="wrap section-sm">
-  <div class="filters">
-    <span class="filter"><span class="material-symbols-outlined">tune</span> Company size</span>
-    <span class="filter"><span class="material-symbols-outlined">public</span> Region</span>
-    <span class="filter"><span class="material-symbols-outlined">payments</span> Budget tier</span>
-    <span class="filter"><span class="material-symbols-outlined">verified</span> Verification level</span>
-    <span class="filter" style="margin-left:auto"><span class="material-symbols-outlined">swap_vert</span> Sort: Fit score</span>
-  </div>
-</section>
-
-<!-- ranked table -->
-<section class="wrap" style="padding-bottom:40px">
+<section class="wrap" style="padding:36px 0 40px">
   <div class="sec-head">
     <h2>The ranking</h2>
   </div>
@@ -113,291 +66,154 @@
     <table class="rank">
       <thead>
         <tr>
-          <th>#</th><th>Company</th><th>Fit score</th><th>Ranking strength</th><th>Verification</th><th>Review presence</th><th>Founder</th>
+          <th>#</th><th>Company</th><th>Founder</th><th>Verification</th><th>Fit score</th>
         </tr>
       </thead>
       <tbody>
+        <tr class="sample">
+          <td class="rank-num"><span class="material-symbols-outlined" style="font-size:16px">science</span></td>
+          <td><div class="co-cell"><span class="avatar">EX</span><div><div class="co-name"><a href="company-example-agency.html">Example Agency</a> <span class="sample-tag">Sample · demonstration data</span></div><div class="co-domain">what a scored, claimed listing looks like</div></div></div></td>
+          <td class="rev-mini">Alex Sample, Founder</td>
+          <td><span class="badge badge-domain"><span class="material-symbols-outlined">verified</span>VERIFIED</span></td>
+          <td><span class="score score-hi">87</span></td>
+        </tr>
         <tr>
           <td class="rank-num">1</td>
-          <td><a href="company-that-agency.html"><div class="co-cell"><span class="avatar">TA</span><div><div class="co-name">THAT Agency <span class="crown material-symbols-outlined" title="Category King">crown</span></div><div class="co-domain">thatagency.com</div></div></div></a></td>
-          <td><span class="score score-hi">94</span></td>
-          <td><span class="pill pill-dominant">dominant</span></td>
-          <td><span class="badge badge-domain"><span class="material-symbols-outlined">verified</span>DOMAIN_VERIFIED</span></td>
-          <td class="rev-mini">G2 41 · Clutch 28 · 4.8★</td>
+          <td><a href="company-that-agency.html"><div class="co-cell"><span class="avatar">TA</span><div><div class="co-name">THAT Agency</div><div class="co-domain">thatagency.com</div></div></div></a></td>
           <td class="rev-mini">Bill Teubner, CEO</td>
+          <td><span class="badge badge-confirmed"><span class="material-symbols-outlined">check_circle</span>CONFIRMED</span></td>
+          <td><span class="at-launch">at launch</span></td>
         </tr>
         <tr>
           <td class="rank-num">2</td>
           <td><div class="co-cell"><span class="avatar">PD</span><div><div class="co-name">Prism Digital Agency</div><div class="co-domain">prismdigitalinc.com</div></div></div></td>
-          <td><span class="score score-hi">91</span></td>
-          <td><span class="pill pill-dominant">dominant</span></td>
-          <td><span class="badge badge-domain"><span class="material-symbols-outlined">verified</span>DOMAIN_VERIFIED</span></td>
-          <td class="rev-mini">Clutch 19 · 4.9★</td>
-          <td class="rev-mini">Monica Evans, CMO/Founder</td>
+          <td class="rev-mini">Monica Evans, CMO &amp; Founder</td>
+          <td><span class="badge badge-confirmed"><span class="material-symbols-outlined">check_circle</span>CONFIRMED</span></td>
+          <td><span class="at-launch">at launch</span></td>
         </tr>
         <tr>
           <td class="rank-num">3</td>
           <td><div class="co-cell"><span class="avatar">WU</span><div><div class="co-name">Wheels Up Collective</div><div class="co-domain">wheelsupcollective.com</div></div></div></td>
-          <td><span class="score score-hi">88</span></td>
-          <td><span class="pill pill-relevant">relevant</span></td>
-          <td><span class="badge badge-confirmed"><span class="material-symbols-outlined">check_circle</span>CONFIRMED</span></td>
-          <td class="rev-mini">G2 12 · Clutch 22 · 4.7★</td>
           <td class="rev-mini">Amy Winner, Co-Founder</td>
-        </tr>
-        <tr class="sponsored">
-          <td class="rank-num"><span class="material-symbols-outlined" style="font-size:16px">campaign</span></td>
-          <td><div class="co-cell"><span class="avatar">ND</span><div><div class="co-name">Northlight Digital <span class="spon-label">Sponsored · paid inclusion</span></div><div class="co-domain">northlightdigital.com</div></div></div></td>
-          <td><span class="score muted">n/a</span></td>
-          <td><span class="pill pill-relevant">relevant</span></td>
-          <td><span class="badge badge-listed">LISTED</span></td>
-          <td class="rev-mini">—</td>
-          <td class="rev-mini">—</td>
+          <td><span class="badge badge-confirmed"><span class="material-symbols-outlined">check_circle</span>CONFIRMED</span></td>
+          <td><span class="at-launch">at launch</span></td>
         </tr>
         <tr>
           <td class="rank-num">4</td>
           <td><div class="co-cell"><span class="avatar">FC</span><div><div class="co-name">FabCom</div><div class="co-domain">fabcomlive.com</div></div></div></td>
-          <td><span class="score score-hi">85</span></td>
-          <td><span class="pill pill-relevant">relevant</span></td>
-          <td><span class="badge badge-confirmed"><span class="material-symbols-outlined">check_circle</span>CONFIRMED</span></td>
-          <td class="rev-mini">Clutch 31 · 4.6★</td>
           <td class="rev-mini">Brian Fabiano, Founder &amp; CEO</td>
+          <td><span class="badge badge-confirmed"><span class="material-symbols-outlined">check_circle</span>CONFIRMED</span></td>
+          <td><span class="at-launch">at launch</span></td>
         </tr>
         <tr>
           <td class="rank-num">5</td>
           <td><div class="co-cell"><span class="avatar">AD</span><div><div class="co-name">Atlas Domus</div><div class="co-domain">atlasdomus.com</div></div></div></td>
-          <td><span class="score score-mid">79</span></td>
-          <td><span class="pill pill-relevant">relevant</span></td>
-          <td><span class="badge badge-confirmed"><span class="material-symbols-outlined">check_circle</span>CONFIRMED</span></td>
-          <td class="rev-mini">G2 8 · 4.5★</td>
           <td class="rev-mini">Idael Diaz, Founder &amp; CEO</td>
+          <td><span class="badge badge-confirmed"><span class="material-symbols-outlined">check_circle</span>CONFIRMED</span></td>
+          <td><span class="at-launch">at launch</span></td>
         </tr>
         <tr>
           <td class="rank-num">6</td>
           <td><div class="co-cell"><span class="avatar">MM</span><div><div class="co-name">Marketing Monsoon</div><div class="co-domain">marketingmonsoon.com</div></div></div></td>
-          <td><span class="score score-mid">77</span></td>
-          <td><span class="pill pill-relevant">relevant</span></td>
-          <td><span class="badge badge-domain"><span class="material-symbols-outlined">verified</span>DOMAIN_VERIFIED</span></td>
-          <td class="rev-mini">Clutch 9 · 4.8★</td>
           <td class="rev-mini">Jayne Burch, CEO &amp; Founder</td>
+          <td><span class="badge badge-confirmed"><span class="material-symbols-outlined">check_circle</span>CONFIRMED</span></td>
+          <td><span class="at-launch">at launch</span></td>
         </tr>
         <tr>
           <td class="rank-num">7</td>
           <td><div class="co-cell"><span class="avatar">CX</span><div><div class="co-name">CXChronicles</div><div class="co-domain">cxchronicles.com</div></div></div></td>
-          <td><span class="score score-mid">74</span></td>
-          <td><span class="pill pill-relevant">relevant</span></td>
-          <td><span class="badge badge-confirmed"><span class="material-symbols-outlined">check_circle</span>CONFIRMED</span></td>
-          <td class="rev-mini">G2 6 · 4.6★</td>
           <td class="rev-mini">Adrian Brady-Cesana, Founder &amp; CEO</td>
+          <td><span class="badge badge-confirmed"><span class="material-symbols-outlined">check_circle</span>CONFIRMED</span></td>
+          <td><span class="at-launch">at launch</span></td>
         </tr>
         <tr>
           <td class="rank-num">8</td>
           <td><div class="co-cell"><span class="avatar">KJ</span><div><div class="co-name">Kainjoo SA</div><div class="co-domain">kainjoo.com</div></div></div></td>
-          <td><span class="score score-mid">72</span></td>
-          <td><span class="pill pill-relevant">relevant</span></td>
-          <td><span class="badge badge-confirmed"><span class="material-symbols-outlined">check_circle</span>CONFIRMED</span></td>
-          <td class="rev-mini">Clutch 5 · 4.7★</td>
           <td class="rev-mini">Haider Alleg, Founder</td>
+          <td><span class="badge badge-confirmed"><span class="material-symbols-outlined">check_circle</span>CONFIRMED</span></td>
+          <td><span class="at-launch">at launch</span></td>
         </tr>
         <tr>
           <td class="rank-num">9</td>
           <td><div class="co-cell"><span class="avatar">TC</span><div><div class="co-name">Textile Creative Studios</div><div class="co-domain">textilecreativestudios.com</div></div></div></td>
-          <td><span class="score score-mid">69</span></td>
-          <td><span class="pill pill-relevant">relevant</span></td>
-          <td><span class="badge badge-confirmed"><span class="material-symbols-outlined">check_circle</span>CONFIRMED</span></td>
-          <td class="rev-mini">Clutch 7 · 4.9★</td>
           <td class="rev-mini">Lori Knisely, Founder &amp; Principal</td>
+          <td><span class="badge badge-confirmed"><span class="material-symbols-outlined">check_circle</span>CONFIRMED</span></td>
+          <td><span class="at-launch">at launch</span></td>
         </tr>
         <tr>
           <td class="rank-num">10</td>
           <td><div class="co-cell"><span class="avatar">CW</span><div><div class="co-name">CycleWerx Marketing</div><div class="co-domain">cyclewerxmarketing.com</div></div></div></td>
-          <td><span class="score score-mid">66</span></td>
-          <td><span class="pill pill-struggling">struggling</span></td>
-          <td><span class="badge badge-confirmed"><span class="material-symbols-outlined">check_circle</span>CONFIRMED</span></td>
-          <td class="rev-mini">G2 3 · 4.4★</td>
           <td class="rev-mini">Scotty Smith, Founder &amp; Owner</td>
+          <td><span class="badge badge-confirmed"><span class="material-symbols-outlined">check_circle</span>CONFIRMED</span></td>
+          <td><span class="at-launch">at launch</span></td>
         </tr>
         <tr>
           <td class="rank-num">11</td>
           <td><div class="co-cell"><span class="avatar">BL</span><div><div class="co-name">Brightlark CRM Studio</div><div class="co-domain">brightlark.com</div></div></div></td>
-          <td><span class="score score-mid">64</span></td>
-          <td><span class="pill pill-struggling">struggling</span></td>
-          <td><span class="badge badge-confirmed"><span class="material-symbols-outlined">check_circle</span>CONFIRMED</span></td>
-          <td class="rev-mini">Clutch 4 · 4.5★</td>
           <td class="rev-mini">Matt Walde, Founder &amp; President</td>
+          <td><span class="badge badge-confirmed"><span class="material-symbols-outlined">check_circle</span>CONFIRMED</span></td>
+          <td><span class="at-launch">at launch</span></td>
         </tr>
         <tr>
           <td class="rank-num">12</td>
           <td><div class="co-cell"><span class="avatar">TB</span><div><div class="co-name">trailBlazer6</div><div class="co-domain">trailblazer6.com</div></div></div></td>
-          <td><span class="score score-lo">58</span></td>
-          <td><span class="pill pill-struggling">struggling</span></td>
-          <td><span class="badge badge-listed">LISTED</span></td>
-          <td class="rev-mini">G2 2 · 4.2★</td>
           <td class="rev-mini">Orlando Gonzalez, Founder &amp; CEO</td>
+          <td><span class="badge badge-confirmed"><span class="material-symbols-outlined">check_circle</span>CONFIRMED</span></td>
+          <td><span class="at-launch">at launch</span></td>
         </tr>
       </tbody>
     </table>
   </div>
+  <p class="table-note">Preview order. Final ranking publishes when category fit scores are computed at launch. The sample row shows a claimed, scored listing with demonstration data; it is not a real company. Companies shown: 12 of 50 tracked in this category.</p>
 </section>
 
-<!-- category king -->
-<section class="wrap" style="padding-bottom:40px">
-  <div class="card king-card">
-    <span class="avatar">TA</span>
-    <div>
-      <div class="eyebrow" style="margin-bottom:4px"><span class="crown material-symbols-outlined" style="font-size:14px">crown</span> Category King</div>
-      <h3><a href="company-that-agency.html" style="color:inherit">THAT Agency</a></h3>
-      <p class="muted" style="font-size:14px">Why it leads the digital marketing agency category:</p>
-      <ul>
-        <li>Highest verification tier in category (DOMAIN_VERIFIED legal entity)</li>
-        <li>Strongest review presence across G2 and Clutch with sustained recency</li>
-        <li>Named leadership with public track record (Bill Teubner, CEO)</li>
-        <li>Category fit score 94/100 across service breadth, proof depth, and market signals</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<!-- vendor cards -->
-<section class="wrap" style="padding-bottom:40px">
-  <div class="sec-head">
-    <h2>Verified profiles</h2>
-  </div>
-  <div class="grid grid-3">
-    <div class="card v-card">
-      <div style="display:flex;gap:12px;align-items:center">
-        <span class="avatar">PD</span>
-        <div><h3>Prism Digital Agency, Inc</h3><div class="v-title">prismdigitalinc.com</div></div>
-      </div>
-      <div class="facts">
-        <div class="f"><b>Founder</b><span>Monica Evans, Chief Marketing Officer / Founder</span></div>
-        <div class="f"><b>LinkedIn</b><span><a href="https://www.linkedin.com/in/monicamevans" target="_blank" rel="noopener">linkedin.com/in/monicamevans</a></span></div>
-        <div class="f"><b>Contact</b><span>monica.evans@prismdigitalinc.com · +1 617-866-8730</span></div>
-        <div class="f"><b>Tier</b><span><span class="badge badge-domain"><span class="material-symbols-outlined">verified</span>DOMAIN_VERIFIED</span></span></div>
-      </div>
-      <div class="knows">
-        <span class="chip">digital strategy</span><span class="chip">brand identity</span><span class="chip">web design</span>
-      </div>
-      <div class="verified-via">Verified via: <a href="https://www.prismdigitalinc.com/about-us" target="_blank" rel="noopener">prismdigitalinc.com/about-us</a> · <a href="https://www.prismdigitalinc.com/contact-us" target="_blank" rel="noopener">/contact-us</a></div>
-    </div>
-    <div class="card v-card">
-      <div style="display:flex;gap:12px;align-items:center">
-        <span class="avatar">MM</span>
-        <div><h3>Marketing Monsoon</h3><div class="v-title">marketingmonsoon.com</div></div>
-      </div>
-      <div class="facts">
-        <div class="f"><b>Founder</b><span>Jayne Burch, CEO &amp; Founder (Fractional CMO)</span></div>
-        <div class="f"><b>LinkedIn</b><span><a href="https://www.linkedin.com/in/jayneburch" target="_blank" rel="noopener">linkedin.com/in/jayneburch</a></span></div>
-        <div class="f"><b>Contact</b><span>jayne@marketingmonsoon.com (verified person)</span></div>
-        <div class="f"><b>Tier</b><span><span class="badge badge-domain"><span class="material-symbols-outlined">verified</span>DOMAIN_VERIFIED</span></span></div>
-      </div>
-      <div class="knows">
-        <span class="chip">fractional CMO</span><span class="chip">demand gen</span><span class="chip">content strategy</span>
-      </div>
-      <div class="verified-via">Verified via: <a href="https://marketingmonsoon.com/about-marketing-monsoon" target="_blank" rel="noopener">marketingmonsoon.com/about</a> · <a href="https://marketingmonsoon.com/contact-us" target="_blank" rel="noopener">/contact-us</a></div>
-    </div>
-    <div class="card v-card">
-      <div style="display:flex;gap:12px;align-items:center">
-        <span class="avatar">TA</span>
-        <div><h3><a href="company-that-agency.html" style="color:inherit">THAT Agency</a></h3><div class="v-title">thatagency.com</div></div>
-      </div>
-      <div class="facts">
-        <div class="f"><b>CEO</b><span>Bill Teubner, Chief Executive Officer</span></div>
-        <div class="f"><b>LinkedIn</b><span><a href="https://www.linkedin.com/in/billteubner" target="_blank" rel="noopener">linkedin.com/in/billteubner</a></span></div>
-        <div class="f"><b>Contact</b><span>info@thatagency.com</span></div>
-        <div class="f"><b>Tier</b><span><span class="badge badge-domain"><span class="material-symbols-outlined">verified</span>DOMAIN_VERIFIED</span></span></div>
-      </div>
-      <div class="knows">
-        <span class="chip">inbound marketing</span><span class="chip">HubSpot</span><span class="chip">web development</span>
-      </div>
-      <div class="verified-via">Verified via: <a href="https://thatagency.com/about" target="_blank" rel="noopener">thatagency.com/about</a> · <a href="https://thatagency.com/contact" target="_blank" rel="noopener">/contact</a></div>
-    </div>
-  </div>
-</section>
-
-<!-- buyer questions -->
 <section class="wrap" style="padding-bottom:40px">
   <div class="sec-head">
     <h2>What buyers ask</h2>
   </div>
   <div class="grid grid-3">
     <div class="card qa-card">
-      <h3>How much does a digital marketing agency cost per month?</h3>
-      <p class="qa-answer">Most B2B retainers land between $3,000 and $20,000 per month depending on scope. Project work runs $10,000 to $50,000. Fractional CMO engagements typically start near $5,000 per month.</p>
-      <div class="cites">
-        <div class="cite"><span class="c-pub">Clutch</span> · <span class="c-title">Digital Marketing Pricing Guide</span><div class="c-ex">"the majority of agencies bill monthly retainers in the $2,500 to $25,000 range"</div></div>
-        <div class="cite"><span class="c-pub">HubSpot Blog</span> · <span class="c-title">Agency Pricing Models</span><div class="c-ex">"value-based retainers are replacing hourly billing across mid-market agencies"</div></div>
-      </div>
-      <div class="consensus"><span class="material-symbols-outlined">handshake</span> Consensus: sources agree on retainer-first pricing; ranges vary by service depth.</div>
+      <h3>How do you get your brand recommended in Google Gemini's AI answers?</h3>
+      <p class="qa-answer">Getting recommended in Google Gemini depends on being a recognizable entity, not just a high-ranking page. Gemini names brands it can corroborate across multiple independent sources, so consistent entity details everywhere, Organization schema linking verified profiles, and accurate third-party mentions tend to carry more weight than adding another page to the brand's own site.</p>
+      <div class="qa-src">From AnswerStack · contributed by Lean Labs · <a href="https://beta.answerstack.io/q/how-to-get-your-brand-recommended-in-google-gemini" target="_blank" rel="noopener">read the cited answer →</a></div>
     </div>
     <div class="card qa-card">
-      <h3>What should a B2B SaaS company look for in an agency?</h3>
-      <p class="qa-answer">Named senior team, industry proof in your category, transparent reporting, and owned methodology. Verified founders and public case studies separate real operators from white-label resellers.</p>
-      <div class="cites">
-        <div class="cite"><span class="c-pub">Gartner</span> · <span class="c-title">Selecting a Marketing Agency</span><div class="c-ex">"buyers who verified agency leadership reported 2x satisfaction at renewal"</div></div>
-        <div class="cite"><span class="c-pub">G2 Learn</span> · <span class="c-title">Agency Buyer's Guide</span><div class="c-ex">"review recency matters more than review volume for services categories"</div></div>
-      </div>
-      <div class="consensus"><span class="material-symbols-outlined">handshake</span> Consensus: verification depth beats portfolio polish.</div>
+      <h3>How does growth-driven design work for B2B websites?</h3>
+      <p class="qa-answer">Growth-driven design treats the site as the conversion layer of a longer growth system: it launches a focused version fast, then improves the pages that carry pipeline as real buyer behavior comes in. A launchpad site of the highest-impact pages goes live in roughly 60 to 70 days instead of the four to six months a traditional B2B rebuild takes.</p>
+      <div class="qa-src">From AnswerStack · contributed by Lean Labs · <a href="https://beta.answerstack.io/q/how-does-growth-driven-design-work-for-b2b-websites" target="_blank" rel="noopener">read the cited answer →</a></div>
     </div>
     <div class="card qa-card">
-      <h3>Agency vs in-house vs fractional: which fits when?</h3>
-      <p class="qa-answer">Under $1M ARR, fractional leadership plus contractors wins. $1M to $10M, a specialized agency accelerates without headcount. Past $10M, hybrid: in-house core with agency specialists.</p>
-      <div class="cites">
-        <div class="cite"><span class="c-pub">Forrester</span> · <span class="c-title">Marketing Org Design</span><div class="c-ex">"hybrid models now dominate B2B companies between $10M and $100M revenue"</div></div>
-        <div class="cite"><span class="c-pub">MarketingProfs</span> · <span class="c-title">Fractional CMO Trend Report</span><div class="c-ex">"fractional engagement grew 40% year over year in B2B services"</div></div>
-      </div>
-      <div class="consensus"><span class="material-symbols-outlined">handshake</span> Consensus: stage-dependent; no single model wins outright.</div>
+      <h3>What is HubSpot CMS, and how does Content Hub work?</h3>
+      <p class="qa-answer">HubSpot Content Hub is HubSpot's content management system and AI-powered content marketing software for building a website and running the blogs, landing pages, and content around it in one place. It is the renamed and expanded version of what HubSpot sold as CMS Hub until an April 2024 rebrand.</p>
+      <div class="qa-src">From AnswerStack · <a href="https://beta.answerstack.io/q/what-is-hubspot-cms-and-content-hub" target="_blank" rel="noopener">read the cited answer →</a></div>
     </div>
   </div>
 </section>
 
-<!-- alternatives -->
-<section class="wrap" style="padding-bottom:40px">
-  <div class="sec-head">
-    <h2>Alternatives to THAT Agency</h2>
-  </div>
-  <div class="card">
-    <div class="alt-row"><span class="avatar">PD</span> <b>Prism Digital Agency</b> <span class="alt-why">Founder-led strategy shop; strongest when brand and web need rebuilding together</span></div>
-    <div class="alt-row"><span class="avatar">WU</span> <b>Wheels Up Collective</b> <span class="alt-why">Co-founded collective model; flexible senior bench for stage-based scaling</span></div>
-    <div class="alt-row"><span class="avatar">MM</span> <b>Marketing Monsoon</b> <span class="alt-why">Fractional CMO first; fits teams that need leadership before execution</span></div>
-    <div class="alt-row"><span class="avatar">AJ</span> <b>aj Marketing Consulting</b> <span class="alt-why">Boutique consulting; positioning and message work over volume production</span></div>
-  </div>
-</section>
-
-<!-- methodology + disclosure footer -->
-<section class="wrap" id="methodology" style="padding-bottom:56px">
-  <div class="sec-head"><h2>How this ranking works</h2></div>
+<section class="wrap" id="methodology" style="padding-bottom:64px">
   <div class="grid grid-2">
     <div class="card disc-box">
       <h3 style="font-size:16px;margin-bottom:10px"><span class="material-symbols-outlined">campaign</span> Paid inclusion policy</h3>
-      <p class="muted" style="font-size:14px">Sponsored placements are always labeled, shown outside the numbered ranking, and never affect rank or fit score. Selection criteria are published per category. Any paid relationship is disclosed on the listing itself.</p>
+      <p class="muted" style="font-size:14px">No payment ever changes rank or score. Any sponsored placement is labeled and shown outside the numbered ranking. There are currently no sponsored placements in this category. <a href="methodology.html#paid" style="color:var(--accent-blue)">Full policy →</a></p>
     </div>
     <div class="card">
-      <h3 style="font-size:16px;margin-bottom:14px"><span class="material-symbols-outlined">functions</span> Scoring dimensions</h3>
-      <div class="dim-row"><span class="dim-name">Category fit</span><div class="weight-bar"><span style="width:35%"></span></div><span class="dim-w">35%</span></div>
-      <div class="dim-row"><span class="dim-name">Verification depth</span><div class="weight-bar"><span style="width:25%"></span></div><span class="dim-w">25%</span></div>
-      <div class="dim-row"><span class="dim-name">Review presence</span><div class="weight-bar"><span style="width:20%"></span></div><span class="dim-w">20%</span></div>
-      <div class="dim-row"><span class="dim-name">Proof &amp; evidence</span><div class="weight-bar"><span style="width:12%"></span></div><span class="dim-w">12%</span></div>
-      <div class="dim-row"><span class="dim-name">Market signals</span><div class="weight-bar"><span style="width:8%"></span></div><span class="dim-w">8%</span></div>
-    </div>
-    <div class="card" style="grid-column:1/-1">
-      <h3 style="font-size:16px;margin-bottom:14px"><span class="material-symbols-outlined">database</span> Data sources behind this page</h3>
+      <h3 style="font-size:16px;margin-bottom:14px"><span class="material-symbols-outlined">database</span> Data behind this page</h3>
       <div class="src-list">
-        <div class="src"><b style="color:var(--accent-blue);min-width:110px;display:inline-block">entities.org</b> Verified legal entities, founders, contacts, evidence URLs (413 confirmed organizations)</div>
-        <div class="src"><b style="color:var(--aeo-green);min-width:110px;display:inline-block">AnswerStack</b> Buyer questions, cited answers, consensus takeaways, editorial methodology</div>
-        <div class="src"><b style="color:var(--aeo-yellow);min-width:110px;display:inline-block">WhatIsBest</b> Category fit scores, ranking strength, category king, market map rows</div>
-        <div class="src"><b style="color:var(--aeo-green);min-width:110px;display:inline-block">Fan-out engine</b> Real buyer demand, what people actually ask across 8 answer engines</div>
+        <div class="src"><b style="color:var(--accent-blue)">entities.org</b> Verified legal entities, founders, evidence URLs</div>
+        <div class="src"><b style="color:var(--aeo-green)">AnswerStack</b> Cited buyer questions and answers</div>
+        <div class="src"><b style="color:var(--aeo-yellow)">WhatIsBest</b> Category fit scoring (computed at launch)</div>
       </div>
+      <p class="muted" style="font-size:12px;margin-top:12px"><a href="methodology.html" style="color:var(--accent-blue)">How the ranking works →</a></p>
     </div>
   </div>
 </section>
 
-<!-- footer -->
 <footer class="site-foot">
   <div class="wrap">
     <div class="wordmark" style="font-size:15px"><span class="wm-badge">B2B</span> INDEX</div>
     <p style="margin-top:12px;max-width:720px">B2B Index is a Brandvius Digital research property, operated alongside entities.org, AnswerStack, WhatIsBest, BestFit, and ReviewInsight. Shared ownership is disclosed; every property maintains its own editorial gate and original research.</p>
     <div class="foot-links">
-      <a href="#">Editorial policy</a><a href="#">Corrections</a><a href="#">Paid listing disclosure</a><a href="#">Get verified</a><a href="#">Contact research desk</a>
+      <a href="methodology.html">Methodology</a><a href="methodology.html#corrections">Corrections</a><a href="methodology.html#paid">Paid listing disclosure</a><a href="company-that-agency.html#claim">Claim your profile</a>
     </div>
   </div>
 </footer>

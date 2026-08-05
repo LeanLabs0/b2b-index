@@ -3,199 +3,163 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>THAT Agency | Reviews, Rankings &amp; Verified Facts | B2B Index</title>
+<meta name="robots" content="noindex">
+<title>THAT Agency | Verified Company Profile | B2B Index</title>
 <link rel="stylesheet" href="ds.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "THAT Agency",
+  "url": "https://thatagency.com/",
+  "contactPoint": { "@type": "ContactPoint", "email": "info@thatagency.com", "contactType": "customer service" },
+  "founder": { "@type": "Person", "name": "Bill Teubner", "jobTitle": "Chief Executive Officer", "sameAs": "https://www.linkedin.com/in/billteubner" }
+}
+</script>
 <style>
   .crumbs { font-size: 13px; color: var(--text-disabled); margin-bottom: 22px; }
   .crumbs a:hover { color: var(--text-secondary); }
-  .co-header { padding: 40px 0 32px; border-bottom: 1px solid var(--border-default); }
+  .unclaimed-banner {
+    background: rgba(147, 197, 253, .07); border-bottom: 1px solid var(--border-default);
+    padding: 12px 0; font-size: 13px; color: var(--text-secondary);
+  }
+  .unclaimed-banner .wrap { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+  .unclaimed-banner .material-symbols-outlined { color: var(--accent-blue); font-size: 18px; }
+  .co-header { padding: 36px 0 32px; border-bottom: 1px solid var(--border-default); }
   .co-header .top { display: flex; gap: 22px; align-items: flex-start; flex-wrap: wrap; }
   .co-logo {
     width: 76px; height: 76px; border-radius: var(--radius-lg);
     background: var(--surface-icon); display: flex; align-items: center; justify-content: center;
     font-family: var(--font-heading); font-weight: 700; font-size: 26px; flex: none;
   }
-  .co-header h1 { font-size: 32px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+  .co-header h1 { font-size: 32px; }
   .co-header .co-sub { color: var(--text-secondary); font-size: 14px; margin-top: 6px; }
   .co-header .co-sub a { color: var(--accent-blue); }
   .co-badges { display: flex; gap: 8px; margin-top: 14px; flex-wrap: wrap; }
+  .badge-unclaimed { background: rgba(148,148,148,.14); color: var(--text-secondary); }
   .co-actions { margin-left: auto; display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
-  .rank-strip { display: flex; gap: 28px; margin-top: 26px; flex-wrap: wrap; }
-  .rank-strip .rs { display: flex; align-items: center; gap: 12px; }
-  .rank-strip .rs .big { font-family: var(--font-heading); font-weight: 700; font-size: 24px; }
-  .rank-strip .rs .lbl { font-size: 12px; color: var(--text-secondary); line-height: 1.4; }
   .layout { display: grid; grid-template-columns: 1fr 340px; gap: 24px; padding: 40px 0 64px; }
   @media (max-width: 1000px) { .layout { grid-template-columns: 1fr; } }
-  .main-col { display: flex; flex-direction: column; gap: 24px; }
-  .side-col { display: flex; flex-direction: column; gap: 24px; }
+  .main-col, .side-col { display: flex; flex-direction: column; gap: 24px; }
   .card h2 { font-size: 19px; margin-bottom: 14px; }
   .card h2 .material-symbols-outlined { margin-right: 6px; }
   .about-txt { font-size: 14px; color: var(--text-secondary); }
-  .dim-row { display: grid; grid-template-columns: 170px 1fr 44px; align-items: center; gap: 14px; font-size: 13px; margin-bottom: 12px; }
-  .dim-row .dim-name { color: var(--text-secondary); }
-  .dim-row .dim-w { text-align: right; color: var(--text-primary); font-family: var(--font-heading); font-weight: 600; }
-  .rev-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
-  @media (max-width: 640px) { .rev-grid { grid-template-columns: 1fr; } }
-  .rev-tile { background: var(--surface-icon); border-radius: var(--radius-md); padding: 16px; }
-  .rev-tile .plat { font-family: var(--font-heading); font-weight: 600; font-size: 13px; }
-  .rev-tile .stars { color: var(--aeo-yellow); font-size: 14px; margin: 6px 0 2px; }
-  .rev-tile .cnt { font-size: 12px; color: var(--text-secondary); }
-  .theme-row { display: flex; gap: 8px; flex-wrap: wrap; }
-  .theme-pos { background: rgba(0,212,146,.1); color: var(--aeo-green); }
-  .theme-neg { background: rgba(229,72,77,.1); color: var(--aeo-red); }
-  .theme-row .chip { border: none; }
   .facts { display: grid; gap: 12px; font-size: 13px; }
   .facts .f { display: flex; gap: 10px; align-items: baseline; }
   .facts .f b { color: var(--text-secondary); font-weight: 500; min-width: 92px; display: inline-block; flex: none; }
   .facts .f span { color: var(--text-primary); word-break: break-word; }
   .facts .f a { color: var(--accent-blue); }
-  .cat-rank-row { display: flex; align-items: center; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--border-default); font-size: 14px; }
-  .cat-rank-row:last-child { border-bottom: none; }
-  .cat-rank-row .pos { font-family: var(--font-heading); font-weight: 700; color: var(--aeo-green); margin-left: auto; }
-  .qa-mini { padding: 12px 0; border-bottom: 1px solid var(--border-default); }
-  .qa-mini:last-child { border-bottom: none; }
-  .qa-mini .q { font-size: 14px; font-weight: 500; }
-  .qa-mini .a { font-size: 13px; color: var(--text-secondary); margin-top: 4px; }
-  .alt-row { display: flex; align-items: center; gap: 12px; padding: 11px 0; border-bottom: 1px solid var(--border-default); font-size: 14px; }
-  .alt-row:last-child { border-bottom: none; }
-  .alt-row .score { margin-left: auto; }
+  .facts .f.ghost span, .facts .f.ghost b { color: var(--text-disabled); }
+  .facts .f.ghost span { font-style: italic; }
   .evidence-list { display: grid; gap: 8px; font-size: 13px; }
   .evidence-list a { color: var(--accent-blue); display: flex; gap: 8px; align-items: center; word-break: break-all; }
+  .cat-rank-row { display: flex; align-items: center; gap: 12px; padding: 12px 0; font-size: 14px; }
+  .cat-rank-row .pos { font-family: var(--font-heading); font-weight: 700; color: var(--text-disabled); margin-left: auto; font-size: 12px; font-style: italic; }
   .claim-card { border-left: 3px solid var(--accent-blue); }
   .claim-card p { font-size: 13px; color: var(--text-secondary); margin: 8px 0 16px; }
+  .claim-form { display: grid; gap: 10px; }
+  .claim-form input {
+    background: var(--surface-button); border: 1px solid var(--border-default);
+    border-radius: var(--radius-md); padding: 10px 14px; color: var(--text-primary);
+    font-family: var(--font-body); font-size: 14px;
+  }
+  .claim-form input::placeholder { color: var(--text-disabled); }
   .tier-steps { display: grid; gap: 10px; font-size: 13px; }
   .tier-steps .ts { display: flex; gap: 10px; align-items: center; color: var(--text-secondary); }
   .tier-steps .ts.done { color: var(--text-primary); }
   .tier-steps .ts.done .material-symbols-outlined { color: var(--aeo-green); }
+  .ghost-note { font-size: 12px; color: var(--text-disabled); font-style: italic; }
 </style>
 </head>
 <body>
 
-<!-- site header -->
 <header class="site-head">
   <div class="wrap">
     <a class="wordmark" href="index.html"><span class="wm-badge">B2B</span> INDEX</a>
     <nav class="nav">
       <a href="index.html#categories">Categories</a>
-      <a href="category-digital-marketing.html#methodology">Methodology</a>
-      <a href="index.html#rankings">Rankings</a>
-      <a href="index.html#ownership">About &amp; Ownership</a>
+      <a href="methodology.html">Methodology</a>
+      <a href="category-digital-marketing.html">Rankings</a>
+      <a href="methodology.html#ownership">About &amp; Ownership</a>
     </nav>
     <div class="head-search"><span class="material-symbols-outlined">search</span> Search categories or companies…</div>
   </div>
 </header>
 
-<!-- company header -->
+<div class="unclaimed-banner">
+  <div class="wrap">
+    <span class="material-symbols-outlined">info</span>
+    <span><b style="color:var(--text-primary)">Unclaimed profile.</b> Compiled by the B2B Index research desk from public sources. Work at THAT Agency? <a href="#claim" style="color:var(--accent-blue)">Claim it free</a> to keep the facts current.</span>
+  </div>
+</div>
+
 <section class="co-header">
   <div class="wrap">
     <div class="crumbs"><a href="index.html">Home</a> / <a href="category-digital-marketing.html">Digital Marketing</a> / <span style="color:var(--text-secondary)">THAT Agency</span></div>
     <div class="top">
       <span class="co-logo">TA</span>
       <div>
-        <h1>THAT Agency <span class="crown material-symbols-outlined" style="color:var(--aeo-yellow);font-size:26px" title="Category King">crown</span></h1>
-        <div class="co-sub"><a href="https://thatagency.com/" target="_blank" rel="noopener">thatagency.com</a> · West Palm Beach, FL · Digital marketing agency</div>
+        <h1>THAT Agency</h1>
+        <div class="co-sub"><a href="https://thatagency.com/" target="_blank" rel="noopener">thatagency.com</a> · Digital marketing agency</div>
         <div class="co-badges">
-          <span class="badge badge-domain"><span class="material-symbols-outlined">verified</span>DOMAIN_VERIFIED</span>
-          <span class="badge badge-confirmed"><span class="material-symbols-outlined">workspace_premium</span>Category King · Digital Marketing</span>
+          <span class="badge badge-confirmed"><span class="material-symbols-outlined">check_circle</span>CONFIRMED</span>
+          <span class="badge badge-unclaimed"><span class="material-symbols-outlined">flag</span>UNCLAIMED</span>
         </div>
       </div>
       <div class="co-actions">
-        <a class="btn" href="#claim"><span class="material-symbols-outlined">flag</span> Claim this profile</a>
-        <a class="btn btn-primary" href="https://thatagency.com/" target="_blank" rel="noopener">Visit website <span class="material-symbols-outlined" style="color:#0D0D0D;font-size:18px">open_in_new</span></a>
+        <a class="btn btn-primary" href="#claim"><span class="material-symbols-outlined" style="color:#0D0D0D;font-size:18px">flag</span> Claim this profile</a>
       </div>
-    </div>
-    <div class="rank-strip">
-      <div class="rs"><span class="big score-hi score">94</span><span class="lbl">Category fit score<br>Digital Marketing</span></div>
-      <div class="rs"><span class="big">#1</span><span class="lbl">of 50 verified companies<br><a href="category-digital-marketing.html" style="color:var(--accent-blue)">in category ranking</a></span></div>
-      <div class="rs"><span class="big" style="color:var(--aeo-green)">4.8</span><span class="lbl">Average rating<br>across 69 reviews</span></div>
-      <div class="rs"><span class="big">2007</span><span class="lbl">Founded<br>17+ years operating</span></div>
     </div>
   </div>
 </section>
 
-<!-- body -->
 <div class="wrap layout">
   <div class="main-col">
 
     <div class="card">
       <h2><span class="material-symbols-outlined">info</span>About</h2>
-      <p class="about-txt">THAT Agency is a full-service digital marketing agency based in West Palm Beach, Florida, led by CEO Bill Teubner. The agency focuses on inbound marketing, HubSpot implementations, and web development for mid-market B2B and consumer brands. It holds the highest verification tier in the Digital Marketing category and leads the B2B Index ranking on category fit, verification depth, and sustained review recency.</p>
-      <div style="margin-top:14px;display:flex;gap:6px;flex-wrap:wrap">
-        <span class="chip">inbound marketing</span><span class="chip">HubSpot</span><span class="chip">web development</span><span class="chip">SEO</span><span class="chip">paid media</span>
-      </div>
+      <p class="about-txt">THAT Agency is a digital marketing agency listed in the B2B Index Digital Marketing category, one of 50 verified companies tracked in this category. Its record is confirmed against primary sources from its own website. This profile is unclaimed; the description, service focus, and company details can be expanded by the company after claiming.</p>
     </div>
 
     <div class="card">
-      <h2><span class="material-symbols-outlined">functions</span>Score breakdown</h2>
-      <div class="dim-row"><span class="dim-name">Category fit</span><div class="weight-bar"><span style="width:96%"></span></div><span class="dim-w">96</span></div>
-      <div class="dim-row"><span class="dim-name">Verification depth</span><div class="weight-bar"><span style="width:100%"></span></div><span class="dim-w">100</span></div>
-      <div class="dim-row"><span class="dim-name">Review presence</span><div class="weight-bar"><span style="width:88%"></span></div><span class="dim-w">88</span></div>
-      <div class="dim-row"><span class="dim-name">Proof &amp; evidence</span><div class="weight-bar"><span style="width:92%"></span></div><span class="dim-w">92</span></div>
-      <div class="dim-row"><span class="dim-name">Market signals</span><div class="weight-bar"><span style="width:84%"></span></div><span class="dim-w">84</span></div>
-      <p class="muted" style="font-size:12px;margin-top:12px">Composite: <b style="color:var(--aeo-green)">94/100</b>. Dimension weights are published on the <a href="category-digital-marketing.html#methodology" style="color:var(--accent-blue)">methodology page</a>.</p>
+      <h2><span class="material-symbols-outlined">badge</span>Verified facts</h2>
+      <div class="facts">
+        <div class="f"><b>Company</b><span>THAT Agency <a href="https://thatagency.com/about" target="_blank" rel="noopener">(source)</a></span></div>
+        <div class="f"><b>CEO</b><span>Bill Teubner <a href="https://thatagency.com/about" target="_blank" rel="noopener">(source)</a></span></div>
+        <div class="f"><b>LinkedIn</b><span><a href="https://www.linkedin.com/in/billteubner" target="_blank" rel="noopener">linkedin.com/in/billteubner</a></span></div>
+        <div class="f"><b>Website</b><span><a href="https://thatagency.com/" target="_blank" rel="noopener">thatagency.com</a></span></div>
+        <div class="f"><b>Contact</b><span>info@thatagency.com <a href="https://thatagency.com/contact" target="_blank" rel="noopener">(source)</a></span></div>
+        <div class="f"><b>Industry</b><span>Digital Marketing</span></div>
+        <div class="f"><b>Last verified</b><span>August 2026</span></div>
+        <div class="f ghost"><b>Founded</b><span>added when this profile is claimed</span></div>
+        <div class="f ghost"><b>Team size</b><span>added when this profile is claimed</span></div>
+        <div class="f ghost"><b>HQ</b><span>added when this profile is claimed</span></div>
+        <div class="f ghost"><b>Services</b><span>added when this profile is claimed</span></div>
+      </div>
     </div>
 
     <div class="card">
       <h2><span class="material-symbols-outlined">reviews</span>Review presence</h2>
-      <div class="rev-grid">
-        <div class="rev-tile"><div class="plat">G2</div><div class="stars">★★★★★</div><div class="cnt">41 reviews · 4.8 avg · last review Jul 2026</div></div>
-        <div class="rev-tile"><div class="plat">Clutch</div><div class="stars">★★★★★</div><div class="cnt">28 reviews · 4.9 avg · last review Jun 2026</div></div>
-        <div class="rev-tile"><div class="plat">Google</div><div class="stars">★★★★☆</div><div class="cnt">37 reviews · 4.6 avg · last review Jul 2026</div></div>
-      </div>
-      <div style="margin-top:18px">
-        <div style="font-size:13px;color:var(--text-secondary);margin-bottom:8px">What reviewers mention most</div>
-        <div class="theme-row">
-          <span class="chip theme-pos">responsive team ×14</span>
-          <span class="chip theme-pos">HubSpot expertise ×11</span>
-          <span class="chip theme-pos">transparent reporting ×9</span>
-          <span class="chip theme-neg">premium pricing ×5</span>
-        </div>
-      </div>
+      <p class="ghost-note">Review platform profiles are linked after verification. Claiming this profile lets the company connect its G2, Clutch, and Google listings directly.</p>
     </div>
 
     <div class="card">
       <h2><span class="material-symbols-outlined">leaderboard</span>Ranks in</h2>
-      <div class="cat-rank-row"><span class="avatar" style="width:30px;height:30px;font-size:11px"><span class="material-symbols-outlined" style="font-size:16px">campaign</span></span> <a href="category-digital-marketing.html"><b>Digital Marketing Agencies</b></a> <span class="pos">#1</span></div>
-      <div class="cat-rank-row"><span class="avatar" style="width:30px;height:30px;font-size:11px"><span class="material-symbols-outlined" style="font-size:16px">hub</span></span> HubSpot Implementation Partners <span class="muted" style="font-size:12px">(index in progress)</span> <span class="pos" style="color:var(--text-disabled)">—</span></div>
-      <div class="cat-rank-row"><span class="avatar" style="width:30px;height:30px;font-size:11px"><span class="material-symbols-outlined" style="font-size:16px">code</span></span> Web Development Agencies <span class="muted" style="font-size:12px">(index in progress)</span> <span class="pos" style="color:var(--text-disabled)">—</span></div>
-    </div>
-
-    <div class="card">
-      <h2><span class="material-symbols-outlined">help</span>Appears in answers</h2>
-      <div class="qa-mini">
-        <div class="q">What should a B2B SaaS company look for in an agency?</div>
-        <div class="a">Cited as an example of verified leadership and published case studies. <a href="category-digital-marketing.html" style="color:var(--accent-blue)">Read the answer →</a></div>
-      </div>
-      <div class="qa-mini">
-        <div class="q">How much does a digital marketing agency cost per month?</div>
-        <div class="a">Referenced in the retainer pricing range for full-service agencies. <a href="category-digital-marketing.html" style="color:var(--accent-blue)">Read the answer →</a></div>
-      </div>
-    </div>
-
-    <div class="card">
-      <h2><span class="material-symbols-outlined">compare_arrows</span>Alternatives &amp; competitors</h2>
-      <div class="alt-row"><span class="avatar">PD</span> <b>Prism Digital Agency</b> <span class="score score-hi">91</span></div>
-      <div class="alt-row"><span class="avatar">WU</span> <b>Wheels Up Collective</b> <span class="score score-hi">88</span></div>
-      <div class="alt-row"><span class="avatar">FC</span> <b>FabCom</b> <span class="score score-hi">85</span></div>
-      <div class="alt-row"><span class="avatar">AD</span> <b>Atlas Domus</b> <span class="score score-mid">79</span></div>
-      <div style="margin-top:14px"><a href="category-digital-marketing.html" style="color:var(--accent-blue);font-size:13px">See the full category ranking →</a></div>
+      <div class="cat-rank-row"><span class="avatar" style="width:30px;height:30px"><span class="material-symbols-outlined" style="font-size:16px">campaign</span></span> <a href="category-digital-marketing.html"><b>Digital Marketing Agencies</b></a> <span class="pos">rank publishes at launch</span></div>
     </div>
 
   </div>
   <div class="side-col">
 
-    <div class="card">
-      <h2><span class="material-symbols-outlined">badge</span>Verified facts</h2>
-      <div class="facts">
-        <div class="f"><b>Legal name</b><span>THAT Agency</span></div>
-        <div class="f"><b>CEO</b><span>Bill Teubner</span></div>
-        <div class="f"><b>LinkedIn</b><span><a href="https://www.linkedin.com/in/billteubner" target="_blank" rel="noopener">linkedin.com/in/billteubner</a></span></div>
-        <div class="f"><b>Website</b><span><a href="https://thatagency.com/" target="_blank" rel="noopener">thatagency.com</a></span></div>
-        <div class="f"><b>Contact</b><span>info@thatagency.com</span></div>
-        <div class="f"><b>HQ</b><span>West Palm Beach, Florida, US</span></div>
-        <div class="f"><b>Founded</b><span>2007</span></div>
-        <div class="f"><b>Team size</b><span>11 to 50</span></div>
-        <div class="f"><b>Industry</b><span>Digital Marketing</span></div>
+    <div class="card claim-card" id="claim">
+      <h2><span class="material-symbols-outlined">flag</span>Is this your company?</h2>
+      <p>AI assistants read pages like this when buyers ask about THAT Agency. Claim the profile free to make sure what they say is right, add the missing facts, and connect your review platforms.</p>
+      <p style="margin:0 0 16px"><b style="color:var(--text-primary)">No payment ever changes rank or score.</b> Verification is free and open to every listed company.</p>
+      <div class="claim-form">
+        <input type="text" placeholder="Your name">
+        <input type="text" placeholder="Role at the company">
+        <input type="email" placeholder="Work email (must match company domain)">
+        <a class="btn btn-primary" href="#" style="justify-content:center">Claim this profile</a>
       </div>
     </div>
 
@@ -214,26 +178,20 @@
       <div class="tier-steps">
         <div class="ts done"><span class="material-symbols-outlined">check_circle</span> LISTED · entity discovered and recorded</div>
         <div class="ts done"><span class="material-symbols-outlined">check_circle</span> CONFIRMED · facts matched to primary sources</div>
-        <div class="ts done"><span class="material-symbols-outlined">check_circle</span> DOMAIN_VERIFIED · ownership proven via domain</div>
+        <div class="ts"><span class="material-symbols-outlined">radio_button_unchecked</span> VERIFIED · ownership proven after claiming</div>
       </div>
-    </div>
-
-    <div class="card claim-card" id="claim">
-      <h2><span class="material-symbols-outlined">flag</span>Is this your company?</h2>
-      <p>Claim this profile to keep your facts current, respond to rankings, and add your own evidence. Claiming is free. Verification tiers are earned, never purchased.</p>
-      <a class="btn btn-primary" href="#">Claim this profile</a>
+      <p class="muted" style="font-size:12px;margin-top:12px"><a href="methodology.html#tiers" style="color:var(--accent-blue)">How tiers are earned →</a></p>
     </div>
 
   </div>
 </div>
 
-<!-- footer -->
-<footer class="site-foot" id="ownership">
+<footer class="site-foot">
   <div class="wrap">
     <div class="wordmark" style="font-size:15px"><span class="wm-badge">B2B</span> INDEX</div>
     <p style="margin-top:12px;max-width:720px">B2B Index is a Brandvius Digital research property, operated alongside entities.org, AnswerStack, WhatIsBest, BestFit, and ReviewInsight. Shared ownership is disclosed; every property maintains its own editorial gate and original research.</p>
     <div class="foot-links">
-      <a href="#">Editorial policy</a><a href="#">Corrections</a><a href="#">Paid listing disclosure</a><a href="#">Get verified</a><a href="#">Contact research desk</a>
+      <a href="methodology.html">Methodology</a><a href="methodology.html#corrections">Corrections</a><a href="methodology.html#paid">Paid listing disclosure</a><a href="#claim">Claim your profile</a>
     </div>
   </div>
 </footer>

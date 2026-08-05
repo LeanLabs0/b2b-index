@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Example Agency (Sample) | B2B Index</title>
+<link rel="stylesheet" href="ds.css">
+<style>
+  .crumbs { font-size: 13px; color: var(--text-disabled); margin-bottom: 22px; }
+  .sample-banner {
+    background: rgba(253, 230, 138, .08); border-bottom: 1px solid var(--border-default);
+    padding: 12px 0; font-size: 13px; color: var(--text-secondary);
+  }
+  .sample-banner .wrap { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+  .sample-banner .material-symbols-outlined { color: var(--accent-alert); font-size: 18px; }
+  .co-header { padding: 36px 0 32px; border-bottom: 1px solid var(--border-default); }
+  .co-header .top { display: flex; gap: 22px; align-items: flex-start; flex-wrap: wrap; }
+  .co-logo {
+    width: 76px; height: 76px; border-radius: var(--radius-lg);
+    background: var(--surface-icon); display: flex; align-items: center; justify-content: center;
+    font-family: var(--font-heading); font-weight: 700; font-size: 26px; flex: none;
+  }
+  .co-header h1 { font-size: 32px; }
+  .co-header .co-sub { color: var(--text-secondary); font-size: 14px; margin-top: 6px; }
+  .co-badges { display: flex; gap: 8px; margin-top: 14px; flex-wrap: wrap; }
+  .badge-claimed { background: rgba(0,212,146,.12); color: var(--aeo-green); }
+  .badge-sample { background: rgba(253,230,138,.14); color: var(--accent-alert); }
+  .rank-strip { display: flex; gap: 28px; margin-top: 26px; flex-wrap: wrap; }
+  .rank-strip .rs { display: flex; align-items: center; gap: 12px; }
+  .rank-strip .rs .big { font-family: var(--font-heading); font-weight: 700; font-size: 24px; }
+  .rank-strip .rs .lbl { font-size: 12px; color: var(--text-secondary); line-height: 1.4; }
+  .layout { display: grid; grid-template-columns: 1fr 340px; gap: 24px; padding: 40px 0 64px; }
+  @media (max-width: 1000px) { .layout { grid-template-columns: 1fr; } }
+  .main-col, .side-col { display: flex; flex-direction: column; gap: 24px; }
+  .card h2 { font-size: 19px; margin-bottom: 14px; }
+  .card h2 .material-symbols-outlined { margin-right: 6px; }
+  .about-txt { font-size: 14px; color: var(--text-secondary); }
+  .dim-row { display: grid; grid-template-columns: 170px 1fr 44px; align-items: center; gap: 14px; font-size: 13px; margin-bottom: 12px; }
+  .dim-row .dim-name { color: var(--text-secondary); }
+  .dim-row .dim-w { text-align: right; color: var(--text-primary); font-family: var(--font-heading); font-weight: 600; }
+  .rev-links { display: grid; gap: 10px; font-size: 13px; }
+  .rev-links a { color: var(--accent-blue); display: flex; gap: 8px; align-items: center; }
+  .facts { display: grid; gap: 12px; font-size: 13px; }
+  .facts .f { display: flex; gap: 10px; align-items: baseline; }
+  .facts .f b { color: var(--text-secondary); font-weight: 500; min-width: 92px; display: inline-block; flex: none; }
+  .facts .f span { color: var(--text-primary); }
+  .tier-steps { display: grid; gap: 10px; font-size: 13px; }
+  .tier-steps .ts { display: flex; gap: 10px; align-items: center; color: var(--text-primary); }
+  .tier-steps .ts .material-symbols-outlined { color: var(--aeo-green); }
+</style>
+</head>
+<body>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="wordmark" href="index.html"><span class="wm-badge">B2B</span> INDEX</a>
+    <nav class="nav">
+      <a href="index.html#categories">Categories</a>
+      <a href="methodology.html">Methodology</a>
+      <a href="category-digital-marketing.html">Rankings</a>
+      <a href="methodology.html#ownership">About &amp; Ownership</a>
+    </nav>
+    <div class="head-search"><span class="material-symbols-outlined">search</span> Search categories or companies…</div>
+  </div>
+</header>
+
+<div class="sample-banner">
+  <div class="wrap">
+    <span class="material-symbols-outlined">science</span>
+    <span><b style="color:var(--text-primary)">Sample profile with demonstration data.</b> Example Agency is not a real company. This page shows what a claimed, fully verified, scored listing looks like at launch.</span>
+  </div>
+</div>
+
+<section class="co-header">
+  <div class="wrap">
+    <div class="crumbs"><a href="index.html">Home</a> / <a href="category-digital-marketing.html">Digital Marketing</a> / <span style="color:var(--text-secondary)">Example Agency</span></div>
+    <div class="top">
+      <span class="co-logo">EX</span>
+      <div>
+        <h1>Example Agency</h1>
+        <div class="co-sub">exampleagency.com · Digital marketing agency</div>
+        <div class="co-badges">
+          <span class="badge badge-sample"><span class="material-symbols-outlined">science</span>SAMPLE</span>
+          <span class="badge badge-domain"><span class="material-symbols-outlined">verified</span>VERIFIED</span>
+          <span class="badge badge-claimed"><span class="material-symbols-outlined">flag</span>CLAIMED</span>
+        </div>
+      </div>
+    </div>
+    <div class="rank-strip">
+      <div class="rs"><span class="big score-hi score">87</span><span class="lbl">Category fit score<br>Digital Marketing</span></div>
+      <div class="rs"><span class="big">#3</span><span class="lbl">of 50 verified companies<br>in category ranking</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap layout">
+  <div class="main-col">
+
+    <div class="card">
+      <h2><span class="material-symbols-outlined">info</span>About</h2>
+      <p class="about-txt">Example Agency is a digital marketing agency ranked #3 of 50 verified companies in the B2B Index Digital Marketing category. The company claimed and verified this profile, so its facts, service focus, and review platforms are maintained by the company and checked against primary sources by the research desk.</p>
+      <div style="margin-top:14px;display:flex;gap:6px;flex-wrap:wrap">
+        <span class="chip">demand generation</span><span class="chip">content strategy</span><span class="chip">marketing automation</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2><span class="material-symbols-outlined">functions</span>Score breakdown</h2>
+      <div class="dim-row"><span class="dim-name">Category fit</span><div class="weight-bar"><span style="width:90%"></span></div><span class="dim-w">90</span></div>
+      <div class="dim-row"><span class="dim-name">Verification depth</span><div class="weight-bar"><span style="width:100%"></span></div><span class="dim-w">100</span></div>
+      <div class="dim-row"><span class="dim-name">Evidence completeness</span><div class="weight-bar"><span style="width:72%"></span></div><span class="dim-w">72</span></div>
+      <p class="muted" style="font-size:12px;margin-top:12px">Composite: <b style="color:var(--aeo-green)">87/100</b>. Only dimensions with a live data source are scored. <a href="methodology.html" style="color:var(--accent-blue)">Methodology →</a></p>
+    </div>
+
+    <div class="card">
+      <h2><span class="material-symbols-outlined">reviews</span>Review presence</h2>
+      <p class="about-txt" style="margin-bottom:12px">Connected by the company after claiming. B2B Index links to the platforms and never republishes their review counts or scores.</p>
+      <div class="rev-links">
+        <a href="#"><span class="material-symbols-outlined" style="font-size:16px">open_in_new</span>Reviews on G2 · checked August 2026</a>
+        <a href="#"><span class="material-symbols-outlined" style="font-size:16px">open_in_new</span>Reviews on Clutch · checked August 2026</a>
+        <a href="#"><span class="material-symbols-outlined" style="font-size:16px">open_in_new</span>Reviews on Google · checked August 2026</a>
+      </div>
+    </div>
+
+  </div>
+  <div class="side-col">
+
+    <div class="card">
+      <h2><span class="material-symbols-outlined">badge</span>Verified facts</h2>
+      <div class="facts">
+        <div class="f"><b>Company</b><span>Example Agency LLC</span></div>
+        <div class="f"><b>Founder</b><span>Alex Sample, Founder &amp; CEO</span></div>
+        <div class="f"><b>Website</b><span>exampleagency.com</span></div>
+        <div class="f"><b>Founded</b><span>2015</span></div>
+        <div class="f"><b>Team size</b><span>11 to 50</span></div>
+        <div class="f"><b>HQ</b><span>Austin, Texas, US</span></div>
+        <div class="f"><b>Industry</b><span>Digital Marketing</span></div>
+        <div class="f"><b>Last verified</b><span>August 2026</span></div>
+      </div>
+      <p class="muted" style="font-size:12px;margin-top:12px">Founded, team size, and HQ were added by the company after claiming and checked by the research desk.</p>
+    </div>
+
+    <div class="card">
+      <h2><span class="material-symbols-outlined">verified</span>Verification tier</h2>
+      <div class="tier-steps">
+        <div class="ts"><span class="material-symbols-outlined">check_circle</span> LISTED · entity discovered and recorded</div>
+        <div class="ts"><span class="material-symbols-outlined">check_circle</span> CONFIRMED · facts matched to primary sources</div>
+        <div class="ts"><span class="material-symbols-outlined">check_circle</span> VERIFIED · ownership proven after claiming</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="wordmark" style="font-size:15px"><span class="wm-badge">B2B</span> INDEX</div>
+    <p style="margin-top:12px;max-width:720px">B2B Index is a Brandvius Digital research property, operated alongside entities.org, AnswerStack, WhatIsBest, BestFit, and ReviewInsight. Shared ownership is disclosed; every property maintains its own editorial gate and original research.</p>
+    <div class="foot-links">
+      <a href="methodology.html">Methodology</a><a href="methodology.html#corrections">Corrections</a><a href="methodology.html#paid">Paid listing disclosure</a><a href="company-that-agency.html#claim">Claim your profile</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

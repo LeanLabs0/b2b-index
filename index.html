@@ -3,223 +3,122 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
 <title>B2B Index | Who actually ranks in every B2B category</title>
 <link rel="stylesheet" href="ds.css">
 <style>
-  .hero { padding: 72px 0 56px; text-align: center; }
+  .hero { padding: 84px 0 64px; text-align: center; }
   .hero h1 { font-size: 44px; max-width: 780px; margin: 0 auto 16px; }
   .hero p.sub { max-width: 620px; margin: 0 auto; color: var(--text-secondary); font-size: 17px; }
-  .hero-search {
-    max-width: 560px; margin: 30px auto 0; display: flex; align-items: center; gap: 10px;
-    background: var(--surface-card); border: 1px solid var(--border-default);
-    border-radius: var(--radius-lg); padding: 14px 20px;
-    color: var(--text-disabled); font-size: 15px; text-align: left;
-    box-shadow: var(--card-border-inset);
-  }
-  .stats-bar { display: flex; gap: 40px; justify-content: center; margin-top: 34px; flex-wrap: wrap; }
+  .stats-bar { display: flex; gap: 40px; justify-content: center; margin-top: 38px; flex-wrap: wrap; }
   .stat b { display: block; font-family: var(--font-heading); font-size: 26px; font-weight: 700; color: var(--text-primary); }
   .stat span { font-size: 13px; color: var(--text-secondary); }
   .grid-cats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
   @media (max-width: 1000px) { .grid-cats { grid-template-columns: repeat(2, 1fr); } }
   @media (max-width: 560px) { .grid-cats { grid-template-columns: 1fr; } }
-  .lb-row { display: flex; align-items: center; gap: 14px; padding: 14px 0; border-bottom: 1px solid var(--border-default); }
-  .lb-row:last-child { border-bottom: none; }
-  .lb-rank { font-family: var(--font-heading); font-weight: 700; font-size: 18px; color: var(--text-secondary); width: 26px; }
-  .lb-name { font-weight: 500; }
-  .lb-domain { font-size: 12px; color: var(--text-disabled); }
-  .lb-right { margin-left: auto; display: flex; align-items: center; gap: 14px; }
-  .engine-row { display: grid; grid-template-columns: 160px 1fr 40px; gap: 12px; align-items: center; font-size: 13px; margin-bottom: 9px; }
-  .engine-row .en { color: var(--text-secondary); }
-  .engine-row .cnt { text-align: right; font-family: var(--font-heading); font-weight: 600; }
-  .q-sample { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
-  .q-sample .chip { font-size: 12px; }
+  .next-up { margin-top: 18px; font-size: 13px; color: var(--text-disabled); }
   .trust-card h3 { font-size: 15px; margin: 12px 0 8px; }
   .trust-card p { font-size: 13px; color: var(--text-secondary); }
-  .rv-card { display: flex; flex-direction: column; gap: 10px; }
-  .rv-card .rv-co { font-family: var(--font-heading); font-weight: 600; font-size: 15px; }
-  .rv-card .rv-meta { font-size: 12px; color: var(--text-secondary); }
-  .why { border-top: 1px solid var(--border-default); background: var(--surface-page-alt); }
-  .why h2 { font-size: 22px; margin-bottom: 18px; }
-  .why table { width: 100%; border-collapse: collapse; font-size: 13px; }
-  .why th, .why td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--border-default); vertical-align: top; }
-  .why th { font-family: var(--font-heading); font-size: 11px; text-transform: uppercase; letter-spacing: .07em; color: var(--text-secondary); }
-  .why td:first-child { color: var(--text-primary); font-weight: 500; white-space: nowrap; }
-  .why td { color: var(--text-secondary); }
+  .trust-card a { color: var(--accent-blue); font-size: 13px; }
 </style>
 </head>
 <body>
 
-<!-- site header -->
 <header class="site-head">
   <div class="wrap">
     <a class="wordmark" href="index.html"><span class="wm-badge">B2B</span> INDEX</a>
     <nav class="nav">
       <a href="#categories">Categories</a>
-      <a href="category-digital-marketing.html#methodology">Methodology</a>
-      <a href="#rankings">Rankings</a>
-      <a href="#ownership">About &amp; Ownership</a>
+      <a href="methodology.html">Methodology</a>
+      <a href="category-digital-marketing.html">Rankings</a>
+      <a href="methodology.html#ownership">About &amp; Ownership</a>
     </nav>
     <div class="head-search"><span class="material-symbols-outlined">search</span> Search categories or companies…</div>
   </div>
 </header>
 
-<!-- hero -->
 <section class="hero">
   <div class="wrap">
     <div class="eyebrow">The B2B category index</div>
     <h1>Who actually ranks in every B2B category.</h1>
-    <p class="sub">Verified companies, cited answers, and real buyer demand. Every ranking is built on primary-source evidence, never pay-to-play.</p>
-    <div class="hero-search"><span class="material-symbols-outlined">search</span> Try "digital marketing agencies" or "UCaaS providers"…</div>
+    <p class="sub">Verified companies, cited answers, and real buyer demand. Every listing is a verified legal entity with primary-source evidence on file, never pay-to-play.</p>
     <div class="stats-bar">
       <div class="stat"><b>413</b><span>verified organizations</span></div>
-      <div class="stat"><b>32</b><span>solution categories</span></div>
-      <div class="stat"><b>8</b><span>answer engines monitored</span></div>
+      <div class="stat"><b>32</b><span>categories tracked</span></div>
+      <div class="stat"><b>1</b><span>category index live</span></div>
     </div>
   </div>
 </section>
 
-<!-- category grid -->
 <section class="wrap section" id="categories">
   <div class="sec-head">
     <h2>Browse by category</h2>
   </div>
-  <div class="grid-cats" id="catGrid"></div>
-</section>
-
-<!-- featured leaderboard + demand radar -->
-<section class="wrap section-sm" id="rankings" style="padding-bottom:56px">
-  <div class="grid grid-2">
-    <div class="card">
-      <div class="sec-head" style="margin-bottom:8px">
-        <h2 style="font-size:20px">Featured ranking: Digital Marketing</h2>
-      </div>
-      <div class="lb-row"><span class="lb-rank">1</span><span class="avatar">TA</span><div><div class="lb-name"><a href="company-that-agency.html">THAT Agency</a></div><div class="lb-domain">thatagency.com</div></div><div class="lb-right"><span class="score score-hi">94</span><span class="badge badge-domain"><span class="material-symbols-outlined">verified</span>DOMAIN_VERIFIED</span></div></div>
-      <div class="lb-row"><span class="lb-rank">2</span><span class="avatar">PD</span><div><div class="lb-name">Prism Digital Agency</div><div class="lb-domain">prismdigitalinc.com</div></div><div class="lb-right"><span class="score score-hi">91</span><span class="badge badge-domain"><span class="material-symbols-outlined">verified</span>DOMAIN_VERIFIED</span></div></div>
-      <div class="lb-row"><span class="lb-rank">3</span><span class="avatar">WU</span><div><div class="lb-name">Wheels Up Collective</div><div class="lb-domain">wheelsupcollective.com</div></div><div class="lb-right"><span class="score score-hi">88</span><span class="badge badge-confirmed"><span class="material-symbols-outlined">check_circle</span>CONFIRMED</span></div></div>
-      <div class="lb-row"><span class="lb-rank">4</span><span class="avatar">FC</span><div><div class="lb-name">FabCom</div><div class="lb-domain">fabcomlive.com</div></div><div class="lb-right"><span class="score score-hi">85</span><span class="badge badge-confirmed"><span class="material-symbols-outlined">check_circle</span>CONFIRMED</span></div></div>
-      <div class="lb-row"><span class="lb-rank">5</span><span class="avatar">AD</span><div><div class="lb-name">Atlas Domus</div><div class="lb-domain">atlasdomus.com</div></div><div class="lb-right"><span class="score score-mid">79</span><span class="badge badge-confirmed"><span class="material-symbols-outlined">check_circle</span>CONFIRMED</span></div></div>
-      <div style="margin-top:18px"><a class="btn btn-primary" href="category-digital-marketing.html">View full ranking <span class="material-symbols-outlined" style="color:#0D0D0D;font-size:18px">arrow_forward</span></a></div>
+  <div class="grid-cats">
+    <a class="cat-card live" href="category-digital-marketing.html">
+      <span class="cat-icon"><span class="material-symbols-outlined">campaign</span></span>
+      <span class="cat-name">Digital Marketing</span>
+      <span class="cat-meta">50 verified companies</span>
+      <span class="cat-live-tag">Live index</span>
+    </a>
+    <div class="cat-card">
+      <span class="cat-icon"><span class="material-symbols-outlined">apps</span></span>
+      <span class="cat-name">SaaS</span>
+      <span class="cat-meta">In verification</span>
     </div>
-    <div class="card">
-      <div class="sec-head" style="margin-bottom:8px">
-        <h2 style="font-size:20px">Demand Radar: UCaaS</h2>
-      </div>
-      <p class="muted" style="font-size:14px;margin-bottom:16px"><b style="color:var(--text-primary)">198 buyer questions</b> tracked across 8 answer engines, deduplicated from 264 raw queries. Demand mapping precedes every category launch.</p>
-      <div class="engine-row"><span class="en">Gemini expansion</span><div class="weight-bar"><span style="width:100%"></span></div><span class="cnt">83</span></div>
-      <div class="engine-row"><span class="en">Google Autocomplete</span><div class="weight-bar"><span style="width:70%"></span></div><span class="cnt">58</span></div>
-      <div class="engine-row"><span class="en">ChatGPT queries</span><div class="weight-bar"><span style="width:36%"></span></div><span class="cnt">30</span></div>
-      <div class="engine-row"><span class="en">Related searches</span><div class="weight-bar"><span style="width:8%"></span></div><span class="cnt">7</span></div>
-      <div class="engine-row"><span class="en">People Also Ask</span><div class="weight-bar"><span style="width:7%"></span></div><span class="cnt">6</span></div>
-      <div class="engine-row"><span class="en">Perplexity</span><div class="weight-bar"><span style="width:6%"></span></div><span class="cnt">5</span></div>
-      <div class="engine-row"><span class="en">Google AI Mode</span><div class="weight-bar"><span style="width:6%"></span></div><span class="cnt">5</span></div>
-      <div class="engine-row"><span class="en">Gemini grounded</span><div class="weight-bar"><span style="width:5%"></span></div><span class="cnt">4</span></div>
-      <div class="q-sample">
-        <span class="chip">ucaas vs ccaas</span>
-        <span class="chip">best ucaas providers</span>
-        <span class="chip">ucaas pricing</span>
-        <span class="chip">ucaas vs voip</span>
-        <span class="chip">ucaas magic quadrant</span>
-      </div>
+    <div class="cat-card">
+      <span class="cat-icon"><span class="material-symbols-outlined">security</span></span>
+      <span class="cat-name">Cybersecurity</span>
+      <span class="cat-meta">In verification</span>
+    </div>
+    <div class="cat-card">
+      <span class="cat-icon"><span class="material-symbols-outlined">smart_toy</span></span>
+      <span class="cat-name">Artificial Intelligence</span>
+      <span class="cat-meta">In verification</span>
     </div>
   </div>
+  <p class="next-up">32 categories tracked in total. A category index goes live only after its companies are verified and real buyer demand is mapped. <a href="methodology.html#demand" style="color:var(--accent-blue)">How categories earn a launch →</a></p>
 </section>
 
-<!-- trust strip -->
-<section class="wrap section-sm" style="padding-bottom:56px">
+<section class="wrap section-sm" style="padding-bottom:72px">
   <div class="sec-head"><h2>Built to be trusted</h2></div>
   <div class="grid grid-4">
     <div class="card trust-card">
       <span class="material-symbols-outlined" style="font-size:26px">functions</span>
-      <h3>How rankings are computed</h3>
-      <p>Five weighted dimensions, published per category. Category fit, verification depth, review presence, proof, and market signals.</p>
+      <h3>How rankings work</h3>
+      <p>Category fit and earned verification, with the method published in plain words.</p>
+      <a href="methodology.html">Read the methodology →</a>
     </div>
     <div class="card trust-card">
       <span class="material-symbols-outlined" style="font-size:26px">verified</span>
-      <h3>Verification tiers</h3>
-      <p>LISTED → CONFIRMED → DOMAIN_VERIFIED. Tiers are earned through primary-source evidence, never purchased.</p>
+      <h3>Verification is earned</h3>
+      <p>Listed → Confirmed → Verified. Tiers come from primary-source evidence, never payment.</p>
+      <a href="methodology.html#tiers">See the tiers →</a>
     </div>
     <div class="card trust-card">
       <span class="material-symbols-outlined" style="font-size:26px">campaign</span>
-      <h3>Paid inclusion policy</h3>
-      <p>Sponsored placements are labeled, shown outside the numbered ranking, and never affect rank or score.</p>
+      <h3>No pay-to-play</h3>
+      <p>No payment ever changes rank or score. Any sponsored placement is labeled and sits outside the ranking.</p>
+      <a href="methodology.html#paid">Paid inclusion policy →</a>
     </div>
     <div class="card trust-card">
       <span class="material-symbols-outlined" style="font-size:26px">account_balance</span>
-      <h3>Who owns B2B Index</h3>
-      <p>A Brandvius Digital research property. Sister sites are disclosed below. Each keeps its own editorial gate and original research.</p>
+      <h3>Who owns this</h3>
+      <p>A Brandvius Digital research property. Sister sites disclosed, each with its own editorial gate.</p>
+      <a href="methodology.html#ownership">Ownership &amp; corrections →</a>
     </div>
   </div>
 </section>
 
-<!-- recently verified -->
-<section class="wrap section-sm" style="padding-bottom:64px">
-  <div class="sec-head">
-    <h2>Recently verified</h2>
-  </div>
-  <div class="grid grid-4">
-    <div class="card rv-card">
-      <span class="avatar">FC</span>
-      <div class="rv-co">FabCom</div>
-      <div class="rv-meta">Brian Fabiano, Founder &amp; CEO<br>fabcomlive.com</div>
-      <span class="badge badge-confirmed"><span class="material-symbols-outlined">check_circle</span>CONFIRMED</span>
-    </div>
-    <div class="card rv-card">
-      <span class="avatar">CX</span>
-      <div class="rv-co">CXChronicles</div>
-      <div class="rv-meta">Adrian Brady-Cesana, Founder &amp; CEO<br>cxchronicles.com</div>
-      <span class="badge badge-confirmed"><span class="material-symbols-outlined">check_circle</span>CONFIRMED</span>
-    </div>
-    <div class="card rv-card">
-      <span class="avatar">KJ</span>
-      <div class="rv-co">Kainjoo SA</div>
-      <div class="rv-meta">Haider Alleg, Founder<br>kainjoo.com</div>
-      <span class="badge badge-confirmed"><span class="material-symbols-outlined">check_circle</span>CONFIRMED</span>
-    </div>
-    <div class="card rv-card">
-      <span class="avatar">TC</span>
-      <div class="rv-co">Textile Creative Studios</div>
-      <div class="rv-meta">Lori Knisely, Founder &amp; Principal<br>textilecreativestudios.com</div>
-      <span class="badge badge-confirmed"><span class="material-symbols-outlined">check_circle</span>CONFIRMED</span>
-    </div>
-  </div>
-</section>
-
-<!-- footer -->
 <footer class="site-foot" id="ownership">
   <div class="wrap">
     <div class="wordmark" style="font-size:15px"><span class="wm-badge">B2B</span> INDEX</div>
     <p style="margin-top:12px;max-width:720px">B2B Index is a Brandvius Digital research property, operated alongside entities.org, AnswerStack, WhatIsBest, BestFit, and ReviewInsight. Shared ownership is disclosed; every property maintains its own editorial gate and original research.</p>
     <div class="foot-links">
-      <a href="#">Editorial policy</a><a href="#">Corrections</a><a href="#">Paid listing disclosure</a><a href="#">Get verified</a><a href="#">Contact research desk</a>
+      <a href="methodology.html">Methodology</a><a href="methodology.html#corrections">Corrections</a><a href="methodology.html#paid">Paid listing disclosure</a><a href="company-that-agency.html#claim">Claim your profile</a>
     </div>
   </div>
 </footer>
 
-<script>
-const CATS = [
-  ["accounting","calculate"],["agriculture","agriculture"],["artificial-intelligence","smart_toy"],["automotive","directions_car"],
-  ["biotech","biotech"],["cleantech","eco"],["cloud-computing","cloud"],["construction","construction"],
-  ["cybersecurity","security"],["developer-tools","terminal"],["digital-marketing","campaign"],["e-commerce","shopping_cart"],
-  ["energy","bolt"],["financial-services","account_balance"],["fintech","credit_card"],["healthcare","medical_services"],
-  ["hr-technology","group"],["information-services","info"],["legal-technology","gavel"],["logistics","local_shipping"],
-  ["manufacturing","factory"],["pharmaceuticals","medication"],["procurement","request_quote"],["professional-training","school"],
-  ["public-relations","record_voice_over"],["real-estate-technology","home_work"],["retail","storefront"],["robotics","precision_manufacturing"],
-  ["saas","apps"],["sales-enablement","trending_up"],["staffing","badge"],["telecommunications","cell_tower"]
-];
-const label = s => s.split("-").map(w => w === "e" ? "E" : w === "hr" ? "HR" : w === "saas" ? "SaaS" : w[0].toUpperCase() + w.slice(1)).join(" ").replace("E Commerce","E-Commerce");
-const grid = document.getElementById("catGrid");
-CATS.forEach(([slug, icon]) => {
-  const live = slug === "digital-marketing";
-  const el = document.createElement(live ? "a" : "div");
-  el.className = "cat-card" + (live ? " live" : "");
-  if (live) el.href = "category-digital-marketing.html";
-  el.innerHTML = `
-    <span class="cat-icon"><span class="material-symbols-outlined">${icon}</span></span>
-    <span class="cat-name">${label(slug)}</span>
-    <span class="cat-meta">${live ? "50 verified companies" : "index in progress"}</span>
-    ${live ? '<span class="cat-live-tag">Featured · full index live</span>' : ""}`;
-  grid.appendChild(el);
-});
-</script>
 </body>
 </html>
