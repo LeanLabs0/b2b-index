@@ -7,53 +7,42 @@
 <title>Methodology | B2Bindex</title>
 <link rel="stylesheet" href="ds.css">
 <style>
-  .page-head { padding: 48px 0 34px; border-bottom: 1px solid var(--border-default); }
-  .crumbs { font-size: 13px; color: var(--text-disabled); margin-bottom: 18px; }
-  .crumbs a:hover { color: var(--text-secondary); }
   .page-head h1 { font-size: 34px; margin-bottom: 12px; }
-  .page-head p { max-width: 720px; color: var(--text-secondary); font-size: 15px; }
-  .demo-note { margin-top: 14px; font-size: 12px; color: var(--text-disabled); font-style: italic; }
+  .page-head p { max-width: 720px; color: var(--ink-2); font-size: 15px; }
+  .demo-note { margin-top: 14px; }
 
-  .m-section { padding: 40px 0 8px; }
   .m-section h2 { font-size: 22px; margin-bottom: 14px; }
   .m-section h2 .material-symbols-outlined { margin-right: 8px; }
-  .m-section p, .m-section li { font-size: 14px; color: var(--text-secondary); max-width: 760px; }
+  .m-section p, .m-section li { font-size: 14px; color: var(--ink-2); max-width: 760px; }
   .m-section ul { margin: 10px 0 0 20px; }
   .m-section li { margin-bottom: 8px; }
-  .m-section b { color: var(--text-primary); font-weight: 500; }
+  .m-section b { color: var(--ink); font-weight: 600; }
 
   .factor-list { display: grid; gap: 14px; margin-top: 18px; max-width: 780px; }
-  .factor { background: var(--surface-card); border-radius: var(--radius-md); box-shadow: var(--card-border-inset); padding: 18px 20px; }
+  .factor { border: 1px solid var(--rule); border-radius: 8px; padding: 18px 20px; }
   .factor .f-head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin-bottom: 8px; }
-  .factor .f-name { font-family: var(--font-heading); font-weight: 600; font-size: 15px; color: var(--text-primary); }
-  .factor .f-weight { font-family: var(--font-heading); font-weight: 700; font-size: 14px; color: var(--accent-blue); flex: none; }
-  .factor .f-desc { font-size: 13px; color: var(--text-secondary); margin-bottom: 10px; }
-  .factor .f-flag { font-size: 11px; font-weight: 600; color: var(--accent-alert); margin-left: 8px; }
+  .factor .f-weight { font-size: 14px; flex: none; }
+  .factor .f-desc { margin-bottom: 10px; }
+  .factor .f-flag { margin-left: 8px; }
+  .factor.flagged { margin-inline: 0; padding-inline: 20px; }
 
   .score-ex { display: flex; gap: 34px; flex-wrap: wrap; margin-top: 18px; }
-  .score-ex .se b { display: block; font-family: var(--font-heading); font-size: 26px; font-weight: 700; color: var(--text-primary); }
-  .score-ex .se span { font-size: 12px; color: var(--text-secondary); }
+  .score-ex .se b { display: block; font-size: 26px; }
+  .score-ex .se span { font-size: 12px; color: var(--ink-2); }
 
   .tier-table { display: grid; gap: 12px; margin-top: 16px; max-width: 760px; }
-  .tier-row { display: flex; gap: 14px; align-items: flex-start; background: var(--surface-card); border-radius: var(--radius-md); box-shadow: var(--card-border-inset); padding: 16px 18px; font-size: 14px; }
-  .tier-row .t-desc { color: var(--text-secondary); }
-  .claim-link { color: var(--accent-blue); font-weight: 600; font-size: 12px; }
+  .tier-row {
+    display: flex; gap: 14px; align-items: flex-start;
+    border: 1px solid var(--rule); border-radius: 8px; padding: 16px 18px; font-size: 14px;
+  }
+  .tier-row .t-desc { color: var(--ink-2); }
 
   .demand-stat { display: flex; gap: 34px; flex-wrap: wrap; margin: 18px 0 6px; }
-  .demand-stat .ds b { display: block; font-family: var(--font-heading); font-size: 24px; font-weight: 700; color: var(--text-primary); }
-  .demand-stat .ds span { font-size: 12px; color: var(--text-secondary); }
+  .demand-stat .ds b { display: block; font-size: 24px; }
+  .demand-stat .ds span { font-size: 12px; color: var(--ink-2); }
 
-  .src-list { display: grid; gap: 10px; font-size: 14px; color: var(--text-secondary); margin-top: 14px; max-width: 760px; }
-  .src-list b { min-width: 190px; display: inline-block; color: var(--text-primary); font-weight: 500; }
-
-  .nav .soon { color: var(--text-disabled); cursor: default; }
-  .foot-cats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin: 28px 0 0; padding-top: 24px; border-top: 1px solid var(--border-default); }
-  @media (max-width: 900px) { .foot-cats { grid-template-columns: repeat(2, 1fr); } }
-  .foot-cats h5 { font-family: var(--font-heading); font-size: 12px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--text-secondary); margin-bottom: 10px; }
-  .foot-cats ul { list-style: none; display: flex; flex-direction: column; gap: 6px; font-size: 12px; color: var(--text-disabled); }
-  .foot-integrity { margin-top: 16px; max-width: 780px; font-size: 12px; color: var(--text-disabled); border-top: 1px solid var(--border-default); padding-top: 14px; }
-  .foot-net { margin-top: 10px; font-size: 12px; color: var(--text-disabled); }
-  .foot-net a { color: var(--text-secondary); }
+  .src-list { display: grid; gap: 10px; font-size: 14px; color: var(--ink-2); margin-top: 14px; max-width: 760px; }
+  .src-list b { min-width: 190px; display: inline-block; color: var(--ink); font-weight: 600; }
 </style>
 </head>
 <body>
@@ -67,7 +56,7 @@
       <a href="index.html#top10">Top 100</a>
       <a class="soon" title="Coming soon">Compare</a>
       <a class="soon" title="Coming soon">Insights</a>
-      <a class="soon" title="Coming soon">Find a Solution</a>
+      <a class="soon cta" title="Coming soon">Find a Solution</a>
       <a href="get-listed.html">Get Listed</a>
     </nav>
   </div>
@@ -75,7 +64,7 @@
 
 <section class="page-head">
   <div class="wrap">
-    <div class="crumbs"><a href="index.html">Home</a> / <span style="color:var(--text-secondary)">Methodology</span></div>
+    <div class="crumbs"><a href="index.html">Home</a> / <span style="color:var(--ink-2)">Methodology</span></div>
     <div class="eyebrow">How B2Bindex works</div>
     <h1>Methodology</h1>
     <p>Every ranking on this site can be explained in plain words. This page explains the score, the listing and verification process, and what money can and cannot buy. It also says who owns the site.</p>
@@ -102,7 +91,7 @@
       <p class="f-desc">Aggregates verified reviews, case studies, and customer references from third-party sources.</p>
       <div class="weight-bar"><span style="width:20%"></span></div>
     </div>
-    <div class="factor">
+    <div class="factor flagged">
       <div class="f-head"><span class="f-name">Product Maturity<span class="f-flag">(under review)</span></span><span class="f-weight">20%</span></div>
       <p class="f-desc">Measures how developed and proven the product or service offering is. This factor's definition is under review and may change.</p>
       <div class="weight-bar"><span style="width:20%"></span></div>
@@ -127,7 +116,7 @@
   <p>Basic listings are free. A company enters the index one of two ways:</p>
   <ul>
     <li><b>Indexed by us.</b> The editorial team records the company from public filings, licensed data providers, and other public sources. These profiles show as Unclaimed until someone at the company claims them.</li>
-    <li><b>Submitted by the company.</b> Anyone at the company can <a href="get-listed.html" style="color:var(--accent-blue)">submit a listing</a>. The editorial team reviews submissions within 5 to 7 business days.</li>
+    <li><b>Submitted by the company.</b> Anyone at the company can <a href="get-listed.html">submit a listing</a>. The editorial team reviews submissions within 5 to 7 business days.</li>
   </ul>
   <p style="margin-top:12px">To appear in rankings, a profile needs a minimum completeness of <b>60%</b>. Below that threshold the company stays listed but unranked until the missing facts are filled in.</p>
 </section>
@@ -136,7 +125,7 @@
   <h2><span class="material-symbols-outlined">verified</span>Verification</h2>
   <p>Verification is B2Bindex's own. There are two states, and moving between them happens right here on the site:</p>
   <div class="tier-table">
-    <div class="tier-row"><span class="badge badge-listed">UNCLAIMED</span><span class="t-desc">The company is indexed from public data. No one at the company has claimed the profile yet. Every unclaimed row carries a <span class="claim-link">Claim &rarr;</span> link to <a href="get-listed.html" style="color:var(--accent-blue)">Get Listed</a>.</span></div>
+    <div class="tier-row"><span class="badge badge-listed">UNCLAIMED</span><span class="t-desc">The company is indexed from public data. No one at the company has claimed the profile yet. Every unclaimed row carries a <span class="claim-link">Claim &rarr;</span> link to <a href="get-listed.html">Get Listed</a>.</span></div>
     <div class="tier-row"><span class="badge badge-domain"><span class="material-symbols-outlined">verified</span>VERIFIED</span><span class="t-desc">The company claimed its profile on B2Bindex and proved ownership through a work email on its own domain. Verified profiles are confirmed by the company and may complete missing data.</span></div>
   </div>
   <p style="margin-top:14px">Verification carries a fee, one of only two paid programs on the site. <b>Verification proves who you are. That's all it does.</b></p>
@@ -185,16 +174,16 @@
   <p>Pages are assembled from the data sources above and reviewed before publishing by the B2Bindex editorial team.</p>
 </section>
 
-<section class="wrap m-section" id="ownership" style="padding-bottom:64px">
+<section class="wrap m-section" id="ownership">
   <h2><span class="material-symbols-outlined">account_balance</span>Ownership</h2>
   <p>B2Bindex is a brand of <b>Brandvious, Inc.</b> The other Brandvious properties are named in the footer of every page. Each property maintains its own editorial gate and original research. When a page cites a sister property, the citation is labeled as such.</p>
 </section>
 
 <footer class="site-foot">
   <div class="wrap">
-    <div class="wordmark" style="font-size:15px"><span class="wm-badge">B2B</span> INDEX</div>
+    <div class="wordmark"><span class="wm-badge">B2B</span> INDEX</div>
     <p style="margin-top:14px;max-width:720px">Maintained by the B2Bindex editorial team with data from public filings, licensed data providers, and verified company submissions.</p>
-    <p style="margin-top:8px;color:var(--text-disabled)">A brand by Brandvious, Inc. &middot; Last reviewed: August 13, 2026</p>
+    <p style="margin-top:8px;color:var(--ink-3)">A brand by Brandvious, Inc. &middot; Last reviewed: August 13, 2026</p>
     <div class="foot-links">
       <a href="index.html">Index</a><a href="methodology.html">Methodology</a><a href="get-listed.html">Get Listed</a><a href="#corrections">Corrections</a><a href="#paid">Paid programs disclosure</a>
     </div>
@@ -220,7 +209,7 @@
       <div>
         <h5>Professional Services</h5>
         <ul>
-          <li><a href="category-digital-marketing.html" style="color:var(--accent-blue)">Digital &amp; AI Marketing</a></li><li>B2B Consulting / Training</li><li>Reputation / PR</li><li>Legal Services</li><li>HR &amp; Recruiting</li><li>Design &amp; Creative</li><li>Translation &amp; Localization</li><li>Market Research</li>
+          <li><a href="category-digital-marketing.html">Digital &amp; AI Marketing</a></li><li>B2B Consulting / Training</li><li>Reputation / PR</li><li>Legal Services</li><li>HR &amp; Recruiting</li><li>Design &amp; Creative</li><li>Translation &amp; Localization</li><li>Market Research</li>
         </ul>
       </div>
     </div>

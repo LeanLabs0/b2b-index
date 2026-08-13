@@ -7,71 +7,17 @@
 <title>Example Agency (Sample) | Company Profile | B2Bindex</title>
 <link rel="stylesheet" href="ds.css">
 <style>
-  .crumbs { font-size: 13px; color: var(--text-disabled); margin-bottom: 22px; }
-  .crumbs a:hover { color: var(--text-secondary); }
-  .nav a.soon { cursor: default; color: var(--text-disabled); }
   .sample-banner {
-    background: rgba(253, 230, 138, .08); border-bottom: 1px solid var(--border-default);
-    padding: 12px 0; font-size: 13px; color: var(--text-secondary);
+    background: var(--flag-bg); border-bottom: 1px solid var(--rule);
+    padding: 12px 0; font-size: 13px; color: var(--ink-2);
   }
   .sample-banner .wrap { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
-  .sample-banner .material-symbols-outlined { color: var(--accent-alert); font-size: 18px; }
-  .co-header { padding: 36px 0 32px; border-bottom: 1px solid var(--border-default); }
-  .co-header .top { display: flex; gap: 22px; align-items: flex-start; flex-wrap: wrap; }
-  .co-logo {
-    width: 76px; height: 76px; border-radius: var(--radius-lg);
-    background: var(--surface-icon); display: flex; align-items: center; justify-content: center;
-    font-family: var(--font-heading); font-weight: 700; font-size: 26px; flex: none;
-  }
+  .sample-banner .material-symbols-outlined { color: var(--flag); font-size: 18px; }
+  .sample-banner b { color: var(--ink); }
   .co-header h1 { font-size: 32px; }
-  .co-header .co-sub { color: var(--text-secondary); font-size: 14px; margin-top: 6px; }
+  .co-header .top { display: flex; gap: 22px; align-items: flex-start; flex-wrap: wrap; }
+  .co-header .co-sub { color: var(--ink-2); font-size: 14px; margin-top: 6px; }
   .co-badges { display: flex; gap: 8px; margin-top: 14px; flex-wrap: wrap; }
-  .badge-verified { background: rgba(0,212,146,.12); color: var(--score-green); }
-  .badge-sample { background: rgba(253,230,138,.14); color: var(--accent-alert); }
-  .rank-strip { display: flex; gap: 34px; margin-top: 26px; flex-wrap: wrap; align-items: center; }
-  .rank-strip .lbl a { color: var(--accent-blue); }
-  .factor .weight-bar > span { background: var(--score-green); }
-  .bar-note { font-size: 11px; color: var(--text-disabled); margin-bottom: 4px; }
-  .rank-strip .rs { display: flex; align-items: center; gap: 12px; }
-  .rank-strip .rs .big { font-family: var(--font-heading); font-weight: 700; font-size: 26px; }
-  .rank-strip .rs .lbl { font-size: 12px; color: var(--text-secondary); line-height: 1.4; }
-  .strip-note { font-size: 12px; color: var(--text-disabled); }
-  .layout { display: grid; grid-template-columns: 1fr 340px; gap: 24px; padding: 40px 0 64px; }
-  @media (max-width: 1000px) { .layout { grid-template-columns: 1fr; } }
-  .main-col, .side-col { display: flex; flex-direction: column; gap: 24px; }
-  .card h2 { font-size: 19px; margin-bottom: 14px; }
-  .card h2 .material-symbols-outlined { margin-right: 6px; }
-  .about-txt { font-size: 14px; color: var(--text-secondary); }
-  .factor { padding: 14px 0; border-bottom: 1px solid var(--border-default); }
-  .factor:last-of-type { border-bottom: none; }
-  .factor .f-head { display: flex; align-items: baseline; gap: 10px; font-size: 14px; }
-  .factor .f-name { font-family: var(--font-heading); font-weight: 600; color: var(--text-primary); }
-  .factor .f-wt { font-size: 12px; color: var(--text-disabled); }
-  .factor .f-score { margin-left: auto; font-family: var(--font-heading); font-weight: 700; font-size: 15px; }
-  .factor .weight-bar { margin: 10px 0 8px; }
-  .factor .f-how { font-size: 13px; color: var(--text-secondary); }
-  .under-review { font-size: 11px; color: var(--accent-alert); font-weight: 600; }
-  .rev-row { display: flex; align-items: center; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--border-default); font-size: 14px; flex-wrap: wrap; }
-  .rev-row:last-of-type { border-bottom: none; }
-  .rev-row .rev-plat { font-family: var(--font-heading); font-weight: 600; min-width: 70px; }
-  .rev-row a { color: var(--accent-blue); font-size: 13px; }
-  .rev-row .rev-meta { margin-left: auto; font-size: 12px; color: var(--text-secondary); }
-  .facts { display: grid; gap: 12px; font-size: 13px; }
-  .facts .f { display: flex; gap: 10px; align-items: baseline; }
-  .facts .f b { color: var(--text-secondary); font-weight: 500; min-width: 92px; display: inline-block; flex: none; }
-  .facts .f span { color: var(--text-primary); word-break: break-word; }
-  .facts .f a { color: var(--accent-blue); }
-  .cat-rank-row { display: flex; align-items: center; gap: 12px; padding: 12px 0; font-size: 14px; }
-  .cat-rank-row .pos { font-family: var(--font-heading); font-weight: 700; color: var(--text-secondary); margin-left: auto; font-size: 13px; }
-  .claim-card { border-left: 3px solid var(--accent-blue); }
-  .claim-card p { font-size: 13px; color: var(--text-secondary); margin: 8px 0 16px; }
-  .site-foot .integrity { margin-top: 18px; padding-top: 18px; border-top: 1px solid var(--border-default); font-size: 12px; color: var(--text-disabled); max-width: 820px; }
-  .site-foot .net-links { margin-top: 12px; font-size: 12px; color: var(--text-disabled); }
-  .site-foot .net-links a { color: var(--text-secondary); }
-  .foot-cats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin: 28px 0 0; padding-top: 24px; border-top: 1px solid var(--border-default); }
-  @media (max-width: 900px) { .foot-cats { grid-template-columns: repeat(2, 1fr); } }
-  .foot-cats h5 { font-family: var(--font-heading); font-size: 12px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--text-secondary); margin-bottom: 10px; }
-  .foot-cats ul { list-style: none; display: flex; flex-direction: column; gap: 6px; font-size: 12px; color: var(--text-disabled); }
 </style>
 </head>
 <body>
@@ -85,7 +31,7 @@
       <a href="index.html#top10">Top 100</a>
       <a class="soon" href="#" title="Coming soon">Compare</a>
       <a class="soon" href="#" title="Coming soon">Insights</a>
-      <a class="soon" href="#" title="Coming soon">Find a Solution</a>
+      <a class="soon cta" href="#" title="Coming soon">Find a Solution</a>
       <a href="get-listed.html">Get Listed</a>
     </nav>
   </div>
@@ -94,13 +40,13 @@
 <div class="sample-banner">
   <div class="wrap">
     <span class="material-symbols-outlined">science</span>
-    <span><b style="color:var(--text-primary)">Sample profile with demonstration data.</b> Example Agency is not a real company. This page shows what a claimed, verified, fully scored listing looks like.</span>
+    <span><b style="color:var(--ink)">Sample profile with demonstration data.</b> Example Agency is not a real company. This page shows what a claimed, verified, fully scored listing looks like.</span>
   </div>
 </div>
 
 <section class="co-header">
   <div class="wrap">
-    <div class="crumbs"><a href="index.html">Home</a> / <a href="index.html">Index</a> / <span style="color:var(--text-secondary)">Sample Category</span> / <span style="color:var(--text-secondary)">Example Agency</span></div>
+    <div class="crumbs"><a href="index.html">Home</a> / <a href="index.html">Index</a> / <span style="color:var(--ink-2)">Sample Category</span> / <span style="color:var(--ink-2)">Example Agency</span></div>
     <div class="top">
       <span class="co-logo">EX</span>
       <div>
@@ -156,7 +102,7 @@
         <p class="f-how">We aggregated 96 verified reviews averaging 4.8 stars across G2, Clutch, and Google, plus published case studies with named customers.</p>
       </div>
 
-      <div class="factor">
+      <div class="factor flagged">
         <div class="f-head"><span class="f-name">Product Maturity</span><span class="f-wt">20% weight · <span class="under-review">(under review)</span></span><span class="f-score score-hi">88</span></div>
         <div class="weight-bar"><span style="width:88%"></span></div>
         <p class="f-how">We assessed how developed and proven the service offering is. Example Agency publishes fixed scopes and pricing for its three core services. This factor's definition is under review and may change.</p>
@@ -168,7 +114,7 @@
         <p class="f-how">We read public stability signals. The company is bootstrapped and profitable since 2017, with steady headcount growth on LinkedIn. Some of the same signals also feed the separate Health sub-score of 91, which reads a wider set of operational data on its own scale.</p>
       </div>
 
-      <p class="muted" style="font-size:12px;margin-top:12px">Weighted composite: (94&times;.25) + (90&times;.20) + (91&times;.20) + (88&times;.20) + (94&times;.15) = <b style="color:var(--text-primary)">91.4</b>. Recomputed each snapshot.</p>
+      <p class="muted" style="font-size:12px;margin-top:12px">Weighted composite: (94&times;.25) + (90&times;.20) + (91&times;.20) + (88&times;.20) + (94&times;.15) = <b style="color:var(--ink)">91.4</b>. Recomputed each snapshot.</p>
     </div>
 
     <div class="card">
@@ -226,14 +172,14 @@
 
     <div class="card">
       <h2><span class="material-symbols-outlined">verified</span>Verification status</h2>
-      <p class="about-txt">B2Bindex runs its own verification. This profile is <b style="color:var(--score-green)">Verified</b>, meaning the company claimed it and proved ownership, and every fact was matched to a primary source by the editorial team.</p>
-      <p class="muted" style="font-size:12px;margin-top:12px"><a href="get-listed.html" style="color:var(--accent-blue)">How claiming works &rarr;</a></p>
+      <p class="about-txt">B2Bindex runs its own verification. This profile is <b style="color:var(--ok)">Verified</b>, meaning the company claimed it and proved ownership, and every fact was matched to a primary source by the editorial team.</p>
+      <p class="muted" style="font-size:12px;margin-top:12px"><a href="get-listed.html">How claiming works &rarr;</a></p>
     </div>
 
     <div class="card">
       <h2><span class="material-symbols-outlined">compare_arrows</span>See the difference</h2>
       <p class="about-txt">Compare this page with an unclaimed profile to see what changes after claiming.</p>
-      <p style="margin-top:12px;font-size:13px"><a href="company-that-agency.html" style="color:var(--accent-blue)">View an unclaimed profile &rarr;</a></p>
+      <p style="margin-top:12px;font-size:13px"><a href="company-that-agency.html">View an unclaimed profile &rarr;</a></p>
     </div>
 
   </div>
@@ -241,9 +187,9 @@
 
 <footer class="site-foot">
   <div class="wrap">
-    <div class="wordmark" style="font-size:15px"><span class="wm-badge">B2B</span> INDEX</div>
+    <div class="wordmark"><span class="wm-badge">B2B</span> INDEX</div>
     <p style="margin-top:14px;max-width:720px">Maintained by the B2Bindex editorial team with data from public filings, licensed data providers, and verified company submissions.</p>
-    <p style="margin-top:8px;color:var(--text-disabled)">A brand by Brandvious, Inc. · Last reviewed: August 13, 2026</p>
+    <p style="margin-top:8px;color:var(--ink-3)">A brand by Brandvious, Inc. · Last reviewed: August 13, 2026</p>
     <div class="foot-links">
       <a href="index.html">Index</a><a href="index.html#top10">Top 100</a><a href="methodology.html">Methodology</a><a href="get-listed.html">Get Listed</a>
     </div>
@@ -269,7 +215,7 @@
       <div>
         <h5>Professional Services</h5>
         <ul>
-          <li><a href="category-digital-marketing.html" style="color:var(--accent-blue)">Digital &amp; AI Marketing</a></li><li>B2B Consulting / Training</li><li>Reputation / PR</li><li>Legal Services</li><li>HR &amp; Recruiting</li><li>Design &amp; Creative</li><li>Translation &amp; Localization</li><li>Market Research</li>
+          <li><a href="category-digital-marketing.html">Digital &amp; AI Marketing</a></li><li>B2B Consulting / Training</li><li>Reputation / PR</li><li>Legal Services</li><li>HR &amp; Recruiting</li><li>Design &amp; Creative</li><li>Translation &amp; Localization</li><li>Market Research</li>
         </ul>
       </div>
     </div>
