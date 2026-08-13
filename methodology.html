@@ -4,12 +4,16 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex">
-<title>Methodology | B2B Index</title>
+<title>Methodology | B2Bindex</title>
 <link rel="stylesheet" href="ds.css">
 <style>
-  .page-head { padding: 52px 0 36px; border-bottom: 1px solid var(--border-default); }
+  .page-head { padding: 48px 0 34px; border-bottom: 1px solid var(--border-default); }
+  .crumbs { font-size: 13px; color: var(--text-disabled); margin-bottom: 18px; }
+  .crumbs a:hover { color: var(--text-secondary); }
   .page-head h1 { font-size: 34px; margin-bottom: 12px; }
   .page-head p { max-width: 720px; color: var(--text-secondary); font-size: 15px; }
+  .demo-note { margin-top: 14px; font-size: 12px; color: var(--text-disabled); font-style: italic; }
+
   .m-section { padding: 40px 0 8px; }
   .m-section h2 { font-size: 22px; margin-bottom: 14px; }
   .m-section h2 .material-symbols-outlined { margin-right: 8px; }
@@ -17,14 +21,39 @@
   .m-section ul { margin: 10px 0 0 20px; }
   .m-section li { margin-bottom: 8px; }
   .m-section b { color: var(--text-primary); font-weight: 500; }
+
+  .factor-list { display: grid; gap: 14px; margin-top: 18px; max-width: 780px; }
+  .factor { background: var(--surface-card); border-radius: var(--radius-md); box-shadow: var(--card-border-inset); padding: 18px 20px; }
+  .factor .f-head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin-bottom: 8px; }
+  .factor .f-name { font-family: var(--font-heading); font-weight: 600; font-size: 15px; color: var(--text-primary); }
+  .factor .f-weight { font-family: var(--font-heading); font-weight: 700; font-size: 14px; color: var(--accent-blue); flex: none; }
+  .factor .f-desc { font-size: 13px; color: var(--text-secondary); margin-bottom: 10px; }
+  .factor .f-flag { font-size: 11px; font-weight: 600; color: var(--accent-alert); margin-left: 8px; }
+
+  .score-ex { display: flex; gap: 34px; flex-wrap: wrap; margin-top: 18px; }
+  .score-ex .se b { display: block; font-family: var(--font-heading); font-size: 26px; font-weight: 700; color: var(--text-primary); }
+  .score-ex .se span { font-size: 12px; color: var(--text-secondary); }
+
   .tier-table { display: grid; gap: 12px; margin-top: 16px; max-width: 760px; }
   .tier-row { display: flex; gap: 14px; align-items: flex-start; background: var(--surface-card); border-radius: var(--radius-md); box-shadow: var(--card-border-inset); padding: 16px 18px; font-size: 14px; }
   .tier-row .t-desc { color: var(--text-secondary); }
+  .claim-link { color: var(--accent-blue); font-weight: 600; font-size: 12px; }
+
   .demand-stat { display: flex; gap: 34px; flex-wrap: wrap; margin: 18px 0 6px; }
   .demand-stat .ds b { display: block; font-family: var(--font-heading); font-size: 24px; font-weight: 700; color: var(--text-primary); }
   .demand-stat .ds span { font-size: 12px; color: var(--text-secondary); }
+
   .src-list { display: grid; gap: 10px; font-size: 14px; color: var(--text-secondary); margin-top: 14px; max-width: 760px; }
-  .src-list b { min-width: 120px; display: inline-block; }
+  .src-list b { min-width: 190px; display: inline-block; color: var(--text-primary); font-weight: 500; }
+
+  .nav .soon { color: var(--text-disabled); cursor: default; }
+  .foot-cats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin: 28px 0 0; padding-top: 24px; border-top: 1px solid var(--border-default); }
+  @media (max-width: 900px) { .foot-cats { grid-template-columns: repeat(2, 1fr); } }
+  .foot-cats h5 { font-family: var(--font-heading); font-size: 12px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--text-secondary); margin-bottom: 10px; }
+  .foot-cats ul { list-style: none; display: flex; flex-direction: column; gap: 6px; font-size: 12px; color: var(--text-disabled); }
+  .foot-integrity { margin-top: 16px; max-width: 780px; font-size: 12px; color: var(--text-disabled); border-top: 1px solid var(--border-default); padding-top: 14px; }
+  .foot-net { margin-top: 10px; font-size: 12px; color: var(--text-disabled); }
+  .foot-net a { color: var(--text-secondary); }
 </style>
 </head>
 <body>
@@ -32,62 +61,102 @@
 <header class="site-head">
   <div class="wrap">
     <a class="wordmark" href="index.html"><span class="wm-badge">B2B</span> INDEX</a>
+    <div class="head-search"><span class="material-symbols-outlined">search</span> Search companies, categories…</div>
     <nav class="nav">
-      <a href="index.html#categories">Categories</a>
-      <a href="methodology.html">Methodology</a>
-      <a href="category-digital-marketing.html">Rankings</a>
-      <a href="#ownership">About &amp; Ownership</a>
+      <a href="index.html">Index</a>
+      <a href="index.html#top10">Top 100</a>
+      <a class="soon" title="Coming soon">Compare</a>
+      <a class="soon" title="Coming soon">Insights</a>
+      <a class="soon" title="Coming soon">Find a Solution</a>
+      <a href="get-listed.html">Get Listed</a>
     </nav>
-    <div class="head-search"><span class="material-symbols-outlined">search</span> Search categories or companies…</div>
   </div>
 </header>
 
 <section class="page-head">
   <div class="wrap">
-    <div class="eyebrow">How B2B Index works</div>
+    <div class="crumbs"><a href="index.html">Home</a> / <span style="color:var(--text-secondary)">Methodology</span></div>
+    <div class="eyebrow">How B2Bindex works</div>
     <h1>Methodology</h1>
-    <p>Every ranking on this site can be explained in plain words. This page is the whole method: how companies get listed, how they rank, how categories launch, where the data comes from, and who owns the site.</p>
+    <p>Every ranking on this site can be explained in plain words. This page explains the score, the listing and verification process, and what money can and cannot buy. It also says who owns the site.</p>
+    <p class="demo-note">Preview with demonstration data.</p>
   </div>
+</section>
+
+<section class="wrap m-section" id="scoring">
+  <h2><span class="material-symbols-outlined">functions</span>How B2Bindex ranks companies</h2>
+  <p>Each company gets a composite <b>Index Score</b> from 0 to 100, shown to one decimal (for example 98.4), plus a <b>Health</b> sub-score and a review star average. The Index Score is a weighted blend of five factors. Only factors with a live data source are scored; anything we cannot back with data does not get a number.</p>
+  <div class="factor-list">
+    <div class="factor">
+      <div class="f-head"><span class="f-name">Company Authority Score</span><span class="f-weight">25%</span></div>
+      <p class="f-desc">Scores the company across public knowledge properties such as Wikipedia, Wikidata, entities.org, and LinkedIn.</p>
+      <div class="weight-bar"><span style="width:25%"></span></div>
+    </div>
+    <div class="factor">
+      <div class="f-head"><span class="f-name">Industry Authority</span><span class="f-weight">20%</span></div>
+      <p class="f-desc">Benchmarks domain and product authority against other providers in the category.</p>
+      <div class="weight-bar"><span style="width:20%"></span></div>
+    </div>
+    <div class="factor">
+      <div class="f-head"><span class="f-name">Brand Reputation</span><span class="f-weight">20%</span></div>
+      <p class="f-desc">Aggregates verified reviews, case studies, and customer references from third-party sources.</p>
+      <div class="weight-bar"><span style="width:20%"></span></div>
+    </div>
+    <div class="factor">
+      <div class="f-head"><span class="f-name">Product Maturity<span class="f-flag">(under review)</span></span><span class="f-weight">20%</span></div>
+      <p class="f-desc">Measures how developed and proven the product or service offering is. This factor's definition is under review and may change.</p>
+      <div class="weight-bar"><span style="width:20%"></span></div>
+    </div>
+    <div class="factor">
+      <div class="f-head"><span class="f-name">Funding &amp; Operational Health</span><span class="f-weight">15%</span></div>
+      <p class="f-desc">Considers funding stage, runway indicators, and headcount growth as signals of stability.</p>
+      <div class="weight-bar"><span style="width:15%"></span></div>
+    </div>
+  </div>
+  <div class="score-ex">
+    <div class="se"><b>98.4</b><span>composite Index Score, one decimal</span></div>
+    <div class="se"><b>96</b><span>Health sub-score</span></div>
+    <div class="se"><b>4.4</b><span>review star average, linked to source</span></div>
+  </div>
+  <p style="margin-top:16px" id="health"><b>What Health means.</b> Health is a separate sub-score from 0 to 100. It reads operational signals only. Funding stage, runway indicators, headcount trend, and hiring activity. It is not part of the Index Score and carries no weight in it. The Funding &amp; Operational Health factor uses some of the same signals but contributes only 15% of the Index Score. Health puts those signals on their own 0 to 100 scale.</p>
+  <p style="margin-top:16px">Monthly snapshots. Every score recomputes in each one. Review counts and ratings from other platforms are never republished as our own; where relevant we link to the platforms directly. Reviewed by the B2Bindex editorial team.</p>
 </section>
 
 <section class="wrap m-section" id="inclusion">
   <h2><span class="material-symbols-outlined">checklist</span>How companies get listed</h2>
-  <p>The minimum bar for any listing:</p>
+  <p>Basic listings are free. A company enters the index one of two ways:</p>
   <ul>
-    <li><b>Verified legal entity.</b> The company exists as a registered business, matched to public records.</li>
-    <li><b>Live domain.</b> An operating website that matches the entity.</li>
-    <li><b>Published leadership.</b> A named founder or executive, confirmed against a primary source.</li>
-    <li><b>Evidence on file.</b> At least one primary-source URL backing the listed facts.</li>
+    <li><b>Indexed by us.</b> The editorial team records the company from public filings, licensed data providers, and other public sources. These profiles show as Unclaimed until someone at the company claims them.</li>
+    <li><b>Submitted by the company.</b> Anyone at the company can <a href="get-listed.html" style="color:var(--accent-blue)">submit a listing</a>. The editorial team reviews submissions within 5 to 7 business days.</li>
   </ul>
-  <p style="margin-top:12px">Inclusion is earned, never bought. Companies do not pay to be listed and cannot pay to be removed from a ranking position.</p>
+  <p style="margin-top:12px">To appear in rankings, a profile needs a minimum completeness of <b>60%</b>. Below that threshold the company stays listed but unranked until the missing facts are filled in.</p>
 </section>
 
-<section class="wrap m-section" id="tiers">
-  <h2><span class="material-symbols-outlined">verified</span>Verification tiers</h2>
-  <p>Tiers are earned through evidence. Claiming a profile is free and is the path to the highest tier.</p>
+<section class="wrap m-section" id="verification">
+  <h2><span class="material-symbols-outlined">verified</span>Verification</h2>
+  <p>Verification is B2Bindex's own. There are two states, and moving between them happens right here on the site:</p>
   <div class="tier-table">
-    <div class="tier-row"><span class="badge badge-listed">LISTED</span><span class="t-desc">The entity is discovered and recorded with its basic facts.</span></div>
-    <div class="tier-row"><span class="badge badge-confirmed"><span class="material-symbols-outlined">check_circle</span>CONFIRMED</span><span class="t-desc">Facts are matched to primary sources: the company site, public registries, leadership profiles.</span></div>
-    <div class="tier-row"><span class="badge badge-domain"><span class="material-symbols-outlined">verified</span>VERIFIED</span><span class="t-desc">The company claimed its entities.org record and proved ownership through its domain. The company maintains its facts; the research desk checks them.</span></div>
+    <div class="tier-row"><span class="badge badge-listed">UNCLAIMED</span><span class="t-desc">The company is indexed from public data. No one at the company has claimed the profile yet. Every unclaimed row carries a <span class="claim-link">Claim &rarr;</span> link to <a href="get-listed.html" style="color:var(--accent-blue)">Get Listed</a>.</span></div>
+    <div class="tier-row"><span class="badge badge-domain"><span class="material-symbols-outlined">verified</span>VERIFIED</span><span class="t-desc">The company claimed its profile on B2Bindex and proved ownership through a work email on its own domain. Verified profiles are confirmed by the company and may complete missing data.</span></div>
   </div>
-  <p style="margin-top:14px">Claiming happens once, on <b>entities.org</b>, the registry that powers every listing here. One claim updates the company's record across B2B Index and every sister property. <b>No payment ever changes rank or score.</b> Verification is free and open to every listed company.</p>
+  <p style="margin-top:14px">Verification carries a fee, one of only two paid programs on the site. <b>Verification proves who you are. That's all it does.</b></p>
 </section>
 
-<section class="wrap m-section" id="ranking">
-  <h2><span class="material-symbols-outlined">functions</span>How the ranking works</h2>
-  <p>Rankings combine two things, and only dimensions with a live data source are scored:</p>
+<section class="wrap m-section" id="paid">
+  <h2><span class="material-symbols-outlined">campaign</span>What money can and cannot buy</h2>
+  <p>Two paid programs exist, and only two:</p>
   <ul>
-    <li><b>Category fit</b> — how squarely the company operates in the category, computed from its verified service and market footprint.</li>
-    <li><b>Verification depth</b> — how much of the record is proven, and at which tier.</li>
+    <li><b>Profile verification.</b> A fee to claim and verify a profile through the company domain.</li>
+    <li><b>Featured placement.</b> Client placements in the Featured This Week module. It's labeled and sits outside the numbered ranking.</li>
   </ul>
-  <p style="margin-top:12px">Anything we cannot back with data does not get a number. Review counts and ratings from other platforms are never republished; where relevant we link to the platforms directly.</p>
+  <p style="margin-top:12px"><b>Paying doesn't move your rank.</b> Rankings are computed from the five weighted factors above. The Brands to Watch module is selected by the data and cannot be bought. Any paid relationship is disclosed on the placement itself.</p>
 </section>
 
 <section class="wrap m-section" id="demand">
-  <h2><span class="material-symbols-outlined">radar</span>How categories earn a launch</h2>
-  <p>A category index goes live only when two things are true: its companies are verified, and real buyer demand is mapped. Before launching a category we harvest the questions real buyers ask about it across search engines and AI assistants, so every index answers demand that actually exists.</p>
+  <h2><span class="material-symbols-outlined">radar</span>When a category goes live</h2>
+  <p>A category index goes live only when two things are true: its companies are scored, and real buyer demand is mapped. Before launching a category we collect the questions real buyers ask about it, so we only launch categories people are actually searching.</p>
   <div class="demand-stat">
-    <div class="ds"><b>198</b><span>real buyer questions mapped for the UCaaS category</span></div>
+    <div class="ds"><b>198</b><span>real buyer questions mapped for the Digital &amp; AI Marketing category</span></div>
     <div class="ds"><b>8</b><span>answer engines and search surfaces monitored</span></div>
     <div class="ds"><b>32</b><span>categories tracked toward launch</span></div>
   </div>
@@ -96,43 +165,67 @@
 <section class="wrap m-section" id="sources">
   <h2><span class="material-symbols-outlined">database</span>Where the data comes from</h2>
   <div class="src-list">
-    <div><b style="color:var(--accent-blue)">entities.org</b> Verified legal entities, founders, evidence URLs, verification tiers</div>
-    <div><b style="color:var(--aeo-green)">AnswerStack</b> Cited answers to real buyer questions</div>
-    <div><b style="color:var(--aeo-yellow)">WhatIsBest</b> Category research and fit scoring</div>
-    <div><b style="color:var(--aeo-green)">Demand mapping</b> Buyer questions harvested across search and AI answer engines</div>
+    <div><b>Public filings</b> Registrations, funding disclosures, and other public records</div>
+    <div><b>Licensed data providers</b> Firmographics, headcount, and funding-stage data</div>
+    <div><b>Public knowledge properties</b> The sources of record scored in Company Authority Score</div>
+    <div><b>Third-party reviews</b> Verified reviews and references, linked to their platforms</div>
+    <div><b>Verified company submissions</b> Facts maintained by companies on verified profiles</div>
+    <div><b>Demand mapping</b> Buyer questions collected across search and AI answer engines</div>
   </div>
-  <p style="margin-top:14px">All four are research properties operated under the same disclosed ownership. Facts without evidence are not published.</p>
-</section>
-
-<section class="wrap m-section" id="paid">
-  <h2><span class="material-symbols-outlined">campaign</span>Paid inclusion policy</h2>
-  <p>No payment ever changes rank or score. If a sponsored placement exists, it is labeled as sponsored and shown outside the numbered ranking. Any paid relationship is disclosed on the listing itself. There are currently no sponsored placements on B2B Index.</p>
-  <p style="margin-top:12px"><b>The firewall:</b> partners and clients can commission articles and research through the network, subject to the editorial gate. They can never buy a ranking position. Rankings are computed from verified data only, and no article, sponsorship, or partnership moves a company up a ranking.</p>
+  <p style="margin-top:14px">No source, no fact.</p>
 </section>
 
 <section class="wrap m-section" id="corrections">
   <h2><span class="material-symbols-outlined">rule</span>Corrections</h2>
-  <p>Every fact links to a primary source. If a company believes a fact is wrong, it can request a correction from its profile page (claiming is not required to request one). We verify against primary sources and correct within 7 business days. We correct records; we do not remove verified companies from rankings on request.</p>
+  <p>Every fact links to a source. If a company believes a fact is wrong, it can request a correction from its profile page (claiming is not required to request one). We verify against primary sources and correct within 7 business days. We fix wrong facts. We do not pull companies out of rankings because they asked.</p>
 </section>
 
-<section class="wrap m-section" id="editor" style="padding-bottom:20px">
+<section class="wrap m-section" id="editor">
   <h2><span class="material-symbols-outlined">edit_note</span>Editorial</h2>
-  <p>Category pages are assembled from the data sources above and reviewed before publishing. Editor: <b>[Editor name, title]</b>. The editorial gate is simple: if a fact has no primary source, it does not ship.</p>
+  <p>Pages are assembled from the data sources above and reviewed before publishing by the B2Bindex editorial team.</p>
 </section>
 
 <section class="wrap m-section" id="ownership" style="padding-bottom:64px">
   <h2><span class="material-symbols-outlined">account_balance</span>Ownership</h2>
-  <p>B2B Index is a Brandvious Digital research property, operated alongside entities.org, AnswerStack, WhatIsBest, BestFit, and ReviewInsight. Shared ownership is disclosed here and in the footer of every page. Each property maintains its own editorial gate and original research; none exists to link to another.</p>
+  <p>B2Bindex is a brand of <b>Brandvious, Inc.</b> The other Brandvious properties are named in the footer of every page. Each property maintains its own editorial gate and original research. When a page cites a sister property, the citation is labeled as such.</p>
 </section>
 
 <footer class="site-foot">
   <div class="wrap">
     <div class="wordmark" style="font-size:15px"><span class="wm-badge">B2B</span> INDEX</div>
-    <p style="margin-top:14px;font-family:var(--font-heading);font-weight:600;font-size:14px;color:var(--text-primary)">Fair. Factual. Functional for AI.</p>
-    <p style="margin-top:8px;max-width:720px">B2B Index is a Brandvious Digital research property, operated alongside entities.org, AnswerStack, WhatIsBest, BestFit, and ReviewInsight. Shared ownership is disclosed; every property maintains its own editorial gate and original research.</p>
+    <p style="margin-top:14px;max-width:720px">Maintained by the B2Bindex editorial team with data from public filings, licensed data providers, and verified company submissions.</p>
+    <p style="margin-top:8px;color:var(--text-disabled)">A brand by Brandvious, Inc. &middot; Last reviewed: August 13, 2026</p>
     <div class="foot-links">
-      <a href="methodology.html">Methodology</a><a href="#corrections">Corrections</a><a href="#paid">Paid listing disclosure</a><a href="company-that-agency.html#claim">Claim your profile</a>
+      <a href="index.html">Index</a><a href="methodology.html">Methodology</a><a href="get-listed.html">Get Listed</a><a href="#corrections">Corrections</a><a href="#paid">Paid programs disclosure</a>
     </div>
+    <div class="foot-cats">
+      <div>
+        <h5>Software &amp; Data</h5>
+        <ul>
+          <li>Artificial Intelligence</li><li>SaaS</li><li>Cybersecurity</li><li>Data &amp; Analytics</li><li>DevTools &amp; Infrastructure</li><li>Cloud &amp; Hosting</li><li>Sales Tech / RevOps</li><li>Customer Success</li>
+        </ul>
+      </div>
+      <div>
+        <h5>Commerce &amp; Finance</h5>
+        <ul>
+          <li>Fintech</li><li>E-commerce</li><li>Payments</li><li>Banking Tech</li><li>Insurance Tech</li><li>Accounting &amp; Tax</li><li>Procurement &amp; Spend</li><li>Billing &amp; Subscriptions</li>
+        </ul>
+      </div>
+      <div>
+        <h5>Industry &amp; Infrastructure</h5>
+        <ul>
+          <li>Manufacturing</li><li>Logistics &amp; Freight</li><li>Construction Tech</li><li>Energy &amp; Sustainability</li><li>Healthcare &amp; Biotech</li><li>Real Estate / PropTech</li><li>Motorsports / Auto</li><li>Agriculture Tech</li>
+        </ul>
+      </div>
+      <div>
+        <h5>Professional Services</h5>
+        <ul>
+          <li><a href="category-digital-marketing.html" style="color:var(--accent-blue)">Digital &amp; AI Marketing</a></li><li>B2B Consulting / Training</li><li>Reputation / PR</li><li>Legal Services</li><li>HR &amp; Recruiting</li><li>Design &amp; Creative</li><li>Translation &amp; Localization</li><li>Market Research</li>
+        </ul>
+      </div>
+    </div>
+    <p class="foot-integrity">Rankings cannot be bought. The two paid programs, verification and labeled featured placement, never touch scores or rank.</p>
+    <p class="foot-net">Brandvious network: <a href="https://entities.org" target="_blank" rel="noopener">entities.org</a> · <a href="https://answerstack.io" target="_blank" rel="noopener">answerstack.io</a> · B2Bindex · <span title="Coming soon">Network strategy</span></p>
   </div>
 </footer>
 

@@ -4,22 +4,148 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex">
-<title>B2B Index | Who actually ranks in every B2B category</title>
+<title>B2Bindex | Ranked B2B companies</title>
 <link rel="stylesheet" href="ds.css">
 <style>
-  .hero { padding: 84px 0 64px; text-align: center; }
-  .hero h1 { font-size: 44px; max-width: 780px; margin: 0 auto 16px; }
-  .hero p.sub { max-width: 620px; margin: 0 auto; color: var(--text-secondary); font-size: 17px; }
-  .stats-bar { display: flex; gap: 40px; justify-content: center; margin-top: 38px; flex-wrap: wrap; }
-  .stat b { display: block; font-family: var(--font-heading); font-size: 26px; font-weight: 700; color: var(--text-primary); }
-  .stat span { font-size: 13px; color: var(--text-secondary); }
+  /* header */
+  .nav .soon { color: var(--text-disabled); cursor: default; }
+  .nav .soon:hover { color: var(--text-disabled); }
+  .nav .get-listed { color: var(--accent-blue); }
+
+  /* hero */
+  .idx-hero { padding: 44px 0 40px; border-bottom: 1px solid var(--border-default); }
+  .crumbs { font-size: 13px; color: var(--text-disabled); margin-bottom: 18px; }
+  .crumbs a:hover { color: var(--text-secondary); }
+  .idx-hero h1 { font-size: 38px; max-width: 860px; margin-bottom: 14px; }
+  .idx-hero .sub { max-width: 720px; color: var(--text-secondary); font-size: 16px; line-height: 1.6; }
+  .idx-hero .sub + .sub { margin-top: 8px; }
+  .demo-notice {
+    display: inline-flex; align-items: center; gap: 7px;
+    margin-top: 16px; font-size: 12px; font-weight: 600;
+    color: var(--accent-alert); background: rgba(253, 230, 138, .08);
+    border: 1px solid rgba(253, 230, 138, .35); border-radius: var(--radius-sm);
+    padding: 5px 12px;
+  }
+  .hero-meta { margin-top: 14px; font-size: 13px; color: var(--text-disabled); }
+
+  /* avatar strip */
+  .top-strip { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 28px; }
+  .top-strip .top-co {
+    display: flex; align-items: center; gap: 10px;
+    background: var(--surface-card); box-shadow: var(--card-border-inset);
+    border-radius: 999px; padding: 6px 16px 6px 6px; font-size: 13px;
+  }
+  .top-strip .avatar { border-radius: 50%; }
+  .top-strip .top-rank { font-family: var(--font-heading); font-weight: 700; color: var(--text-disabled); font-size: 12px; }
+  .top-strip .top-name { font-weight: 500; }
+
+  /* stat tiles */
+  .stat-tile b { display: block; font-family: var(--font-heading); font-size: 28px; font-weight: 700; }
+  .stat-tile span { font-size: 13px; color: var(--text-secondary); }
+
+  /* category grid */
   .grid-cats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
   @media (max-width: 1000px) { .grid-cats { grid-template-columns: repeat(2, 1fr); } }
   @media (max-width: 560px) { .grid-cats { grid-template-columns: 1fr; } }
-  .next-up { margin-top: 18px; font-size: 13px; color: var(--text-disabled); }
-  .trust-card h3 { font-size: 15px; margin: 12px 0 8px; }
-  .trust-card p { font-size: 13px; color: var(--text-secondary); }
-  .trust-card a { color: var(--accent-blue); font-size: 13px; }
+  .cat-card { padding: 14px 16px; flex-direction: row; align-items: center; gap: 12px; }
+  .cat-card .cat-icon { width: 34px; height: 34px; flex: none; }
+  .cat-card .cat-body { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+
+  /* featured */
+  .feat-sub { font-size: 13px; color: var(--text-secondary); }
+  .feat-card { display: flex; flex-direction: column; gap: 10px; position: relative; }
+  .feat-tag {
+    position: absolute; top: 18px; right: 18px;
+    font-size: 10px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
+    color: var(--accent-blue); background: rgba(147, 197, 253, .1);
+    border-radius: var(--radius-sm); padding: 3px 8px;
+  }
+  .feat-card .feat-head { display: flex; align-items: center; gap: 12px; }
+  .feat-card .feat-name { font-family: var(--font-heading); font-weight: 600; font-size: 15px; }
+  .feat-card p { font-size: 13px; color: var(--text-secondary); }
+  .feat-card .feat-score { font-family: var(--font-heading); font-weight: 700; font-size: 14px; color: var(--score-green); }
+
+  /* main index layout */
+  .index-layout { display: grid; grid-template-columns: 250px 1fr; gap: 28px; align-items: start; }
+  @media (max-width: 900px) { .index-layout { grid-template-columns: 1fr; } }
+  .filters { position: sticky; top: 16px; display: flex; flex-direction: column; gap: 22px; font-size: 13px; }
+  .filters h4 { font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--text-secondary); margin-bottom: 10px; }
+  .f-group .f-opt { display: flex; align-items: center; gap: 9px; padding: 4px 0; color: var(--text-secondary); }
+  .f-group .f-opt .box { width: 14px; height: 14px; border: 1px solid var(--border-default); border-radius: 3px; background: var(--surface-button); flex: none; }
+  .f-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+  .f-more { color: var(--accent-blue); font-size: 12px; margin-top: 8px; display: inline-block; }
+  .f-note { font-size: 11px; color: var(--text-disabled); border-top: 1px solid var(--border-default); padding-top: 12px; }
+
+  /* toolbar */
+  .list-toolbar { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; margin-bottom: 14px; font-size: 13px; color: var(--text-secondary); }
+  .list-toolbar .sort {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: var(--surface-button); border: 1px solid var(--border-default);
+    border-radius: var(--radius-md); padding: 6px 12px; color: var(--text-primary);
+  }
+  .list-toolbar .views { margin-left: auto; display: flex; gap: 4px; }
+  .list-toolbar .views span {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 30px; height: 30px; border: 1px solid var(--border-default);
+    border-radius: var(--radius-sm); background: var(--surface-button);
+  }
+
+  /* company rows */
+  .co-row {
+    display: grid; grid-template-columns: 1fr auto; gap: 18px;
+    background: var(--surface-card); box-shadow: var(--card-border-inset);
+    border-radius: var(--radius-lg); padding: 18px 20px; margin-bottom: 12px;
+  }
+  .co-row:hover { background: var(--surface-card-hover); }
+  .co-row .row-main { display: flex; gap: 14px; min-width: 0; }
+  .co-row .row-body { min-width: 0; }
+  .co-row .row-title { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+  .co-row .row-title .co-name { font-family: var(--font-heading); font-weight: 600; font-size: 16px; }
+  .co-row .row-desc { font-size: 13px; color: var(--text-secondary); margin-top: 3px; }
+  .co-row .row-chips { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 10px; }
+  .co-row .row-meta { font-size: 12px; color: var(--text-disabled); margin-top: 10px; }
+  .co-row .row-side { text-align: right; display: flex; flex-direction: column; align-items: flex-end; gap: 4px; }
+  .co-row .big-score { font-family: var(--font-heading); font-weight: 700; font-size: 24px; color: var(--score-green); line-height: 1; }
+  .co-row .row-rev { font-size: 12px; color: var(--text-secondary); white-space: nowrap; }
+  .co-row .row-rev a { color: var(--accent-blue); }
+  .co-row .row-rank { font-family: var(--font-heading); font-weight: 700; font-size: 13px; color: var(--text-disabled); margin-top: auto; }
+  .badge-unclaimed { background: rgba(148, 148, 148, .14); color: var(--text-secondary); }
+  .claim-link { font-size: 12px; color: var(--accent-blue); }
+
+  /* pagination */
+  .pager { display: flex; gap: 6px; align-items: center; margin-top: 20px; font-size: 13px; color: var(--text-secondary); }
+  .pager span {
+    display: inline-flex; align-items: center; justify-content: center;
+    min-width: 32px; height: 32px; padding: 0 8px;
+    border: 1px solid var(--border-default); border-radius: var(--radius-sm);
+    background: var(--surface-button);
+  }
+  .pager .cur { background: var(--text-primary); color: #0D0D0D; font-weight: 600; }
+
+  /* methodology */
+  .factor { display: grid; grid-template-columns: 1fr auto; gap: 6px 16px; padding: 16px 0; border-bottom: 1px solid var(--border-default); }
+  .factor:last-child { border-bottom: none; }
+  .factor .f-name { font-family: var(--font-heading); font-weight: 600; font-size: 15px; }
+  .factor .f-weight { font-family: var(--font-heading); font-weight: 700; color: var(--accent-blue); }
+  .factor .f-desc { grid-column: 1 / -1; font-size: 13px; color: var(--text-secondary); }
+  .factor .weight-bar { grid-column: 1 / -1; }
+  .under-review { font-size: 11px; font-weight: 600; color: var(--accent-alert); }
+
+  /* faq */
+  .faq-item { border-bottom: 1px solid var(--border-default); padding: 18px 0; }
+  .faq-item:last-child { border-bottom: none; }
+  .faq-item h3 { font-size: 15px; margin-bottom: 8px; }
+  .faq-item p { font-size: 14px; color: var(--text-secondary); }
+
+  /* footer */
+  .foot-cats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin: 28px 0; padding-top: 24px; border-top: 1px solid var(--border-default); }
+  @media (max-width: 900px) { .foot-cats { grid-template-columns: repeat(2, 1fr); } }
+  .foot-cats h5 { font-family: var(--font-heading); font-size: 12px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--text-secondary); margin-bottom: 10px; }
+  .foot-cats ul { list-style: none; display: flex; flex-direction: column; gap: 6px; font-size: 12px; color: var(--text-disabled); }
+  .integrity { border-top: 1px solid var(--border-default); padding-top: 20px; font-size: 12px; color: var(--text-disabled); max-width: 860px; }
+  .foot-net { margin-top: 12px; font-size: 12px; color: var(--text-disabled); }
+  .foot-net a { color: var(--text-secondary); }
+  .foot-net a:hover { color: var(--text-primary); }
 </style>
 </head>
 <body>
@@ -27,97 +153,478 @@
 <header class="site-head">
   <div class="wrap">
     <a class="wordmark" href="index.html"><span class="wm-badge">B2B</span> INDEX</a>
+    <div class="head-search"><span class="material-symbols-outlined">search</span> Search companies, categories…</div>
     <nav class="nav">
-      <a href="#categories">Categories</a>
-      <a href="methodology.html">Methodology</a>
-      <a href="category-digital-marketing.html">Rankings</a>
-      <a href="methodology.html#ownership">About &amp; Ownership</a>
+      <a href="index.html">Index</a>
+      <a href="index.html#top10">Top 100</a>
+      <a class="soon" title="Coming soon">Compare</a>
+      <a class="soon" title="Coming soon">Insights</a>
+      <a class="soon" title="Coming soon">Find a Solution</a>
+      <a class="get-listed" href="get-listed.html">Get Listed</a>
     </nav>
-    <div class="head-search"><span class="material-symbols-outlined">search</span> Search categories or companies…</div>
   </div>
 </header>
 
-<section class="hero">
+<section class="idx-hero">
   <div class="wrap">
-    <div class="eyebrow">The B2B category index</div>
-    <h1>Who actually ranks in every B2B category.</h1>
-    <p class="sub">Verified companies, cited answers, and real buyer demand. Every listing is a verified legal entity with primary-source evidence on file, never pay-to-play.</p>
-    <div class="stats-bar">
-      <div class="stat"><b>413</b><span>verified organizations</span></div>
-      <div class="stat"><b>32</b><span>categories tracked</span></div>
-      <div class="stat"><b>1</b><span>category index live</span></div>
+    <div class="crumbs"><a href="index.html">Home</a> / <span style="color:var(--text-secondary)">B2B Companies</span></div>
+    <h1>2,431 B2B companies, ranked across 32 categories</h1>
+    <p class="sub">B2Bindex is an up-to-date index of B2B companies, ranked by <a href="methodology.html#scoring" style="color:var(--accent-blue)">a composite score across five weighted factors</a>.</p>
+    <p class="sub">Filter by what matters to you and compare companies side by side.</p>
+    <div class="demo-notice"><span class="material-symbols-outlined" style="font-size:16px;color:var(--accent-alert)">science</span> Preview with demonstration data.</div>
+    <p class="hero-meta">Last updated August 13, 2026</p>
+
+    <div class="top-strip">
+      <div class="eyebrow" style="width:100%;margin-bottom:0">Top-ranked companies</div>
+      <div class="top-co"><span class="avatar">SF</span><span class="top-rank">#1</span><span class="top-name">Salesforce</span></div>
+      <div class="top-co"><span class="avatar">WD</span><span class="top-rank">#2</span><span class="top-name">Workday</span></div>
+      <div class="top-co"><span class="avatar">SN</span><span class="top-rank">#3</span><span class="top-name">ServiceNow</span></div>
+      <div class="top-co"><span class="avatar">VE</span><span class="top-name">Veeva</span></div>
+      <div class="top-co"><span class="avatar">CP</span><span class="top-name">Coupa</span></div>
+      <div class="top-co"><span class="avatar">PL</span><span class="top-name">Palantir</span></div>
+      <div class="top-co"><span class="avatar">HS</span><span class="top-name">HubSpot</span></div>
+      <div class="top-co"><span class="avatar">ZD</span><span class="top-name">Zendesk</span></div>
     </div>
   </div>
 </section>
 
-<section class="wrap section" id="categories">
-  <div class="sec-head">
-    <h2>Browse by category</h2>
+<section class="wrap section-sm">
+  <div class="grid grid-3">
+    <div class="card stat-tile"><b>1</b><span>Category Live Today</span></div>
+    <div class="card stat-tile"><b>5</b><span>Scored Factors</span></div>
+    <div class="card stat-tile"><b style="font-size:20px;padding-top:6px">Monthly</b><span>Update Frequency</span></div>
   </div>
+</section>
+
+<section class="wrap section-sm" id="categories">
+  <div class="sec-head"><h2>Browse by Category</h2></div>
   <div class="grid-cats">
-    <a class="cat-card live" href="category-digital-marketing.html">
-      <span class="cat-icon"><span class="material-symbols-outlined">campaign</span></span>
-      <span class="cat-name">Digital Marketing</span>
-      <span class="cat-meta">50 verified companies</span>
-      <span class="cat-live-tag">Live index</span>
-    </a>
-    <div class="cat-card">
-      <span class="cat-icon"><span class="material-symbols-outlined">apps</span></span>
-      <span class="cat-name">SaaS</span>
-      <span class="cat-meta">In verification</span>
-    </div>
-    <div class="cat-card">
-      <span class="cat-icon"><span class="material-symbols-outlined">security</span></span>
-      <span class="cat-name">Cybersecurity</span>
-      <span class="cat-meta">In verification</span>
-    </div>
-    <div class="cat-card">
-      <span class="cat-icon"><span class="material-symbols-outlined">smart_toy</span></span>
-      <span class="cat-name">Artificial Intelligence</span>
-      <span class="cat-meta">In verification</span>
-    </div>
-  </div>
-  <p class="next-up">32 categories tracked in total. A category index goes live only after its companies are verified and real buyer demand is mapped. <a href="methodology.html#demand" style="color:var(--accent-blue)">How categories earn a launch →</a></p>
-</section>
-
-<section class="wrap section-sm" style="padding-bottom:72px">
-  <div class="sec-head"><h2>Built to be trusted</h2></div>
-  <div class="grid grid-4">
-    <div class="card trust-card">
-      <span class="material-symbols-outlined" style="font-size:26px">functions</span>
-      <h3>How rankings work</h3>
-      <p>Category fit and earned verification, with the method published in plain words.</p>
-      <a href="methodology.html">Read the methodology →</a>
-    </div>
-    <div class="card trust-card">
-      <span class="material-symbols-outlined" style="font-size:26px">verified</span>
-      <h3>Verification is earned</h3>
-      <p>Listed → Confirmed → Verified. Tiers come from primary-source evidence, never payment.</p>
-      <a href="methodology.html#tiers">See the tiers →</a>
-    </div>
-    <div class="card trust-card">
-      <span class="material-symbols-outlined" style="font-size:26px">campaign</span>
-      <h3>No pay-to-play</h3>
-      <p>No payment ever changes rank or score. Any sponsored placement is labeled and sits outside the ranking.</p>
-      <a href="methodology.html#paid">Paid inclusion policy →</a>
-    </div>
-    <div class="card trust-card">
-      <span class="material-symbols-outlined" style="font-size:26px">account_balance</span>
-      <h3>Who owns this</h3>
-      <p>A Brandvious Digital research property. Sister sites disclosed, each with its own editorial gate.</p>
-      <a href="methodology.html#ownership">Ownership &amp; corrections →</a>
-    </div>
+    <div class="cat-card"><span class="cat-icon"><span class="material-symbols-outlined">smart_toy</span></span><span class="cat-body"><span class="cat-name">Artificial Intelligence</span><span class="cat-meta">212 companies</span></span></div>
+    <div class="cat-card"><span class="cat-icon"><span class="material-symbols-outlined">apps</span></span><span class="cat-body"><span class="cat-name">SaaS</span><span class="cat-meta">203 companies</span></span></div>
+    <div class="cat-card"><span class="cat-icon"><span class="material-symbols-outlined">security</span></span><span class="cat-body"><span class="cat-name">Cybersecurity</span><span class="cat-meta">138 companies</span></span></div>
+    <div class="cat-card"><span class="cat-icon"><span class="material-symbols-outlined">monitoring</span></span><span class="cat-body"><span class="cat-name">Data &amp; Analytics</span><span class="cat-meta">96 companies</span></span></div>
+    <div class="cat-card"><span class="cat-icon"><span class="material-symbols-outlined">terminal</span></span><span class="cat-body"><span class="cat-name">DevTools &amp; Infrastructure</span><span class="cat-meta">74 companies</span></span></div>
+    <div class="cat-card"><span class="cat-icon"><span class="material-symbols-outlined">cloud</span></span><span class="cat-body"><span class="cat-name">Cloud &amp; Hosting</span><span class="cat-meta">67 companies</span></span></div>
+    <div class="cat-card"><span class="cat-icon"><span class="material-symbols-outlined">trending_up</span></span><span class="cat-body"><span class="cat-name">Sales Tech / RevOps</span><span class="cat-meta">59 companies</span></span></div>
+    <div class="cat-card"><span class="cat-icon"><span class="material-symbols-outlined">support_agent</span></span><span class="cat-body"><span class="cat-name">Customer Success</span><span class="cat-meta">46 companies</span></span></div>
+    <div class="cat-card"><span class="cat-icon"><span class="material-symbols-outlined">account_balance</span></span><span class="cat-body"><span class="cat-name">Fintech</span><span class="cat-meta">141 companies</span></span></div>
+    <div class="cat-card"><span class="cat-icon"><span class="material-symbols-outlined">shopping_cart</span></span><span class="cat-body"><span class="cat-name">E-commerce</span><span class="cat-meta">92 companies</span></span></div>
+    <div class="cat-card"><span class="cat-icon"><span class="material-symbols-outlined">payments</span></span><span class="cat-body"><span class="cat-name">Payments</span><span class="cat-meta">54 companies</span></span></div>
+    <div class="cat-card"><span class="cat-icon"><span class="material-symbols-outlined">savings</span></span><span class="cat-body"><span class="cat-name">Banking Tech</span><span class="cat-meta">44 companies</span></span></div>
+    <div class="cat-card"><span class="cat-icon"><span class="material-symbols-outlined">verified_user</span></span><span class="cat-body"><span class="cat-name">Insurance Tech</span><span class="cat-meta">48 companies</span></span></div>
+    <div class="cat-card"><span class="cat-icon"><span class="material-symbols-outlined">calculate</span></span><span class="cat-body"><span class="cat-name">Accounting &amp; Tax</span><span class="cat-meta">41 companies</span></span></div>
+    <div class="cat-card"><span class="cat-icon"><span class="material-symbols-outlined">receipt_long</span></span><span class="cat-body"><span class="cat-name">Procurement &amp; Spend</span><span class="cat-meta">39 companies</span></span></div>
+    <div class="cat-card"><span class="cat-icon"><span class="material-symbols-outlined">autorenew</span></span><span class="cat-body"><span class="cat-name">Billing &amp; Subscriptions</span><span class="cat-meta">33 companies</span></span></div>
+    <div class="cat-card"><span class="cat-icon"><span class="material-symbols-outlined">precision_manufacturing</span></span><span class="cat-body"><span class="cat-name">Manufacturing</span><span class="cat-meta">107 companies</span></span></div>
+    <div class="cat-card"><span class="cat-icon"><span class="material-symbols-outlined">local_shipping</span></span><span class="cat-body"><span class="cat-name">Logistics &amp; Freight</span><span class="cat-meta">76 companies</span></span></div>
+    <div class="cat-card"><span class="cat-icon"><span class="material-symbols-outlined">construction</span></span><span class="cat-body"><span class="cat-name">Construction Tech</span><span class="cat-meta">52 companies</span></span></div>
+    <div class="cat-card"><span class="cat-icon"><span class="material-symbols-outlined">bolt</span></span><span class="cat-body"><span class="cat-name">Energy &amp; Sustainability</span><span class="cat-meta">63 companies</span></span></div>
+    <div class="cat-card"><span class="cat-icon"><span class="material-symbols-outlined">medical_services</span></span><span class="cat-body"><span class="cat-name">Healthcare &amp; Biotech</span><span class="cat-meta">129 companies</span></span></div>
+    <div class="cat-card"><span class="cat-icon"><span class="material-symbols-outlined">home_work</span></span><span class="cat-body"><span class="cat-name">Real Estate / PropTech</span><span class="cat-meta">57 companies</span></span></div>
+    <div class="cat-card"><span class="cat-icon"><span class="material-symbols-outlined">sports_motorsports</span></span><span class="cat-body"><span class="cat-name">Motorsports / Auto</span><span class="cat-meta">28 companies</span></span></div>
+    <div class="cat-card"><span class="cat-icon"><span class="material-symbols-outlined">agriculture</span></span><span class="cat-body"><span class="cat-name">Agriculture Tech</span><span class="cat-meta">31 companies</span></span></div>
+    <a class="cat-card live" href="category-digital-marketing.html"><span class="cat-icon"><span class="material-symbols-outlined">campaign</span></span><span class="cat-body"><span class="cat-name">Digital &amp; AI Marketing</span><span class="cat-meta">12 listed of 50 tracked</span><span class="cat-live-tag">Live preview</span></span></a>
+    <div class="cat-card"><span class="cat-icon"><span class="material-symbols-outlined">school</span></span><span class="cat-body"><span class="cat-name">B2B Consulting / Training</span><span class="cat-meta">84 companies</span></span></div>
+    <div class="cat-card"><span class="cat-icon"><span class="material-symbols-outlined">newspaper</span></span><span class="cat-body"><span class="cat-name">Reputation / PR</span><span class="cat-meta">45 companies</span></span></div>
+    <div class="cat-card"><span class="cat-icon"><span class="material-symbols-outlined">gavel</span></span><span class="cat-body"><span class="cat-name">Legal Services</span><span class="cat-meta">49 companies</span></span></div>
+    <div class="cat-card"><span class="cat-icon"><span class="material-symbols-outlined">groups</span></span><span class="cat-body"><span class="cat-name">HR &amp; Recruiting</span><span class="cat-meta">98 companies</span></span></div>
+    <div class="cat-card"><span class="cat-icon"><span class="material-symbols-outlined">palette</span></span><span class="cat-body"><span class="cat-name">Design &amp; Creative</span><span class="cat-meta">56 companies</span></span></div>
+    <div class="cat-card"><span class="cat-icon"><span class="material-symbols-outlined">translate</span></span><span class="cat-body"><span class="cat-name">Translation &amp; Localization</span><span class="cat-meta">24 companies</span></span></div>
+    <div class="cat-card"><span class="cat-icon"><span class="material-symbols-outlined">query_stats</span></span><span class="cat-body"><span class="cat-name">Market Research</span><span class="cat-meta">47 companies</span></span></div>
   </div>
 </section>
 
-<footer class="site-foot" id="ownership">
+<section class="wrap section-sm">
+  <div class="sec-head">
+    <h2>Featured This Week</h2>
+    <span class="feat-sub">Paid placements. Always labeled, not part of the ranking.</span>
+  </div>
+  <div class="grid grid-3">
+    <div class="card feat-card">
+      <span class="feat-tag">Featured</span>
+      <div class="feat-head"><span class="avatar">HS</span><span class="feat-name">HubSpot</span></div>
+      <p>CRM and marketing platform for growing companies.</p>
+      <div><span class="chip">Digital &amp; AI Marketing</span></div>
+      <a class="feat-score" href="methodology.html#scoring" title="How this score is derived">Index Score 93.3</a>
+    </div>
+    <div class="card feat-card">
+      <span class="feat-tag">Featured</span>
+      <div class="feat-head"><span class="avatar">TW</span><span class="feat-name">Twilio</span></div>
+      <p>Communication APIs for messaging, voice, and email.</p>
+      <div><span class="chip">DevTools &amp; Infrastructure</span></div>
+      <a class="feat-score" href="methodology.html#scoring" title="How this score is derived">Index Score 91.8</a>
+    </div>
+    <div class="card feat-card">
+      <span class="feat-tag">Featured</span>
+      <div class="feat-head"><span class="avatar">DD</span><span class="feat-name">Datadog</span></div>
+      <p>Monitoring and security for cloud applications.</p>
+      <div><span class="chip">DevTools &amp; Infrastructure</span></div>
+      <a class="feat-score" href="methodology.html#scoring" title="How this score is derived">Index Score 91.2</a>
+    </div>
+  </div>
+</section>
+
+<section class="wrap section-sm" id="index">
+  <div class="sec-head"><h2>The Index</h2></div>
+  <div class="index-layout">
+
+    <aside class="filters">
+      <div class="f-group">
+        <h4>Category</h4>
+        <div class="f-chips">
+          <span class="chip">Artificial Intelligence</span>
+          <span class="chip">SaaS</span>
+          <span class="chip">Fintech</span>
+          <span class="chip">Digital &amp; AI Marketing</span>
+          <span class="chip">Cybersecurity</span>
+        </div>
+        <span class="f-more">Show all 32</span>
+      </div>
+      <div class="f-group">
+        <h4>Company Size</h4>
+        <div class="f-opt"><span class="box"></span> 1-10 employees</div>
+        <div class="f-opt"><span class="box"></span> 11-50 employees</div>
+        <div class="f-opt"><span class="box"></span> 51-200 employees</div>
+        <div class="f-opt"><span class="box"></span> 201-1,000 employees</div>
+        <div class="f-opt"><span class="box"></span> 1,001-5,000 employees</div>
+        <div class="f-opt"><span class="box"></span> 5,000+ employees</div>
+      </div>
+      <div class="f-group">
+        <h4>Founded</h4>
+        <div class="f-opt"><span class="box"></span> Before 1990</div>
+        <div class="f-opt"><span class="box"></span> 1990-1999</div>
+        <div class="f-opt"><span class="box"></span> 2000-2009</div>
+        <div class="f-opt"><span class="box"></span> 2010-2014</div>
+        <div class="f-opt"><span class="box"></span> 2015-2019</div>
+        <div class="f-opt"><span class="box"></span> 2020 or later</div>
+      </div>
+      <div class="f-group">
+        <h4>Funding Stage</h4>
+        <div class="f-opt"><span class="box"></span> Bootstrapped</div>
+        <div class="f-opt"><span class="box"></span> Seed</div>
+        <div class="f-opt"><span class="box"></span> Series A-B</div>
+        <div class="f-opt"><span class="box"></span> Series C+</div>
+        <div class="f-opt"><span class="box"></span> Private Equity</div>
+        <div class="f-opt"><span class="box"></span> Public</div>
+      </div>
+      <div class="f-group">
+        <h4>HQ Region</h4>
+        <div class="f-opt"><span class="box"></span> North America</div>
+        <div class="f-opt"><span class="box"></span> Europe</div>
+        <div class="f-opt"><span class="box"></span> APAC</div>
+        <div class="f-opt"><span class="box"></span> Latin America</div>
+      </div>
+      <div class="f-group">
+        <h4>Pricing Model</h4>
+        <div class="f-opt"><span class="box"></span> Subscription</div>
+        <div class="f-opt"><span class="box"></span> Usage-based</div>
+        <div class="f-opt"><span class="box"></span> Per User</div>
+        <div class="f-opt"><span class="box"></span> Freemium</div>
+        <div class="f-opt"><span class="box"></span> Custom</div>
+      </div>
+      <p class="f-note">Filters are a preview. They go live with the full dataset.</p>
+    </aside>
+
+    <div class="index-list">
+      <div class="list-toolbar">
+        <span class="sort"><span class="material-symbols-outlined" style="font-size:16px">sort</span> Sort by Index Score</span>
+        <span>Showing 1-10</span>
+        <div class="views"><span class="material-symbols-outlined" style="font-size:16px">list</span><span class="material-symbols-outlined" style="font-size:16px">grid_view</span></div>
+      </div>
+
+      <div class="co-row">
+        <div class="row-main">
+          <span class="avatar">SF</span>
+          <div class="row-body">
+            <div class="row-title"><span class="co-name">Salesforce</span><span class="badge badge-domain"><span class="material-symbols-outlined">verified</span>VERIFIED</span></div>
+            <p class="row-desc">CRM platform for sales, service, and marketing teams.</p>
+            <div class="row-chips"><span class="chip">SaaS</span><span class="chip">Sales Tech / RevOps</span></div>
+            <p class="row-meta"><a href="methodology.html#health" style="text-decoration:underline dotted" title="Operational stability sub-score, 0 to 100. Separate from the Index Score.">Health 96</a> (operational stability) · Founded 1999 · Public</p>
+          </div>
+        </div>
+        <div class="row-side"><a class="big-score" href="methodology.html#scoring" title="How this score is derived">98.4</a><span class="row-rev">★ 4.4 avg · <a href="#" title="Sample link">18,412 reviews on G2</a></span><span class="row-rank">#1</span></div>
+      </div>
+
+      <div class="co-row">
+        <div class="row-main">
+          <span class="avatar">WD</span>
+          <div class="row-body">
+            <div class="row-title"><span class="co-name">Workday</span><span class="badge badge-domain"><span class="material-symbols-outlined">verified</span>VERIFIED</span></div>
+            <p class="row-desc">Finance and HR platform for large enterprises.</p>
+            <div class="row-chips"><span class="chip">SaaS</span><span class="chip">HR &amp; Recruiting</span></div>
+            <p class="row-meta"><a href="methodology.html#health" style="text-decoration:underline dotted" title="Operational stability sub-score, 0 to 100. Separate from the Index Score.">Health 95</a> · Founded 2005 · Public</p>
+          </div>
+        </div>
+        <div class="row-side"><a class="big-score" href="methodology.html#scoring" title="How this score is derived">97.2</a><span class="row-rev">★ 4.5 avg · <a href="#" title="Sample link">3,146 reviews on G2</a></span><span class="row-rank">#2</span></div>
+      </div>
+
+      <div class="co-row">
+        <div class="row-main">
+          <span class="avatar">SN</span>
+          <div class="row-body">
+            <div class="row-title"><span class="co-name">ServiceNow</span><span class="badge badge-domain"><span class="material-symbols-outlined">verified</span>VERIFIED</span></div>
+            <p class="row-desc">Workflow automation for IT and enterprise operations.</p>
+            <div class="row-chips"><span class="chip">SaaS</span></div>
+            <p class="row-meta"><a href="methodology.html#health" style="text-decoration:underline dotted" title="Operational stability sub-score, 0 to 100. Separate from the Index Score.">Health 95</a> · Founded 2004 · Public</p>
+          </div>
+        </div>
+        <div class="row-side"><a class="big-score" href="methodology.html#scoring" title="How this score is derived">96.8</a><span class="row-rev">★ 4.4 avg · <a href="#" title="Sample link">2,289 reviews on G2</a></span><span class="row-rank">#3</span></div>
+      </div>
+
+      <div class="co-row">
+        <div class="row-main">
+          <span class="avatar">VE</span>
+          <div class="row-body">
+            <div class="row-title"><span class="co-name">Veeva Systems</span><span class="badge badge-domain"><span class="material-symbols-outlined">verified</span>VERIFIED</span></div>
+            <p class="row-desc">Cloud software for life sciences companies.</p>
+            <div class="row-chips"><span class="chip">Healthcare &amp; Biotech</span><span class="chip">SaaS</span></div>
+            <p class="row-meta"><a href="methodology.html#health" style="text-decoration:underline dotted" title="Operational stability sub-score, 0 to 100. Separate from the Index Score.">Health 93</a> · Founded 2007 · Public</p>
+          </div>
+        </div>
+        <div class="row-side"><a class="big-score" href="methodology.html#scoring" title="How this score is derived">95.1</a><span class="row-rev">★ 4.3 avg · <a href="#" title="Sample link">483 reviews on G2</a></span><span class="row-rank">#4</span></div>
+      </div>
+
+      <div class="co-row">
+        <div class="row-main">
+          <span class="avatar">CP</span>
+          <div class="row-body">
+            <div class="row-title"><span class="co-name">Coupa</span><span class="badge badge-unclaimed badge">UNCLAIMED</span><a class="claim-link" href="get-listed.html">Claim →</a></div>
+            <p class="row-desc">Spend management platform for procurement and finance.</p>
+            <div class="row-chips"><span class="chip">Procurement &amp; Spend</span></div>
+            <p class="row-meta"><a href="methodology.html#health" style="text-decoration:underline dotted" title="Operational stability sub-score, 0 to 100. Separate from the Index Score.">Health 92</a> · Founded 2006 · Private Equity</p>
+          </div>
+        </div>
+        <div class="row-side"><a class="big-score" href="methodology.html#scoring" title="How this score is derived">94.6</a><span class="row-rev">★ 4.2 avg · <a href="#" title="Sample link">546 reviews on G2</a></span><span class="row-rank">#5</span></div>
+      </div>
+
+      <div class="co-row">
+        <div class="row-main">
+          <span class="avatar">PL</span>
+          <div class="row-body">
+            <div class="row-title"><span class="co-name">Palantir</span><span class="badge badge-unclaimed badge">UNCLAIMED</span><a class="claim-link" href="get-listed.html">Claim →</a></div>
+            <p class="row-desc">Data platforms for large-scale operational decisions.</p>
+            <div class="row-chips"><span class="chip">Data &amp; Analytics</span><span class="chip">Artificial Intelligence</span></div>
+            <p class="row-meta"><a href="methodology.html#health" style="text-decoration:underline dotted" title="Operational stability sub-score, 0 to 100. Separate from the Index Score.">Health 91</a> · Founded 2003 · Public</p>
+          </div>
+        </div>
+        <div class="row-side"><a class="big-score" href="methodology.html#scoring" title="How this score is derived">93.9</a><span class="row-rev">★ 4.1 avg · <a href="#" title="Sample link">128 reviews on G2</a></span><span class="row-rank">#6</span></div>
+      </div>
+
+      <div class="co-row">
+        <div class="row-main">
+          <span class="avatar">HS</span>
+          <div class="row-body">
+            <div class="row-title"><span class="co-name">HubSpot</span><span class="badge badge-domain"><span class="material-symbols-outlined">verified</span>VERIFIED</span></div>
+            <p class="row-desc">CRM and marketing platform for growing companies.</p>
+            <div class="row-chips"><span class="chip">SaaS</span><span class="chip">Digital &amp; AI Marketing</span></div>
+            <p class="row-meta"><a href="methodology.html#health" style="text-decoration:underline dotted" title="Operational stability sub-score, 0 to 100. Separate from the Index Score.">Health 93</a> · Founded 2006 · Public</p>
+          </div>
+        </div>
+        <div class="row-side"><a class="big-score" href="methodology.html#scoring" title="How this score is derived">93.3</a><span class="row-rev">★ 4.5 avg · <a href="#" title="Sample link">12,306 reviews on G2</a></span><span class="row-rank">#7</span></div>
+      </div>
+
+      <div class="co-row">
+        <div class="row-main">
+          <span class="avatar">ZD</span>
+          <div class="row-body">
+            <div class="row-title"><span class="co-name">Zendesk</span><span class="badge badge-domain"><span class="material-symbols-outlined">verified</span>VERIFIED</span></div>
+            <p class="row-desc">Customer service software and support ticketing.</p>
+            <div class="row-chips"><span class="chip">Customer Success</span><span class="chip">SaaS</span></div>
+            <p class="row-meta"><a href="methodology.html#health" style="text-decoration:underline dotted" title="Operational stability sub-score, 0 to 100. Separate from the Index Score.">Health 90</a> · Founded 2007 · Private Equity</p>
+          </div>
+        </div>
+        <div class="row-side"><a class="big-score" href="methodology.html#scoring" title="How this score is derived">92.7</a><span class="row-rev">★ 4.3 avg · <a href="#" title="Sample link">6,118 reviews on G2</a></span><span class="row-rank">#8</span></div>
+      </div>
+
+      <div class="co-row">
+        <div class="row-main">
+          <span class="avatar">TW</span>
+          <div class="row-body">
+            <div class="row-title"><span class="co-name">Twilio</span><span class="badge badge-unclaimed badge">UNCLAIMED</span><a class="claim-link" href="get-listed.html">Claim →</a></div>
+            <p class="row-desc">Communication APIs for messaging, voice, and email.</p>
+            <div class="row-chips"><span class="chip">DevTools &amp; Infrastructure</span></div>
+            <p class="row-meta"><a href="methodology.html#health" style="text-decoration:underline dotted" title="Operational stability sub-score, 0 to 100. Separate from the Index Score.">Health 92</a> · Founded 2008 · Public</p>
+          </div>
+        </div>
+        <div class="row-side"><a class="big-score" href="methodology.html#scoring" title="How this score is derived">91.8</a><span class="row-rev">★ 4.2 avg · <a href="#" title="Sample link">472 reviews on G2</a></span><span class="row-rank">#9</span></div>
+      </div>
+
+      <div class="co-row">
+        <div class="row-main">
+          <span class="avatar">DD</span>
+          <div class="row-body">
+            <div class="row-title"><span class="co-name">Datadog</span><span class="badge badge-unclaimed badge">UNCLAIMED</span><a class="claim-link" href="get-listed.html">Claim →</a></div>
+            <p class="row-desc">Monitoring and security for cloud applications.</p>
+            <div class="row-chips"><span class="chip">DevTools &amp; Infrastructure</span></div>
+            <p class="row-meta"><a href="methodology.html#health" style="text-decoration:underline dotted" title="Operational stability sub-score, 0 to 100. Separate from the Index Score.">Health 94</a> · Founded 2010 · Public</p>
+          </div>
+        </div>
+        <div class="row-side"><a class="big-score" href="methodology.html#scoring" title="How this score is derived">91.2</a><span class="row-rev">★ 4.3 avg · <a href="#" title="Sample link">611 reviews on G2</a></span><span class="row-rank">#10</span></div>
+      </div>
+
+      <p class="muted" style="font-size:12px;margin:14px 0 4px">Scores link to the scoring method. Per-company breakdowns publish with each profile.</p>
+
+      <div class="eyebrow" style="margin:22px 0 10px">Recently listed</div>
+      <div class="co-row">
+        <div class="row-main">
+          <span class="avatar">TA</span>
+          <div class="row-body">
+            <div class="row-title"><span class="co-name"><a href="company-that-agency.html">THAT Agency</a></span><span class="badge badge-unclaimed badge">UNCLAIMED</span><a class="claim-link" href="get-listed.html">Claim →</a></div>
+            <p class="row-desc">Digital marketing agency in West Palm Beach, Florida.</p>
+            <div class="row-chips"><span class="chip">Digital &amp; AI Marketing</span></div>
+            <p class="row-meta">Real listing · <a href="methodology.html#health" style="text-decoration:underline dotted" title="Operational stability sub-score, 0 to 100. Separate from the Index Score.">Health 71</a> · Founded 2007 · Bootstrapped</p>
+          </div>
+        </div>
+        <div class="row-side"><a class="big-score" href="company-that-agency.html" style="color:var(--score-yellow)" title="See the full score breakdown">67.8</a><span class="row-rev">Preview score · <a href="company-that-agency.html">Score breakdown</a> · No reviews indexed yet</span><span class="row-rank" style="white-space:normal;max-width:180px">#4 in Digital &amp; AI Marketing · not yet in the global index</span></div>
+      </div>
+
+      <div class="pager">
+        <span class="cur">1</span><span>2</span><span>3</span><span>4</span><span>…</span><span>244</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="wrap section-sm" id="top10">
+  <div class="sec-head"><h2>Top 10 B2B Companies Compared</h2></div>
+  <div class="tbl-scroll">
+    <table class="rank">
+      <thead>
+        <tr><th>Rank</th><th>Company</th><th>Category</th><th>Index Score</th><th><a href="methodology.html#health" style="text-decoration:underline dotted">Health</a></th><th>Founded</th><th>Funding Stage</th><th>Pricing Model</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="rank-num">1</td><td><div class="co-cell"><span class="avatar">SF</span><span class="co-name">Salesforce</span></div></td><td class="rev-mini">SaaS</td><td><a href="methodology.html#scoring" title="How this score is derived" style="text-decoration:underline dotted"><span class="score score-hi">98.4</span></a></td><td class="rev-mini">96</td><td class="rev-mini">1999</td><td class="rev-mini">Public</td><td class="rev-mini">Per User</td></tr>
+        <tr><td class="rank-num">2</td><td><div class="co-cell"><span class="avatar">WD</span><span class="co-name">Workday</span></div></td><td class="rev-mini">SaaS</td><td><a href="methodology.html#scoring" title="How this score is derived" style="text-decoration:underline dotted"><span class="score score-hi">97.2</span></a></td><td class="rev-mini">95</td><td class="rev-mini">2005</td><td class="rev-mini">Public</td><td class="rev-mini">Custom</td></tr>
+        <tr><td class="rank-num">3</td><td><div class="co-cell"><span class="avatar">SN</span><span class="co-name">ServiceNow</span></div></td><td class="rev-mini">SaaS</td><td><a href="methodology.html#scoring" title="How this score is derived" style="text-decoration:underline dotted"><span class="score score-hi">96.8</span></a></td><td class="rev-mini">95</td><td class="rev-mini">2004</td><td class="rev-mini">Public</td><td class="rev-mini">Custom</td></tr>
+        <tr><td class="rank-num">4</td><td><div class="co-cell"><span class="avatar">VE</span><span class="co-name">Veeva Systems</span></div></td><td class="rev-mini">Healthcare &amp; Biotech</td><td><a href="methodology.html#scoring" title="How this score is derived" style="text-decoration:underline dotted"><span class="score score-hi">95.1</span></a></td><td class="rev-mini">93</td><td class="rev-mini">2007</td><td class="rev-mini">Public</td><td class="rev-mini">Custom</td></tr>
+        <tr><td class="rank-num">5</td><td><div class="co-cell"><span class="avatar">CP</span><span class="co-name">Coupa</span></div></td><td class="rev-mini">Procurement &amp; Spend</td><td><a href="methodology.html#scoring" title="How this score is derived" style="text-decoration:underline dotted"><span class="score score-hi">94.6</span></a></td><td class="rev-mini">92</td><td class="rev-mini">2006</td><td class="rev-mini">Private Equity</td><td class="rev-mini">Custom</td></tr>
+        <tr><td class="rank-num">6</td><td><div class="co-cell"><span class="avatar">PL</span><span class="co-name">Palantir</span></div></td><td class="rev-mini">Data &amp; Analytics</td><td><a href="methodology.html#scoring" title="How this score is derived" style="text-decoration:underline dotted"><span class="score score-hi">93.9</span></a></td><td class="rev-mini">91</td><td class="rev-mini">2003</td><td class="rev-mini">Public</td><td class="rev-mini">Custom</td></tr>
+        <tr><td class="rank-num">7</td><td><div class="co-cell"><span class="avatar">HS</span><span class="co-name">HubSpot</span></div></td><td class="rev-mini">Digital &amp; AI Marketing</td><td><a href="methodology.html#scoring" title="How this score is derived" style="text-decoration:underline dotted"><span class="score score-hi">93.3</span></a></td><td class="rev-mini">93</td><td class="rev-mini">2006</td><td class="rev-mini">Public</td><td class="rev-mini">Freemium</td></tr>
+        <tr><td class="rank-num">8</td><td><div class="co-cell"><span class="avatar">ZD</span><span class="co-name">Zendesk</span></div></td><td class="rev-mini">Customer Success</td><td><a href="methodology.html#scoring" title="How this score is derived" style="text-decoration:underline dotted"><span class="score score-hi">92.7</span></a></td><td class="rev-mini">90</td><td class="rev-mini">2007</td><td class="rev-mini">Private Equity</td><td class="rev-mini">Per User</td></tr>
+        <tr><td class="rank-num">9</td><td><div class="co-cell"><span class="avatar">TW</span><span class="co-name">Twilio</span></div></td><td class="rev-mini">DevTools &amp; Infrastructure</td><td><a href="methodology.html#scoring" title="How this score is derived" style="text-decoration:underline dotted"><span class="score score-hi">91.8</span></a></td><td class="rev-mini">92</td><td class="rev-mini">2008</td><td class="rev-mini">Public</td><td class="rev-mini">Usage-based</td></tr>
+        <tr><td class="rank-num">10</td><td><div class="co-cell"><span class="avatar">DD</span><span class="co-name">Datadog</span></div></td><td class="rev-mini">DevTools &amp; Infrastructure</td><td><a href="methodology.html#scoring" title="How this score is derived" style="text-decoration:underline dotted"><span class="score score-hi">91.2</span></a></td><td class="rev-mini">94</td><td class="rev-mini">2010</td><td class="rev-mini">Public</td><td class="rev-mini">Usage-based</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="muted" style="font-size:12px;margin-top:12px">Demonstration data. Scores shown here are placeholders, and the full Top 100 publishes with the first computed snapshot. Per-company score breakdowns publish with each profile.</p>
+</section>
+
+<section class="wrap section-sm" id="methodology">
+  <div class="sec-head"><h2>How B2Bindex Ranks Companies</h2></div>
+  <div class="card" style="padding:8px 24px">
+    <div class="factor">
+      <span class="f-name">Company Authority Score</span>
+      <span class="f-weight">25%</span>
+      <div class="weight-bar"><span style="width:25%"></span></div>
+      <p class="f-desc">Scores the company across public knowledge properties such as Wikipedia, Wikidata, entities.org, and LinkedIn.</p>
+    </div>
+    <div class="factor">
+      <span class="f-name">Industry Authority</span>
+      <span class="f-weight">20%</span>
+      <div class="weight-bar"><span style="width:20%"></span></div>
+      <p class="f-desc">Benchmarks domain and product authority against other providers in the category.</p>
+    </div>
+    <div class="factor">
+      <span class="f-name">Brand Reputation</span>
+      <span class="f-weight">20%</span>
+      <div class="weight-bar"><span style="width:20%"></span></div>
+      <p class="f-desc">Aggregates verified reviews, case studies, and customer references from third-party sources.</p>
+    </div>
+    <div class="factor">
+      <span class="f-name">Product Maturity <span class="under-review">(under review)</span></span>
+      <span class="f-weight">20%</span>
+      <div class="weight-bar"><span style="width:20%"></span></div>
+      <p class="f-desc">Measures how developed and proven the product or service offering is. This factor's definition is under review and may change.</p>
+    </div>
+    <div class="factor">
+      <span class="f-name">Funding &amp; Operational Health</span>
+      <span class="f-weight">15%</span>
+      <div class="weight-bar"><span style="width:15%"></span></div>
+      <p class="f-desc">Considers funding stage, runway indicators, and headcount growth as signals of stability.</p>
+    </div>
+  </div>
+  <p class="muted" style="font-size:13px;margin-top:14px">The five factors combine into a composite Index Score from 0 to 100, shown to one decimal. <a href="methodology.html#health" style="color:var(--accent-blue)">Health</a> is a separate operational sub-score, defined in the methodology. Reviewed by the B2Bindex editorial team.</p>
+</section>
+
+<section class="wrap section-sm" id="faq" style="padding-bottom:64px">
+  <div class="sec-head"><h2>Frequently Asked Questions</h2></div>
+  <div class="card" style="padding:6px 24px">
+    <div class="faq-item">
+      <h3>How are companies selected for the index?</h3>
+      <p>A company enters the index when it meets a minimum profile completeness threshold of 60%. Data comes from public filings, licensed data providers, and verified company submissions.</p>
+    </div>
+    <div class="faq-item">
+      <h3>How often is the index updated?</h3>
+      <p>Monthly. Every score recomputes in each snapshot.</p>
+    </div>
+    <div class="faq-item">
+      <h3>How do I submit my company?</h3>
+      <p>Use the <a href="get-listed.html" style="color:var(--accent-blue)">Get Listed</a> page. Basic listings are free. Submissions are reviewed by the editorial team within 5 to 7 business days.</p>
+    </div>
+    <div class="faq-item">
+      <h3>What does a Verified Profile mean?</h3>
+      <p>It means someone at the company claimed the profile and proved ownership, which lets them fill in missing data. It doesn't change the score.</p>
+    </div>
+    <div class="faq-item">
+      <h3>How is the Index Score calculated?</h3>
+      <p>Five weighted factors, shown with their weights in the <a href="#methodology" style="color:var(--accent-blue)">module above</a>. The composite runs 0 to 100 with one decimal.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Does a listing cost anything?</h3>
+      <p>Basic listings are free. The two paid programs are profile verification and labeled featured placement.</p>
+    </div>
+    <div class="faq-item">
+      <h3>How do I dispute or update information?</h3>
+      <p>Claim your profile to correct it directly, or send the correction to the editorial team. Disputed data points are re-checked against primary sources before the next snapshot.</p>
+    </div>
+    <div class="faq-item">
+      <h3>How do I contact the editorial team?</h3>
+      <p>Through the <a href="get-listed.html" style="color:var(--accent-blue)">Get Listed</a> page, which routes both new submissions and editorial questions.</p>
+    </div>
+  </div>
+</section>
+
+<footer class="site-foot">
   <div class="wrap">
     <div class="wordmark" style="font-size:15px"><span class="wm-badge">B2B</span> INDEX</div>
-    <p style="margin-top:14px;font-family:var(--font-heading);font-weight:600;font-size:14px;color:var(--text-primary)">Fair. Factual. Functional for AI.</p>
-    <p style="margin-top:8px;max-width:720px">B2B Index is a Brandvious Digital research property, operated alongside entities.org, AnswerStack, WhatIsBest, BestFit, and ReviewInsight. Shared ownership is disclosed; every property maintains its own editorial gate and original research.</p>
+    <p style="margin-top:14px;max-width:720px">Maintained by the B2Bindex editorial team with data from public filings, licensed data providers, and verified company submissions.</p>
+    <p style="margin-top:8px;color:var(--text-disabled)">A brand by Brandvious, Inc. · Last reviewed: August 13, 2026</p>
     <div class="foot-links">
-      <a href="methodology.html">Methodology</a><a href="methodology.html#corrections">Corrections</a><a href="methodology.html#paid">Paid listing disclosure</a><a href="company-that-agency.html#claim">Claim your profile</a>
+      <a href="index.html">Index</a>
+      <a href="methodology.html">Methodology</a>
+      <a href="get-listed.html">Get Listed</a>
+      <a href="methodology.html#corrections">Corrections</a>
     </div>
+
+    <div class="foot-cats">
+      <div>
+        <h5>Software &amp; Data</h5>
+        <ul>
+          <li>Artificial Intelligence</li><li>SaaS</li><li>Cybersecurity</li><li>Data &amp; Analytics</li><li>DevTools &amp; Infrastructure</li><li>Cloud &amp; Hosting</li><li>Sales Tech / RevOps</li><li>Customer Success</li>
+        </ul>
+      </div>
+      <div>
+        <h5>Commerce &amp; Finance</h5>
+        <ul>
+          <li>Fintech</li><li>E-commerce</li><li>Payments</li><li>Banking Tech</li><li>Insurance Tech</li><li>Accounting &amp; Tax</li><li>Procurement &amp; Spend</li><li>Billing &amp; Subscriptions</li>
+        </ul>
+      </div>
+      <div>
+        <h5>Industry &amp; Infrastructure</h5>
+        <ul>
+          <li>Manufacturing</li><li>Logistics &amp; Freight</li><li>Construction Tech</li><li>Energy &amp; Sustainability</li><li>Healthcare &amp; Biotech</li><li>Real Estate / PropTech</li><li>Motorsports / Auto</li><li>Agriculture Tech</li>
+        </ul>
+      </div>
+      <div>
+        <h5>Professional Services</h5>
+        <ul>
+          <li><a href="category-digital-marketing.html" style="color:var(--accent-blue)">Digital &amp; AI Marketing</a></li><li>B2B Consulting / Training</li><li>Reputation / PR</li><li>Legal Services</li><li>HR &amp; Recruiting</li><li>Design &amp; Creative</li><li>Translation &amp; Localization</li><li>Market Research</li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="integrity">Rankings cannot be bought. The two paid programs, verification and labeled featured placement, never touch scores or rank.</p>
+    <p class="foot-net">Brandvious network: <a href="https://entities.org" target="_blank" rel="noopener">entities.org</a> · <a href="https://answerstack.io" target="_blank" rel="noopener">answerstack.io</a> · B2Bindex · <span title="Coming soon">Network strategy</span></p>
   </div>
 </footer>
 

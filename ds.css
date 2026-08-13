@@ -1,4 +1,4 @@
-/* B2B Index preview - Lean Labs design system tokens (inlined) + preview components */
+/* B2B Index preview styles */
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700&family=Roboto:wght@400;500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=block');
 
@@ -20,9 +20,9 @@
   --accent-alert: #FDE68A;
   --accent-error: #FCA5A5;
   --accent-blue: #93C5FD;
-  --aeo-green: rgb(0, 212, 146);
-  --aeo-yellow: rgb(255, 166, 0);
-  --aeo-red: rgb(229, 72, 77);
+  --score-green: rgb(0, 212, 146);
+  --score-yellow: rgb(255, 166, 0);
+  --score-red: rgb(229, 72, 77);
   --radius-sm: 4px; --radius-md: 8px; --radius-lg: 16px; --radius-xl: 24px;
   --container-lg: 1280px;
   --card-border-inset: inset 0 0 0 1px var(--border-default);
@@ -76,8 +76,8 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 600; line-height
 .pv-btn:hover { background: var(--surface-button-hover); }
 .pv-legend { color: var(--text-secondary); display: flex; align-items: center; gap: 12px; margin-left: auto; flex-wrap: wrap; }
 .dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 5px; vertical-align: baseline; }
-.dot-real { background: var(--aeo-green); }
-.dot-schema { background: transparent; border: 2px solid var(--aeo-yellow); width: 6px; height: 6px; }
+.dot-real { background: var(--score-green); }
+.dot-schema { background: transparent; border: 2px solid var(--score-yellow); width: 6px; height: 6px; }
 
 /* ---------- annotations ---------- */
 .anno { display: none; }
@@ -119,10 +119,6 @@ body.show-anno .anno-wrap { outline: 1px dashed rgba(253, 230, 138, .35); outlin
   white-space: nowrap;
 }
 .chip .dot { margin-right: 0; }
-.chip-entities { color: var(--accent-blue); }
-.chip-answerstack { color: var(--aeo-green); }
-.chip-wib { color: var(--aeo-yellow); }
-.chip-fanout { color: var(--aeo-green); }
 
 /* ---------- badges & pills ---------- */
 .badge {
@@ -131,19 +127,19 @@ body.show-anno .anno-wrap { outline: 1px dashed rgba(253, 230, 138, .35); outlin
   padding: 3px 9px; border-radius: var(--radius-sm);
 }
 .badge .material-symbols-outlined { font-size: 14px; }
-.badge-domain { background: rgba(0, 212, 146, .12); color: var(--aeo-green); }
+.badge-domain { background: rgba(0, 212, 146, .12); color: var(--score-green); }
 .badge-confirmed { background: rgba(147, 197, 253, .12); color: var(--accent-blue); }
 .badge-listed { background: rgba(148, 148, 148, .14); color: var(--text-secondary); }
 
 .pill { display: inline-block; font-size: 11px; font-weight: 600; padding: 3px 10px; border-radius: 999px; }
-.pill-dominant { background: rgba(0, 212, 146, .12); color: var(--aeo-green); }
-.pill-relevant { background: rgba(255, 166, 0, .12); color: var(--aeo-yellow); }
-.pill-struggling { background: rgba(229, 72, 77, .12); color: var(--aeo-red); }
+.pill-dominant { background: rgba(0, 212, 146, .12); color: var(--score-green); }
+.pill-relevant { background: rgba(255, 166, 0, .12); color: var(--score-yellow); }
+.pill-struggling { background: rgba(229, 72, 77, .12); color: var(--score-red); }
 
 .score { font-family: var(--font-heading); font-weight: 700; font-size: 15px; }
-.score-hi { color: var(--aeo-green); }
-.score-mid { color: var(--aeo-yellow); }
-.score-lo { color: var(--aeo-red); }
+.score-hi { color: var(--score-green); }
+.score-mid { color: var(--score-yellow); }
+.score-lo { color: var(--score-red); }
 
 /* ---------- avatar ---------- */
 .avatar {
