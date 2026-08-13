@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Insights | B2Bindex</title>
+<link rel="stylesheet" href="ds.css">
+<style>
+  .page-head h1 { font-size: 34px; margin-bottom: 12px; }
+
+  /* article cards */
+  .art-kicker {
+    font-size: 11px; letter-spacing: .08em; text-transform: uppercase;
+    color: var(--ink-3); font-weight: 600;
+  }
+  .art-title { font-size: 17px; font-weight: 600; letter-spacing: -0.015em; line-height: 1.3; margin-top: 8px; color: var(--ink); }
+  .art-dek { font-size: 13px; color: var(--ink-2); margin-top: 8px; }
+  .art-meta { font-size: 12px; color: var(--ink-3); margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--rule); }
+  .art-card { display: flex; flex-direction: column; }
+  .art-card .art-meta { margin-top: auto; }
+  .art-head { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+
+  /* featured */
+  .art-feat { display: grid; grid-template-columns: 1.35fr 1fr; gap: 0; overflow: hidden; padding: 0; }
+  @media (max-width: 860px) { .art-feat { grid-template-columns: 1fr; } }
+  .art-feat .feat-body { padding: 32px; }
+  .art-feat .art-title { font-size: 26px; letter-spacing: -0.03em; line-height: 1.2; }
+  .art-feat .art-dek { font-size: 15px; margin-top: 12px; max-width: 560px; }
+  .art-feat .feat-side {
+    background: var(--paper-sunk); border-left: 1px solid var(--rule);
+    padding: 32px; display: flex; flex-direction: column; justify-content: center; gap: 18px;
+  }
+  @media (max-width: 860px) { .art-feat .feat-side { border-left: none; border-top: 1px solid var(--rule); } }
+  .feat-stat b { display: block; font-family: var(--mono); font-variant-numeric: tabular-nums; font-weight: 600; font-size: 26px; line-height: 1.1; color: var(--ink); }
+  .feat-stat span { display: block; font-size: 12px; color: var(--ink-2); margin-top: 4px; }
+
+  /* partner label */
+  .tag-partner {
+    display: inline-block; font-size: 10px; letter-spacing: .08em; text-transform: uppercase;
+    font-weight: 700; padding: 3px 8px; border-radius: 3px;
+    border: 1px solid var(--flag); color: var(--flag); background: var(--flag-bg);
+  }
+  .art-card.partner { border-color: var(--flag); }
+
+  /* subscribe band */
+  .sub-band {
+    border: 1px solid var(--rule); border-radius: var(--r); background: var(--paper-sunk);
+    padding: 28px 32px; display: flex; align-items: center; gap: 24px; flex-wrap: wrap;
+  }
+  .sub-band .sub-copy { flex: 1 1 320px; }
+  .sub-band h3 { font-size: 18px; margin-bottom: 6px; }
+  .sub-band p { font-size: 13px; color: var(--ink-2); margin-bottom: 0; }
+  .sub-form { display: flex; gap: 10px; flex-wrap: wrap; }
+  .sub-form input {
+    background: var(--paper); border: 1px solid var(--rule); border-radius: 8px;
+    padding: 11px 14px; color: var(--ink); font-family: var(--font); font-size: 14px; min-width: 260px;
+  }
+  .sub-form input::placeholder { color: var(--ink-3); }
+  .sub-form input:focus { outline: none; border-color: var(--ink-3); }
+</style>
+</head>
+<body>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="wordmark" href="index.html"><span class="wm-badge">B2B</span> INDEX</a>
+    <div class="head-search"><span class="material-symbols-outlined">search</span> Search companies, categories…</div>
+    <nav class="nav">
+      <a href="index.html">Index</a>
+      <a href="top-100.html">Top 100</a>
+      <a href="compare.html">Compare</a>
+      <a href="insights.html" class="active" aria-current="page">Insights</a>
+      <a class="cta" href="find-a-solution.html">Find a Solution</a>
+      <a class="get-listed" href="get-listed.html">Get Listed</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ============ 1. Page head ============ -->
+<section class="page-head">
+  <div class="wrap">
+    <div class="crumbs"><a href="index.html">Home</a> / <span style="color:var(--ink-2)">Insights</span></div>
+    <div class="eyebrow">Editorial</div>
+    <h1>Insights</h1>
+    <p class="lede">Research, benchmarks, and category reports from the B2Bindex editorial team. Everything here is built on the same data that produces the rankings.</p>
+    <p class="hero-meta small muted" style="margin-top:16px">Partner content is published through certified Brandvious partners and is always labeled.</p>
+  </div>
+</section>
+
+<!-- ============ 2. Featured ============ -->
+<section class="wrap section-sm">
+  <div class="sec-head"><h2>Featured</h2></div>
+  <div class="card art-feat">
+    <div class="feat-body">
+      <div class="art-kicker">Digital &amp; AI Marketing</div>
+      <div class="art-title">The state of Digital and AI Marketing agencies, a 2026 snapshot</div>
+      <p class="art-dek">The first agencies through our scoring pipeline cluster tightly in the sixties and low seventies. We break down where the points are actually being lost, factor by factor, and what a top score in this category would take.</p>
+      <div class="art-meta">B2Bindex editorial · August 11, 2026 · 9 min read</div>
+    </div>
+    <div class="feat-side">
+      <div class="feat-stat"><b>12</b><span>Agencies scored for this report</span></div>
+      <div class="feat-stat"><b>62.9</b><span>Average Index Score in the category</span></div>
+      <div class="feat-stat"><b>5</b><span>Weighted factors behind every score</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 3. Article grid ============ -->
+<section class="wrap section-sm">
+  <div class="sec-head"><h2>Latest</h2></div>
+  <div class="grid grid-3">
+
+    <div class="card art-card">
+      <div class="art-kicker">Methodology</div>
+      <div class="art-title">Why we score Product Maturity, and why the definition is under review</div>
+      <p class="art-dek">It carries 20% of every score and it is the factor we are least happy with. What it measures today, and the three replacements we are testing.</p>
+      <div class="art-meta">B2Bindex editorial · July 28, 2026 · 6 min read</div>
+    </div>
+
+    <div class="card art-card">
+      <div class="art-kicker">Methodology</div>
+      <div class="art-title">Funding stage and stability, what the Health sub-score reads</div>
+      <p class="art-dek">Health sits outside the Index Score on purpose. Here is the operational data behind it and why a 90 does not mean the same thing as a 90 on the composite.</p>
+      <div class="art-meta">B2Bindex editorial · July 14, 2026 · 5 min read</div>
+    </div>
+
+    <div class="card art-card">
+      <div class="art-kicker">Listings</div>
+      <div class="art-title">What changes on a profile the day a company claims it</div>
+      <p class="art-dek">Empty fields become sourced facts and buyers stop guessing. We walk a claimed profile next to an unclaimed one and show what verification does not do.</p>
+      <div class="art-meta">B2Bindex editorial · June 30, 2026 · 4 min read</div>
+    </div>
+
+    <div class="card art-card">
+      <div class="art-kicker">Methodology</div>
+      <div class="art-title">Company Authority is a quarter of the score, and most companies leave it on the table</div>
+      <p class="art-dek">Wikipedia, Wikidata, entities.org, and LinkedIn. What a complete, consistent public record looks like, and the mismatches that cost the most points.</p>
+      <div class="art-meta">B2Bindex editorial · June 16, 2026 · 7 min read</div>
+    </div>
+
+    <div class="card art-card">
+      <div class="art-kicker">Sales Tech / RevOps</div>
+      <div class="art-title">Category benchmark, what separates the top of Sales Tech and RevOps from the middle</div>
+      <p class="art-dek">The gap between the top of this leaderboard and the middle is almost entirely Brand Reputation and Company Authority. Product scores barely move.</p>
+      <div class="art-meta">B2Bindex editorial · June 2, 2026 · 8 min read</div>
+    </div>
+
+    <div class="card art-card partner">
+      <div class="art-head">
+        <span class="art-kicker">Digital &amp; AI Marketing</span>
+        <span class="tag-partner">Partner content</span>
+      </div>
+      <div class="art-title">How one agency rebuilt its profile evidence in a single quarter</div>
+      <p class="art-dek">Published through a certified Brandvious partner. Partner content is always labeled and has no effect on scores or rank.</p>
+      <div class="art-meta">Certified partner · May 19, 2026 · 5 min read</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ 4. Subscribe band ============ -->
+<section class="wrap section-sm">
+  <div class="sub-band">
+    <div class="sub-copy">
+      <h3>Get the monthly snapshot notes</h3>
+      <p>One email when scores refresh, with what moved and why. No other mail.</p>
+    </div>
+    <form class="sub-form" onsubmit="return false">
+      <input type="email" placeholder="you@yourcompany.com" aria-label="Work email" autocomplete="email">
+      <button class="btn btn-primary" type="submit">Subscribe</button>
+    </form>
+  </div>
+</section>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="wordmark"><span class="wm-badge">B2B</span> INDEX</div>
+    <p style="margin-top:14px;max-width:720px">Maintained by the B2Bindex editorial team with data from public filings, licensed data providers, and verified company submissions.</p>
+    <p style="margin-top:8px;color:var(--ink-3)">A brand by Brandvious, Inc. · Last reviewed: August 13, 2026</p>
+    <div class="foot-links">
+      <a href="index.html">Index</a>
+      <a href="top-100.html">Top 100</a>
+      <a href="compare.html">Compare</a>
+      <a href="insights.html">Insights</a>
+      <a href="find-a-solution.html">Find a Solution</a>
+      <a href="methodology.html">Methodology</a>
+      <a href="get-listed.html">Get Listed</a>
+      <a href="methodology.html#corrections">Corrections</a>
+    </div>
+
+    <div class="foot-cats">
+      <div>
+        <h5>Software &amp; Data</h5>
+        <ul>
+          <li>Artificial Intelligence</li><li>SaaS</li><li>Cybersecurity</li><li>Data &amp; Analytics</li><li>DevTools &amp; Infrastructure</li><li>Cloud &amp; Hosting</li><li>Sales Tech / RevOps</li><li>Customer Success</li>
+        </ul>
+      </div>
+      <div>
+        <h5>Commerce &amp; Finance</h5>
+        <ul>
+          <li>Fintech</li><li>E-commerce</li><li>Payments</li><li>Banking Tech</li><li>Insurance Tech</li><li>Accounting &amp; Tax</li><li>Procurement &amp; Spend</li><li>Billing &amp; Subscriptions</li>
+        </ul>
+      </div>
+      <div>
+        <h5>Industry &amp; Infrastructure</h5>
+        <ul>
+          <li>Manufacturing</li><li>Logistics &amp; Freight</li><li>Construction Tech</li><li>Energy &amp; Sustainability</li><li>Healthcare &amp; Biotech</li><li>Real Estate / PropTech</li><li>Motorsports / Auto</li><li>Agriculture Tech</li>
+        </ul>
+      </div>
+      <div>
+        <h5>Professional Services</h5>
+        <ul>
+          <li><a href="category-digital-marketing.html">Digital &amp; AI Marketing</a></li><li>B2B Consulting / Training</li><li>Reputation / PR</li><li>Legal Services</li><li>HR &amp; Recruiting</li><li>Design &amp; Creative</li><li>Translation &amp; Localization</li><li>Market Research</li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="integrity">Rankings cannot be bought. The two paid programs, verification and labeled featured placement, never touch scores or rank.</p>
+    <p class="foot-net">Brandvious network: <a href="https://entities.org" target="_blank" rel="noopener">entities.org</a> · <a href="https://answerstack.io" target="_blank" rel="noopener">answerstack.io</a> · B2Bindex · <span title="Coming soon">Network strategy</span></p>
+  </div>
+</footer>
+
+</body>
+</html>

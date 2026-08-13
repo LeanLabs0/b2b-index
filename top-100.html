@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>The Top 100 in every category | B2Bindex</title>
+<link rel="stylesheet" href="ds.css">
+<style>
+  .page-head h1 { font-size: 34px; margin-bottom: 12px; }
+
+  /* category selector row */
+  .picker { display: flex; align-items: flex-end; gap: 14px; flex-wrap: wrap; }
+  .picker .pick-field { min-width: 320px; }
+  .picker label {
+    display: block; font-size: 11px; font-weight: 600; letter-spacing: .07em;
+    text-transform: uppercase; color: var(--ink-2); margin-bottom: 7px;
+  }
+  .picker select {
+    width: 100%; background: var(--paper); border: 1px solid var(--rule);
+    border-radius: 8px; padding: 11px 14px; color: var(--ink);
+    font-family: var(--font); font-size: 14px;
+  }
+  .picker select:focus { outline: none; border-color: var(--ink-3); }
+  .chip-row { display: flex; flex-wrap: wrap; gap: 8px; }
+  .chip-row .lbl { font-size: 12px; color: var(--ink-3); align-self: center; margin-right: 4px; }
+
+  /* top 5 block */
+  .capsule { max-width: 820px; color: var(--ink); font-size: 15px; line-height: 1.65; margin-bottom: 18px; }
+  .board-note { font-size: 12px; color: var(--ink-2); margin-top: 14px; max-width: 820px; }
+  .board-more { margin-top: 16px; font-size: 14px; font-weight: 500; }
+
+  /* brands to watch */
+  .watch-empty { border: 1px dashed var(--ink-3); background: var(--paper-sunk); padding: 28px; text-align: center; color: var(--ink-2); font-size: 14px; }
+
+  /* every category grid */
+  .grid-cats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+  @media (max-width: 1000px) { .grid-cats { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 560px) { .grid-cats { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="wordmark" href="index.html"><span class="wm-badge">B2B</span> INDEX</a>
+    <div class="head-search"><span class="material-symbols-outlined">search</span> Search companies, categories…</div>
+    <nav class="nav">
+      <a href="index.html">Index</a>
+      <a href="top-100.html" class="active" aria-current="page">Top 100</a>
+      <a href="compare.html">Compare</a>
+      <a href="insights.html">Insights</a>
+      <a class="cta" href="find-a-solution.html">Find a Solution</a>
+      <a class="get-listed" href="get-listed.html">Get Listed</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ============ 1. Page head ============ -->
+<section class="page-head">
+  <div class="wrap">
+    <div class="crumbs"><a href="index.html">Home</a> / <span style="color:var(--ink-2)">Top 100</span></div>
+    <div class="eyebrow">Ranked lists</div>
+    <h1>The Top 100 in every category</h1>
+    <p class="lede">Rankings are scoped to a category, because buyers compare vendors that solve the same problem. Every score combines <a href="methodology.html#scoring">five weighted factors</a> on a 0 to 100 scale.</p>
+    <p class="hero-meta small muted" style="margin-top:16px">Last updated August 13, 2026 · Scores recompute in each monthly snapshot</p>
+  </div>
+</section>
+
+<!-- ============ 2. Category selector ============ -->
+<section class="wrap section-sm">
+  <div class="picker">
+    <div class="pick-field">
+      <label for="cat-select">Category</label>
+      <select id="cat-select">
+        <option selected>Digital &amp; AI Marketing (12 indexed)</option>
+        <option>Artificial Intelligence (212 indexed)</option>
+        <option>SaaS (203 indexed)</option>
+        <option>Fintech (141 indexed)</option>
+        <option>Cybersecurity (138 indexed)</option>
+        <option>Healthcare &amp; Biotech (129 indexed)</option>
+        <option>Sales Tech / RevOps (59 indexed)</option>
+      </select>
+    </div>
+    <a class="btn btn-primary" href="category-digital-marketing.html">View ranking</a>
+  </div>
+  <div class="chip-row" style="margin-top:18px">
+    <span class="lbl">Popular</span>
+    <span class="chip">Artificial Intelligence <b class="num">212</b></span>
+    <span class="chip">SaaS <b class="num">203</b></span>
+    <span class="chip">Fintech <b class="num">141</b></span>
+    <span class="chip">Cybersecurity <b class="num">138</b></span>
+    <span class="chip">Healthcare &amp; Biotech <b class="num">129</b></span>
+    <span class="chip">Manufacturing <b class="num">107</b></span>
+    <span class="chip">HR &amp; Recruiting <b class="num">98</b></span>
+    <span class="chip">Data &amp; Analytics <b class="num">96</b></span>
+  </div>
+</section>
+
+<!-- ============ 3. Top 5 Digital & AI Marketing ============ -->
+<section class="wrap section-sm" id="digital-marketing">
+  <div class="sec-head">
+    <h2>Top 5 Digital &amp; AI Marketing companies</h2>
+    <span class="chip">Live index</span>
+  </div>
+  <p class="capsule">The top Digital &amp; AI Marketing agencies of 2026 are <b>Prism Digital Agency</b>, <b>Wheels Up Collective</b>, and <b>FabCom</b>, ranked by B2Bindex's <a href="methodology.html#scoring">composite score across five weighted factors</a>. <span class="num">12</span> of the <span class="num">50</span> agencies tracked in this category are indexed today.</p>
+
+  <div class="tbl-scroll">
+    <table class="rank">
+      <thead>
+        <tr>
+          <th>Rank</th>
+          <th>Company</th>
+          <th>Index Score</th>
+          <th>Reviews</th>
+          <th><a href="methodology.html#health" style="text-decoration:underline dotted">Health</a></th>
+          <th>Funding stage</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="rank-num">1</td>
+          <td><div class="co-cell"><span class="avatar">PD</span><div><div class="co-name">Prism Digital Agency</div><div class="co-domain">prismdigitalinc.com</div></div></div></td>
+          <td><a href="methodology.html#scoring" title="How this score is derived" style="text-decoration:underline dotted"><span class="score">74.2</span></a></td>
+          <td class="rev-mini">No reviews indexed yet</td>
+          <td class="rev-mini num">80</td>
+          <td class="rev-mini">Not listed</td>
+        </tr>
+        <tr>
+          <td class="rank-num">2</td>
+          <td><div class="co-cell"><span class="avatar">WU</span><div><div class="co-name">Wheels Up Collective</div><div class="co-domain">wheelsupcollective.com</div></div></div></td>
+          <td><a href="methodology.html#scoring" title="How this score is derived" style="text-decoration:underline dotted"><span class="score">71.8</span></a></td>
+          <td class="rev-mini">No reviews indexed yet</td>
+          <td class="rev-mini num">78</td>
+          <td class="rev-mini">Not listed</td>
+        </tr>
+        <tr>
+          <td class="rank-num">3</td>
+          <td><div class="co-cell"><span class="avatar">FC</span><div><div class="co-name">FabCom</div><div class="co-domain">fabcomlive.com</div></div></div></td>
+          <td><a href="methodology.html#scoring" title="How this score is derived" style="text-decoration:underline dotted"><span class="score">68.1</span></a></td>
+          <td class="rev-mini">No reviews indexed yet</td>
+          <td class="rev-mini num">77</td>
+          <td class="rev-mini">Not listed</td>
+        </tr>
+        <tr>
+          <td class="rank-num">4</td>
+          <td><div class="co-cell"><span class="avatar">TA</span><div><div class="co-name"><a href="company-that-agency.html">THAT Agency</a></div><div class="co-domain">thatagency.com</div></div></div></td>
+          <td><a href="company-that-agency.html" title="See the full score breakdown" style="text-decoration:underline dotted"><span class="score">67.8</span></a></td>
+          <td class="rev-mini">No reviews indexed yet</td>
+          <td class="rev-mini num">71</td>
+          <td class="rev-mini">Not listed</td>
+        </tr>
+        <tr>
+          <td class="rank-num">5</td>
+          <td><div class="co-cell"><span class="avatar">AD</span><div><div class="co-name">Atlas Domus</div><div class="co-domain">atlasdomus.com</div></div></div></td>
+          <td><a href="methodology.html#scoring" title="How this score is derived" style="text-decoration:underline dotted"><span class="score">64.9</span></a></td>
+          <td class="rev-mini">&#9733; 5.0 avg · <a href="https://clutch.co/profile/atlas-domus" target="_blank" rel="noopener">2 reviews on Clutch</a></td>
+          <td class="rev-mini num">73</td>
+          <td class="rev-mini">Not listed</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p class="board-note">Funding stage stays empty until a company claims its profile. No agency in this category has claimed one yet, so the column reads Not listed for all five. Per-company score breakdowns publish with each profile, and <a href="company-that-agency.html">THAT Agency's</a> is live.</p>
+  <p class="board-more"><a href="category-digital-marketing.html">Full Digital &amp; AI Marketing leaderboard (all 12 indexed) &rarr;</a></p>
+</section>
+
+<!-- ============ 4. Brands to Watch ============ -->
+<section class="wrap section-sm">
+  <div class="sec-head">
+    <h2>Brands to Watch</h2>
+  </div>
+  <p class="muted" style="font-size:13px;margin:-10px 0 16px;max-width:820px">Largest index-score gains this quarter, outside the top 10. Selected by the data, this module cannot be bought.</p>
+  <div class="watch-empty">Entries populate after the first computed snapshot. Nothing to show yet.</div>
+</section>
+
+<!-- ============ 5. Every category, ranked ============ -->
+<section class="wrap section-sm" id="categories">
+  <div class="sec-head">
+    <h2>Every category, ranked</h2>
+    <span class="small muted">32 categories</span>
+  </div>
+  <div class="grid-cats">
+    <div class="cat-card"><span class="cat-icon"><span class="material-symbols-outlined">smart_toy</span></span><span class="cat-body"><span class="cat-name">Artificial Intelligence</span><span class="cat-meta">Top <span class="num">100</span> ranked · <span class="num">212</span> indexed</span></span></div>
+    <div class="cat-card"><span class="cat-icon"><span class="material-symbols-outlined">apps</span></span><span class="cat-body"><span class="cat-name">SaaS</span><span class="cat-meta">Top <span class="num">100</span> ranked · <span class="num">203</span> indexed</span></span></div>
+    <div class="cat-card"><span class="cat-icon"><span class="material-symbols-outlined">security</span></span><span class="cat-body"><span class="cat-name">Cybersecurity</span><span class="cat-meta">Top <span class="num">100</span> ranked · <span class="num">138</span> indexed</span></span></div>
+    <div class="cat-card"><span class="cat-icon"><span class="material-symbols-outlined">monitoring</span></span><span class="cat-body"><span class="cat-name">Data &amp; Analytics</span><span class="cat-meta">Top <span class="num">96</span> ranked · <span class="num">96</span> indexed</span></span></div>
+    <div class="cat-card"><span class="cat-icon"><span class="material-symbols-outlined">terminal</span></span><span class="cat-body"><span class="cat-name">DevTools &amp; Infrastructure</span><span class="cat-meta">Top <span class="num">74</span> ranked · <span class="num">74</span> indexed</span></span></div>
+    <div class="cat-card"><span class="cat-icon"><span class="material-symbols-outlined">cloud</span></span><span class="cat-body"><span class="cat-name">Cloud &amp; Hosting</span><span class="cat-meta">Top <span class="num">67</span> ranked · <span class="num">67</span> indexed</span></span></div>
+    <div class="cat-card"><span class="cat-icon"><span class="material-symbols-outlined">trending_up</span></span><span class="cat-body"><span class="cat-name">Sales Tech / RevOps</span><span class="cat-meta">Top <span class="num">59</span> ranked · <span class="num">59</span> indexed</span></span></div>
+    <div class="cat-card"><span class="cat-icon"><span class="material-symbols-outlined">support_agent</span></span><span class="cat-body"><span class="cat-name">Customer Success</span><span class="cat-meta">Top <span class="num">46</span> ranked · <span class="num">46</span> indexed</span></span></div>
+    <div class="cat-card"><span class="cat-icon"><span class="material-symbols-outlined">account_balance</span></span><span class="cat-body"><span class="cat-name">Fintech</span><span class="cat-meta">Top <span class="num">100</span> ranked · <span class="num">141</span> indexed</span></span></div>
+    <div class="cat-card"><span class="cat-icon"><span class="material-symbols-outlined">shopping_cart</span></span><span class="cat-body"><span class="cat-name">E-commerce</span><span class="cat-meta">Top <span class="num">92</span> ranked · <span class="num">92</span> indexed</span></span></div>
+    <div class="cat-card"><span class="cat-icon"><span class="material-symbols-outlined">payments</span></span><span class="cat-body"><span class="cat-name">Payments</span><span class="cat-meta">Top <span class="num">54</span> ranked · <span class="num">54</span> indexed</span></span></div>
+    <div class="cat-card"><span class="cat-icon"><span class="material-symbols-outlined">savings</span></span><span class="cat-body"><span class="cat-name">Banking Tech</span><span class="cat-meta">Top <span class="num">44</span> ranked · <span class="num">44</span> indexed</span></span></div>
+    <div class="cat-card"><span class="cat-icon"><span class="material-symbols-outlined">verified_user</span></span><span class="cat-body"><span class="cat-name">Insurance Tech</span><span class="cat-meta">Top <span class="num">48</span> ranked · <span class="num">48</span> indexed</span></span></div>
+    <div class="cat-card"><span class="cat-icon"><span class="material-symbols-outlined">calculate</span></span><span class="cat-body"><span class="cat-name">Accounting &amp; Tax</span><span class="cat-meta">Top <span class="num">41</span> ranked · <span class="num">41</span> indexed</span></span></div>
+    <div class="cat-card"><span class="cat-icon"><span class="material-symbols-outlined">receipt_long</span></span><span class="cat-body"><span class="cat-name">Procurement &amp; Spend</span><span class="cat-meta">Top <span class="num">39</span> ranked · <span class="num">39</span> indexed</span></span></div>
+    <div class="cat-card"><span class="cat-icon"><span class="material-symbols-outlined">autorenew</span></span><span class="cat-body"><span class="cat-name">Billing &amp; Subscriptions</span><span class="cat-meta">Top <span class="num">33</span> ranked · <span class="num">33</span> indexed</span></span></div>
+    <div class="cat-card"><span class="cat-icon"><span class="material-symbols-outlined">precision_manufacturing</span></span><span class="cat-body"><span class="cat-name">Manufacturing</span><span class="cat-meta">Top <span class="num">100</span> ranked · <span class="num">107</span> indexed</span></span></div>
+    <div class="cat-card"><span class="cat-icon"><span class="material-symbols-outlined">local_shipping</span></span><span class="cat-body"><span class="cat-name">Logistics &amp; Freight</span><span class="cat-meta">Top <span class="num">76</span> ranked · <span class="num">76</span> indexed</span></span></div>
+    <div class="cat-card"><span class="cat-icon"><span class="material-symbols-outlined">construction</span></span><span class="cat-body"><span class="cat-name">Construction Tech</span><span class="cat-meta">Top <span class="num">52</span> ranked · <span class="num">52</span> indexed</span></span></div>
+    <div class="cat-card"><span class="cat-icon"><span class="material-symbols-outlined">bolt</span></span><span class="cat-body"><span class="cat-name">Energy &amp; Sustainability</span><span class="cat-meta">Top <span class="num">63</span> ranked · <span class="num">63</span> indexed</span></span></div>
+    <div class="cat-card"><span class="cat-icon"><span class="material-symbols-outlined">medical_services</span></span><span class="cat-body"><span class="cat-name">Healthcare &amp; Biotech</span><span class="cat-meta">Top <span class="num">100</span> ranked · <span class="num">129</span> indexed</span></span></div>
+    <div class="cat-card"><span class="cat-icon"><span class="material-symbols-outlined">home_work</span></span><span class="cat-body"><span class="cat-name">Real Estate / PropTech</span><span class="cat-meta">Top <span class="num">57</span> ranked · <span class="num">57</span> indexed</span></span></div>
+    <div class="cat-card"><span class="cat-icon"><span class="material-symbols-outlined">sports_motorsports</span></span><span class="cat-body"><span class="cat-name">Motorsports / Auto</span><span class="cat-meta">Top <span class="num">28</span> ranked · <span class="num">28</span> indexed</span></span></div>
+    <div class="cat-card"><span class="cat-icon"><span class="material-symbols-outlined">agriculture</span></span><span class="cat-body"><span class="cat-name">Agriculture Tech</span><span class="cat-meta">Top <span class="num">31</span> ranked · <span class="num">31</span> indexed</span></span></div>
+    <a class="cat-card live" href="category-digital-marketing.html"><span class="cat-icon"><span class="material-symbols-outlined">campaign</span></span><span class="cat-body"><span class="cat-name">Digital &amp; AI Marketing</span><span class="cat-meta">Top <span class="num">12</span> ranked · <span class="num">12</span> listed of <span class="num">50</span> tracked</span><span class="cat-live-tag">Live index</span></span></a>
+    <div class="cat-card"><span class="cat-icon"><span class="material-symbols-outlined">school</span></span><span class="cat-body"><span class="cat-name">B2B Consulting / Training</span><span class="cat-meta">Top <span class="num">84</span> ranked · <span class="num">84</span> indexed</span></span></div>
+    <div class="cat-card"><span class="cat-icon"><span class="material-symbols-outlined">newspaper</span></span><span class="cat-body"><span class="cat-name">Reputation / PR</span><span class="cat-meta">Top <span class="num">45</span> ranked · <span class="num">45</span> indexed</span></span></div>
+    <div class="cat-card"><span class="cat-icon"><span class="material-symbols-outlined">gavel</span></span><span class="cat-body"><span class="cat-name">Legal Services</span><span class="cat-meta">Top <span class="num">49</span> ranked · <span class="num">49</span> indexed</span></span></div>
+    <div class="cat-card"><span class="cat-icon"><span class="material-symbols-outlined">groups</span></span><span class="cat-body"><span class="cat-name">HR &amp; Recruiting</span><span class="cat-meta">Top <span class="num">98</span> ranked · <span class="num">98</span> indexed</span></span></div>
+    <div class="cat-card"><span class="cat-icon"><span class="material-symbols-outlined">palette</span></span><span class="cat-body"><span class="cat-name">Design &amp; Creative</span><span class="cat-meta">Top <span class="num">56</span> ranked · <span class="num">56</span> indexed</span></span></div>
+    <div class="cat-card"><span class="cat-icon"><span class="material-symbols-outlined">translate</span></span><span class="cat-body"><span class="cat-name">Translation &amp; Localization</span><span class="cat-meta">Top <span class="num">24</span> ranked · <span class="num">24</span> indexed</span></span></div>
+    <div class="cat-card"><span class="cat-icon"><span class="material-symbols-outlined">query_stats</span></span><span class="cat-body"><span class="cat-name">Market Research</span><span class="cat-meta">Top <span class="num">47</span> ranked · <span class="num">47</span> indexed</span></span></div>
+  </div>
+  <p class="muted small" style="margin-top:14px">A category ranks its full list when it holds fewer than 100 indexed companies, and its top 100 when it holds more.</p>
+</section>
+
+<!-- ============ 6. FAQ ============ -->
+<section class="wrap section-sm" id="faq">
+  <div class="sec-head"><h2>Top 100 questions</h2></div>
+  <div class="card">
+    <div class="faq-item">
+      <h3>Is the Top 100 one overall list</h3>
+      <p>No. Every ranking is scoped to a category, because a buyer choosing a marketing agency is not choosing between it and a payments platform. Scores are normalized 0 to 100 on the same five factors, so you can read a score across categories even though the ranking sits inside one.</p>
+    </div>
+    <div class="faq-item">
+      <h3>How many companies appear in each category</h3>
+      <p>Up to 100. A category with fewer than 100 indexed companies ranks all of them. Digital &amp; AI Marketing holds <span class="num">12</span> indexed companies today out of <span class="num">50</span> tracked, so all <span class="num">12</span> are ranked.</p>
+    </div>
+    <div class="faq-item">
+      <h3>How often do these rankings update</h3>
+      <p>Monthly. Every score recomputes in each snapshot.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Can a company pay to rank higher</h3>
+      <p>No. The two paid programs, verification and labeled featured placement, never touch scores or rank. Featured placement is always labeled and sits outside the ranked list.</p>
+    </div>
+  </div>
+</section>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="wordmark"><span class="wm-badge">B2B</span> INDEX</div>
+    <p style="margin-top:14px;max-width:720px">Maintained by the B2Bindex editorial team with data from public filings, licensed data providers, and verified company submissions.</p>
+    <p style="margin-top:8px;color:var(--ink-3)">A brand by Brandvious, Inc. · Last reviewed: August 13, 2026</p>
+    <div class="foot-links">
+      <a href="index.html">Index</a>
+      <a href="top-100.html">Top 100</a>
+      <a href="compare.html">Compare</a>
+      <a href="insights.html">Insights</a>
+      <a href="find-a-solution.html">Find a Solution</a>
+      <a href="methodology.html">Methodology</a>
+      <a href="get-listed.html">Get Listed</a>
+      <a href="methodology.html#corrections">Corrections</a>
+    </div>
+
+    <div class="foot-cats">
+      <div>
+        <h5>Software &amp; Data</h5>
+        <ul>
+          <li>Artificial Intelligence</li><li>SaaS</li><li>Cybersecurity</li><li>Data &amp; Analytics</li><li>DevTools &amp; Infrastructure</li><li>Cloud &amp; Hosting</li><li>Sales Tech / RevOps</li><li>Customer Success</li>
+        </ul>
+      </div>
+      <div>
+        <h5>Commerce &amp; Finance</h5>
+        <ul>
+          <li>Fintech</li><li>E-commerce</li><li>Payments</li><li>Banking Tech</li><li>Insurance Tech</li><li>Accounting &amp; Tax</li><li>Procurement &amp; Spend</li><li>Billing &amp; Subscriptions</li>
+        </ul>
+      </div>
+      <div>
+        <h5>Industry &amp; Infrastructure</h5>
+        <ul>
+          <li>Manufacturing</li><li>Logistics &amp; Freight</li><li>Construction Tech</li><li>Energy &amp; Sustainability</li><li>Healthcare &amp; Biotech</li><li>Real Estate / PropTech</li><li>Motorsports / Auto</li><li>Agriculture Tech</li>
+        </ul>
+      </div>
+      <div>
+        <h5>Professional Services</h5>
+        <ul>
+          <li><a href="category-digital-marketing.html">Digital &amp; AI Marketing</a></li><li>B2B Consulting / Training</li><li>Reputation / PR</li><li>Legal Services</li><li>HR &amp; Recruiting</li><li>Design &amp; Creative</li><li>Translation &amp; Localization</li><li>Market Research</li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="integrity">Rankings cannot be bought. The two paid programs, verification and labeled featured placement, never touch scores or rank.</p>
+    <p class="foot-net">Brandvious network: <a href="https://entities.org" target="_blank" rel="noopener">entities.org</a> · <a href="https://answerstack.io" target="_blank" rel="noopener">answerstack.io</a> · B2Bindex · <span title="Coming soon">Network strategy</span></p>
+  </div>
+</footer>
+
+</body>
+</html>

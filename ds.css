@@ -144,6 +144,8 @@ body > section:last-of-type { padding-block-end: 56px; }
 }
 .nav .cta:hover, .nav .cta.soon:hover { color: var(--paper); opacity: .85; }
 .nav .get-listed { color: var(--ink); font-weight: 500; }
+.nav a.active, .nav a[aria-current="page"] { color: var(--ink); font-weight: 600; }
+.nav a.cta.active, .nav a.cta[aria-current="page"] { color: var(--paper); }
 @media (max-width: 860px) { .head-search { display: none; } }
 
 /* ---------- buttons ---------- */
